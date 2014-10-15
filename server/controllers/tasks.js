@@ -9,23 +9,24 @@ var tasks = [
 var ejs = require('ejs');
 var path = require('path');
 
+module.exports = {
+    index : require('tasks/index').init({tasks:tasks}),
+    show : require('tasks/show'),
+    newPost : require('tasks/newPost'),
+    newGetForm : require('tasks/newGetForm'),
+    newGetSuccess : require('tasks/newGetSuccess'),
+    newGetError : require('tasks/newGetError'),
+    editPut : require('tasks/editPut'),
+    editGetForm : require('tasks/editGetForm'),
+    editGetSuccess : require('tasks/editGetSuccess'),
+    editGetError : require('tasks/editGetError'),
+    removeDel : require('tasks/removeDel')
+}
+
 /**
  * Shows list of tasks
  */
-exports.index = function(request, response) {
-    //response.send(tasks);
-
-    ejs.renderFile(path.normalize(__dirname+"/../views/tasks/index.ejs"), {
-        tasks : tasks
-    }, function(error, result) {
-        if(!error) {
-            response.end(result);
-        } else {
-            response.end("Error!!!");
-            console.log(error);
-        }
-    });
-}
+exports.index =
 
 /**
  * Create new task
@@ -60,7 +61,7 @@ exports.show = function(request, response) {
 /**
  * Remove task
  */
-exports.destroy = function(request, response) {
+exports.remove = function(request, response) {
     var index = parseInt(request.params.id)-1;
     delete tasks[index];
 
