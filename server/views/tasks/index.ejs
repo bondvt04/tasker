@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <script>
+            (function init() {
+                console.log("HELLO!");
+            })();
+        </script>
+    </head>
+    <body>
+        <% if(tasks.length) {%>
+            <h2>List of tasks</h2>
+            <ul>
+                <% tasks.forEach(function(task) { %>
+                    <li>
+                        <b>Name:</b><%= task.name %>
+                        <b>ID:</b><%= task.id %>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <h2>There is no tasks</h2>
+        <% } %>
+        <% console.log("WORLD!"); %>
+    </body>
+</html>
