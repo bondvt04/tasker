@@ -1128,7 +1128,7 @@
                     },
                     receiveMsg: function msgFunc(msg, data) {
                         var self = this, parts = msg.split('.');
-                        switch (parts[2]) {
+                        switch (parts[parts.length - 1]) {
                         case 'attach_start':
                             self.loader.done(function () {
                                 self.onBeforeAttach();
@@ -1401,13 +1401,17 @@
                     oldView = core.getView(oldViewId);
                     newViewId = data.content;
                     newView = core.getView(newViewId, core.extractExtras(data));
+                    if (newViewId && !newView) {
+                        window.console.error('View not found:' + newViewId);
+                    }
                     detachedViews = getSubviewsID(oldView);
                     attachedViews = getSubviewsID(newView);
                     detachedViews.push(oldViewId);
                     attachedViews.push(newViewId);
                     if (oldViewId === newViewId) {
                         window.console.log('You try to navigate the same view:' + newViewId);
-                        data.callback(data, newView ? newView.el : null, oldView ? oldView.el : null, container);
+                        if (data && data.callback)
+                            data.callback(data, newView ? newView.el : null, oldView ? oldView.el : null, container);
                         return;
                     }
                     attachViews = function () {

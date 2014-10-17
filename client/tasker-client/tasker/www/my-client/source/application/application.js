@@ -5,6 +5,13 @@ RAD.application(function (core) {
 
     app.start = function () {
         core.startService();
+
+        core.publish('navigation.show', {
+            container_id: '#content',
+            content: "view.tasks.layout",
+            animation: 'none'
+        });
+
         core.publish('navigation.show', {
             container_id: '#widget1',
             content: "view.widget1",

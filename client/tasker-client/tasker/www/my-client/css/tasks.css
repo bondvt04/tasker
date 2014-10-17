@@ -1,0 +1,10 @@
+.tasks-menu__item {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.tasks-menu__item,
+.tasks-menu__item * {
+    color: white;
+}
