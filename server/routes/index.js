@@ -18,8 +18,14 @@ module.exports = routesManager = {
             });
         });
 
-        require('./tasks.js').init({app:this.app}).map();
-        require('./knowledges.js').init({app:this.app}).map();
+        require('./tasks.js').init({
+            app:this.app,
+            router:this.router
+        }).map();
+        require('./knowledges.js').init({
+            app:this.app,
+            router:this.router
+        }).map();
 
         return this;
     },
