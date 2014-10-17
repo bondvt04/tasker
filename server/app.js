@@ -60,10 +60,10 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
+app.use(function(error, request, response, next) {
+    response.status(error.status || 500);
+    response.render('error.ejs', {
+        message: error.message,
         error: {}
     });
 });

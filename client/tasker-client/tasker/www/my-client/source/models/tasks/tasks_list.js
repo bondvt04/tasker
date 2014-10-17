@@ -6,6 +6,7 @@ RAD.model('tasks_list_template', Backbone.Collection.extend({
             return regex.test(task.get("name"));
         }));
     }
-}), false)
+}), false);
 
 RAD.model('tasks_list', RAD.models.tasks_list_template, true);
+

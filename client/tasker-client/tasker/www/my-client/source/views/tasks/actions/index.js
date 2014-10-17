@@ -1,9 +1,13 @@
 RAD.view("view.tasks.index", RAD.Blanks.View.extend({
     url: 'source/views/tasks/actions/index.html',
-    model: RAD.models.users_list,
 
-    filterUsers: function (data) {
-        this.bindModel(RAD.models.users_list.filterByUsername(data.username));
+    filterTasks: function (data) {
+        this.bindModel(RAD.models.tasks_list.filterByName(data.name));
+    },
+
+    onInitialize : function() {
+        //this.model = RAD.models.tasks_list;
+        this.bindModel(RAD.models.tasks_list);
     },
 
     onEndAttach: function () {
@@ -24,12 +28,13 @@ RAD.view("view.tasks.index", RAD.Blanks.View.extend({
             action: "show"
         });
 
-        if (false) {
+        if (true) {
+            //debugger;
             this.model.fetch({
-                url: "http://journal.mobi-dev.com/api/users/get",
-                type: 'POST',
+                url: "http://api.tasker.com/tasks",
+                type: 'GET',
                 data: {
-                    deviceId: RAD.models.current_device.get('deviceId')
+                    //hello: RAD.models.current_device.get('deviceId')
                 },
                 success: function (model, response) {
                     if ("success" !== response.status) {

@@ -12,6 +12,8 @@
         "source/views/tasks/actions/show.js",
         "source/views/tasks/actions/new.js",
         "source/views/spinner/spinner.js",
+        "source/views/error/error.js",
+
 
 
         "source/views/widget1/widget1.js",
