@@ -1,0 +1,1521 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    
+    
+    <title>angular/angular · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="angular/angular" name="twitter:title" /><meta content="Contribute to angular development by creating an account on GitHub." name="twitter:description" /><meta content="https://avatars0.githubusercontent.com/u/139426?v=3&amp;s=400" name="twitter:image:src" />
+      <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars0.githubusercontent.com/u/139426?v=3&amp;s=400" property="og:image" /><meta content="angular/angular" property="og:title" /><meta content="https://github.com/angular/angular" property="og:url" /><meta content="Contribute to angular development by creating an account on GitHub." property="og:description" />
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    
+    <meta name="pjax-timeout" content="1000">
+    
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient>
+      <meta name="google-analytics" content="UA-3769691-2">
+
+    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="C206E82D:4045:167A0DF:555B24D2" name="octolytics-dimension-request_id" />
+    
+    <meta content="Rails, view, files#disambiguate" name="analytics-event" />
+    <meta class="js-ga-set" name="dimension1" content="Logged Out">
+    <meta class="js-ga-set" name="dimension2" content="Header v3">
+    <meta name="is-dotcom" content="true">
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+    
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="RXm9k5Krv1jlzpnIb9syjdziQJUZQnCqbud60e0ME7IyJb/oYKIfzjP8hMcHmkr0Z/pBpmJrrc4DRH07XzWZsQ==" name="csrf-token" />
+
+    <link href="https://assets-cdn.github.com/assets/github/index-d80e093fe7c48ff920ce83dfd2ad7c02806722220d164b49101ed783098ea618.css" media="all" rel="stylesheet" />
+    <link href="https://assets-cdn.github.com/assets/github2/index-99a58ea750b0547d1266460cd4ade0c2c81ed8c524cbba4ea5e3b37e18daec79.css" media="all" rel="stylesheet" />
+    
+    
+
+
+    <meta http-equiv="x-pjax-version" content="7bc30b38b669884142fe7da73f3839dd">
+
+      
+  <meta name="description" content="Contribute to angular development by creating an account on GitHub.">
+  <meta name="go-import" content="github.com/angular/angular git https://github.com/angular/angular.git">
+
+  <meta content="139426" name="octolytics-dimension-user_id" /><meta content="angular" name="octolytics-dimension-user_login" /><meta content="24195339" name="octolytics-dimension-repository_id" /><meta content="angular/angular" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="24195339" name="octolytics-dimension-repository_network_root_id" /><meta content="angular/angular" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/angular/angular/commits/master.atom" rel="alternate" title="Recent Commits to angular:master" type="application/atom+xml">
+
+  </head>
+
+
+  <body class="logged_out  env-production  vis-public">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div class="wrapper">
+      
+      
+      
+
+
+        
+        <div class="header header-logged-out" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions" role="navigation">
+        <a class="btn btn-primary" href="/join" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign up</a>
+      <a class="btn" href="/login?return_to=%2Fangular%2Fangular" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
+    </div>
+
+    <div class="site-search repo-scope js-site-search" role="search">
+      <form accept-charset="UTF-8" action="/angular/angular/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/angular/angular/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+  <label class="js-chromeless-input-container form-control">
+    <div class="scope-badge">This repository</div>
+    <input type="text"
+      class="js-site-search-focus js-site-search-field is-clearable chromeless-input"
+      data-hotkey="s"
+      name="q"
+      placeholder="Search"
+      data-global-scope-placeholder="Search GitHub"
+      data-repo-scope-placeholder="Search"
+      tabindex="1"
+      autocapitalize="off">
+  </label>
+</form>
+    </div>
+
+      <ul class="header-nav left" role="navigation">
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/explore" data-ga-click="(Logged out) Header, go to explore, text:explore">Explore</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/features" data-ga-click="(Logged out) Header, go to features, text:features">Features</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://enterprise.github.com/" data-ga-click="(Logged out) Header, go to enterprise, text:enterprise">Enterprise</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="/blog" data-ga-click="(Logged out) Header, go to blog, text:blog">Blog</a>
+          </li>
+      </ul>
+
+  </div>
+</div>
+
+
+
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+    <div id="js-flash-container">
+      
+    </div>
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+<ul class="pagehead-actions">
+
+  <li>
+      <a href="/login?return_to=%2Fangular%2Fangular"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to watch a repository" rel="nofollow">
+    <span class="octicon octicon-eye"></span>
+    Watch
+  </a>
+  <a class="social-count" href="/angular/angular/watchers">
+    510
+  </a>
+
+  </li>
+
+  <li>
+      <a href="/login?return_to=%2Fangular%2Fangular"
+    class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+    aria-label="You must be signed in to star a repository" rel="nofollow">
+    <span class="octicon octicon-star"></span>
+    Star
+  </a>
+
+    <a class="social-count js-social-count" href="/angular/angular/stargazers">
+      3,111
+    </a>
+
+  </li>
+
+    <li>
+      <a href="/login?return_to=%2Fangular%2Fangular"
+        class="btn btn-sm btn-with-count tooltipped tooltipped-n"
+        aria-label="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-repo-forked"></span>
+        Fork
+      </a>
+      <a href="/angular/angular/network" class="social-count">
+        797
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author"><a href="/angular" class="url fn" itemprop="url" rel="author"><span itemprop="title">angular</span></a></span><!--
+       --><span class="path-divider">/</span><!--
+       --><strong><a href="/angular/angular" class="js-current-repository" data-pjax="#js-repo-pjax-container">angular</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+      <div class="repository-with-sidebar repo-container new-discussion-timeline with-full-navigation ">
+        <div class="repository-sidebar clearfix">
+            
+<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container"
+     data-issue-count-url="/angular/angular/issues/counts">
+  <ul class="sunken-menu-group">
+    <li class="tooltipped tooltipped-w" aria-label="Code">
+      <a href="/angular/angular" aria-label="Code" class="selected js-selected-navigation-item sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /angular/angular">
+        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Issues">
+        <a href="/angular/angular/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /angular/angular/issues">
+          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+          <span class="js-issue-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>      </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Pull requests">
+      <a href="/angular/angular/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /angular/angular/pulls">
+          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
+          <span class="js-pull-replace-counter"></span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>    </li>
+
+      <li class="tooltipped tooltipped-w" aria-label="Wiki">
+        <a href="/angular/angular/wiki" aria-label="Wiki" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g w" data-selected-links="repo_wiki /angular/angular/wiki">
+          <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
+          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>      </li>
+  </ul>
+  <div class="sunken-menu-separator"></div>
+  <ul class="sunken-menu-group">
+
+    <li class="tooltipped tooltipped-w" aria-label="Pulse">
+      <a href="/angular/angular/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /angular/angular/pulse">
+        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>    </li>
+
+    <li class="tooltipped tooltipped-w" aria-label="Graphs">
+      <a href="/angular/angular/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /angular/angular/graphs">
+        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+</a>    </li>
+  </ul>
+
+
+</nav>
+
+              <div class="only-with-full-nav">
+                  
+<div class="clone-url open"
+  data-protocol-type="http"
+  data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">HTTPS</span> clone URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
+           value="https://github.com/angular/angular.git" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+  
+<div class="clone-url "
+  data-protocol-type="subversion"
+  data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><span class="text-emphasized">Subversion</span> checkout URL</h3>
+  <div class="input-group js-zeroclipboard-container">
+    <input type="text" class="input-mini input-monospace js-url-field js-zeroclipboard-target"
+           value="https://github.com/angular/angular" readonly="readonly">
+    <span class="input-group-button">
+      <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+    </span>
+  </div>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+  <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a> or <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>.
+  <a href="https://help.github.com/articles/which-remote-url-should-i-use" class="help tooltipped tooltipped-n" aria-label="Get help on which URL is right for you.">
+    <span class="octicon octicon-question"></span>
+  </a>
+</p>
+
+
+
+
+                <a href="/angular/angular/archive/master.zip"
+                   class="btn btn-sm sidebar-button"
+                   aria-label="Download the contents of angular/angular as a zip file"
+                   title="Download the contents of angular/angular as a zip file"
+                   rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+              </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
+
+          
+<span id="js-show-full-navigation"></span>
+
+<div class="repository-meta js-details-container ">
+
+
+
+</div>
+
+<div class="overall-summary overall-summary-bottomless">
+
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+    <div class="stats-switcher-wrapper">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax href="/angular/angular/commits/master">
+            <span class="octicon octicon-history"></span>
+            <span class="num text-emphasized">
+              1,369
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax href="/angular/angular/branches">
+          <span class="octicon octicon-git-branch"></span>
+          <span class="num text-emphasized">
+            10
+          </span>
+          branches
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax href="/angular/angular/releases">
+          <span class="octicon octicon-tag"></span>
+          <span class="num text-emphasized">
+            11
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+        
+  <a href="/angular/angular/graphs/contributors">
+    <span class="octicon octicon-organization"></span>
+    <span class="num text-emphasized">
+      81
+    </span>
+    contributors
+  </a>
+      </li>
+    </ul>
+
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="/angular/angular/search?l=javascript">
+                <span class="color-block language-color" style="background-color:#f1e05a;"></span>
+                <span class="lang">JavaScript</span>
+                <span class="percent">34.4%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/angular/angular/search?l=dart">
+                <span class="color-block language-color" style="background-color:#00B4AB;"></span>
+                <span class="lang">Dart</span>
+                <span class="percent">28.3%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/angular/angular/search?l=typescript">
+                <span class="color-block language-color" style="background-color:#2b7489;"></span>
+                <span class="lang">TypeScript</span>
+                <span class="percent">25.4%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/angular/angular/search?l=css">
+                <span class="color-block language-color" style="background-color:#563d7c;"></span>
+                <span class="lang">CSS</span>
+                <span class="percent">5.8%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/angular/angular/search?l=html">
+                <span class="color-block language-color" style="background-color:#e44b23;"></span>
+                <span class="lang">HTML</span>
+                <span class="percent">4.8%</span>
+              </a>
+          </li>
+          <li>
+              <a href="/angular/angular/search?l=bash">
+                <span class="color-block language-color" style="background-color:#89e051;"></span>
+                <span class="lang">Shell</span>
+                <span class="percent">1.3%</span>
+              </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="repository-lang-stats-graph js-toggle-lang-stats" title="Click for language details">
+    <span class="language-color" aria-label="JavaScript 34.4%" style="width:34.4%; background-color:#f1e05a;" itemprop="keywords">JavaScript</span>
+    <span class="language-color" aria-label="Dart 28.3%" style="width:28.3%; background-color:#00B4AB;" itemprop="keywords">Dart</span>
+    <span class="language-color" aria-label="TypeScript 25.4%" style="width:25.4%; background-color:#2b7489;" itemprop="keywords">TypeScript</span>
+    <span class="language-color" aria-label="CSS 5.8%" style="width:5.8%; background-color:#563d7c;" itemprop="keywords">CSS</span>
+    <span class="language-color" aria-label="HTML 4.8%" style="width:4.8%; background-color:#e44b23;" itemprop="keywords">HTML</span>
+    <span class="language-color" aria-label="Shell 1.3%" style="width:1.3%; background-color:#89e051;" itemprop="keywords">Shell</span>
+  </div>
+
+<include-fragment src="/angular/angular/show_partial?partial=tree%2Frecently_touched_branches_list"></include-fragment>
+
+<div class="file-navigation in-mid-page">
+  <a href="/angular/angular/find/master"
+        class="js-show-file-finder btn btn-sm empty-icon tooltipped tooltipped-s right"
+        data-pjax
+        data-hotkey="t"
+        aria-label="Quickly jump between files">
+    <span class="octicon octicon-list-unordered"></span>
+  </a>
+    <a href="/angular/angular/compare" aria-label="Compare, review, create a pull request" class="btn btn-sm btn-primary tooltipped tooltipped-se left compare-button" aria-label="Compare &amp; review" data-pjax data-ga-click="Repository, go to compare view, location:repo overview; icon:git-compare">
+      <span class="octicon octicon-git-compare"></span>
+    </a>
+
+  
+<div class="select-menu js-menu-container js-select-menu left">
+  <span class="btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    data-master-branch="master"
+    data-ref="master"
+    title="master"
+    role="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button css-truncate-target">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-x js-menu-close" role="button" aria-label="Close"></span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/angular/angular/tree/angular.io-docs"
+               data-name="angular.io-docs"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="angular.io-docs">
+                angular.io-docs
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/angular/angular/tree/docs"
+               data-name="docs"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="docs">
+                docs
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/angular/angular/tree/errors"
+               data-name="errors"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="errors">
+                errors
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/angular/angular/tree/formatting-doc"
+               data-name="formatting-doc"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="formatting-doc">
+                formatting-doc
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/angular/angular/tree/master"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="master">
+                master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/angular/angular/tree/perftest"
+               data-name="perftest"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="perftest">
+                perftest
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/angular/angular/tree/q-master-misko"
+               data-name="q-master-misko"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="q-master-misko">
+                q-master-misko
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/angular/angular/tree/q-misko-master"
+               data-name="q-misko-master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="q-misko-master">
+                q-misko-master
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/angular/angular/tree/test-bed-return-type"
+               data-name="test-bed-return-type"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="test-bed-return-type">
+                test-bed-return-type
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/angular/angular/tree/update-readme"
+               data-name="update-readme"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <span class="select-menu-item-text css-truncate-target" title="update-readme">
+                update-readme
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.23"
+                 data-name="2.0.0-alpha.23"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.23">2.0.0-alpha.23</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.22"
+                 data-name="2.0.0-alpha.22"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.22">2.0.0-alpha.22</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.21"
+                 data-name="2.0.0-alpha.21"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.21">2.0.0-alpha.21</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.20"
+                 data-name="2.0.0-alpha.20"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.20">2.0.0-alpha.20</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.19"
+                 data-name="2.0.0-alpha.19"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.19">2.0.0-alpha.19</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.18"
+                 data-name="2.0.0-alpha.18"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.18">2.0.0-alpha.18</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.17"
+                 data-name="2.0.0-alpha.17"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.17">2.0.0-alpha.17</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.16"
+                 data-name="2.0.0-alpha.16"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.16">2.0.0-alpha.16</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.15"
+                 data-name="2.0.0-alpha.15"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.15">2.0.0-alpha.15</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.14"
+                 data-name="2.0.0-alpha.14"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.14">2.0.0-alpha.14</a>
+            </div>
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/angular/angular/tree/2.0.0-alpha.13"
+                 data-name="2.0.0-alpha.13"
+                 data-skip-pjax="true"
+                 rel="nofollow"
+                 class="js-navigation-open select-menu-item-text css-truncate-target"
+                 title="2.0.0-alpha.13">2.0.0-alpha.13</a>
+            </div>
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="breadcrumb"><span class='repo-root js-repo-root'><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/angular/angular" class="" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">angular</span></a></span></span><span class="separator">/</span>
+    <a class="btn-link disabled tooltipped tooltipped-e" href="#" aria-label="You must be signed in to make or propose changes">
+      <span class="octicon octicon-plus"></span>
+    </a>
+</div>
+</div>
+
+
+
+  
+  <div class="commit commit-tease js-details-container" >
+    <p class="commit-title ">
+        <a href="/angular/angular/commit/04a9eb8820b83825867e94cac58ffa56725a86a4" class="message" data-pjax="true" title="fix(build): npm shrinkwrap to pick up changed SHA1.
+
+ts2dart&#39;s node-source-map-support dependency was updated to match the main
+line patch, but this changed the SHA in the existing repo, breaking Angular&#39;s
+shrink wrapped dependency.
+
+This update changes the dependency back to an existing SHA.">fix(build): npm shrinkwrap to pick up changed SHA1.</a>
+        <span class="hidden-text-expander inline"><a href="#" class="js-details-target">…</a></span>
+    </p>
+      <div class="commit-desc"><pre>ts2dart's node-source-map-support dependency was updated to match the main
+line patch, but this changed the SHA in the existing repo, breaking Angular's
+shrink wrapped dependency.
+
+This update changes the dependency back to an existing SHA.</pre></div>
+    <div class="commit-meta">
+      <button aria-label="Copy SHA" class="js-zeroclipboard zeroclipboard-link tooltipped tooltipped-s" data-clipboard-text="04a9eb8820b83825867e94cac58ffa56725a86a4" data-copied-hint="Copied!" type="button"><span class="octicon octicon-clippy"></span></button>
+      <a href="/angular/angular/commit/04a9eb8820b83825867e94cac58ffa56725a86a4" class="sha-block" data-pjax>latest commit <span class="sha">04a9eb8820</span></a>
+
+      <div class="authorship">
+        <img alt="@mprobst" class="avatar" data-user="7208" height="20" src="https://avatars0.githubusercontent.com/u/7208?v=3&amp;s=40" width="20" />
+        <span class="author-name"><a href="/mprobst" rel="contributor">mprobst</a></span>
+        authored <time class="updated" datetime="2015-05-19T07:30:44Z" is="relative-time">May 19, 2015</time>
+
+      </div>
+    </div>
+  </div>
+
+  
+<div class="file-wrap">
+  <a href="/angular/angular/tree/04a9eb8820b83825867e94cac58ffa56725a86a4" class="hidden js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+  <table class="files" data-pjax>
+
+
+    <tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><span class="octicon octicon-alert"></span></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/tree/master/.settings" class="js-directory-link" id="80dbd6eeac5e4fcdc70419e17b1b45cd-862baded9113fa33d25083f85fb8d4ffe59cac69" title=".settings">.settings</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/cfba38b46236a3aacafe020318fef3383641c7a0" class="message" data-pjax="true" title="chore: Visual Studio Code project settings for excluding directories">chore: Visual Studio Code project settings for excluding directories</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-18T21:34:36Z" is="time-ago">May 18, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/tree/master/docs" class="js-directory-link" id="e3e2a9bfd88566b05001b02a3f51d286-f16f9d9a85893b8c98ea64f2bff472fb17bf2810" title="docs">docs</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/62bf777ef135c13e69774c282ffaa8a014f841d2" class="message" data-pjax="true" title="fix(docs): fix broken docs test after addition of .ts extension to dgeni
+regex.">fix(docs): fix broken docs test after addition of .ts extension to dgeni</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-07T21:05:57Z" is="time-ago">May 7, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/tree/master/modules" class="js-directory-link" id="0eb9b3af2e4a00837a1b1a854c9ea18c-88b2031592c9e01061499b3b4f9ac9f6e6306f93" title="modules">modules</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/0f002a5b18120d1f7bdfc7dca78f4e1c53794659" class="message" data-pjax="true" title="feat(fakeAsync): allow simulating the passage of time">feat(fakeAsync): allow simulating the passage of time</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-19T04:51:15Z" is="time-ago">May 19, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/tree/master/modules_dart" class="js-directory-link" id="abdf7d6fff7e09404cf43fc3c9ea4afd-21ec0464438037f3c6336b2eb7467384b4c6286e" title="modules_dart">modules_dart</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/abc887854766f272123e00975774c398a3135c39" class="message" data-pjax="true" title="feat(dart/transform): Reuse readDirectiveMetadata in plugin
+
+Share code for parsing `DirectiveMetadata` values between the
+transformer and the analyzer plugin.">feat(dart/transform): Reuse readDirectiveMetadata in plugin</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-08T21:34:16Z" is="time-ago">May 8, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/tree/master/scripts" class="js-directory-link" id="d6c5855a62cf32a4dadbc2831f0f295f-6055250578575dd178b6ba8fcd694c74d9b381ad" title="scripts">scripts</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/7dc524ed5888c217ba40f721ccc1494193432d66" class="message" data-pjax="true" title="chore(publishing): fix pubspec authors field">chore(publishing): fix pubspec authors field</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-12T22:06:00Z" is="time-ago">May 12, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-directory"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/tree/master/tools" class="js-directory-link" id="4a931512ce65bdc9ca6808adf92d8783-c25ae21a677c3f027ce1b92cd7c8df1e3d0c5f78" title="tools">tools</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/0f002a5b18120d1f7bdfc7dca78f4e1c53794659" class="message" data-pjax="true" title="feat(fakeAsync): allow simulating the passage of time">feat(fakeAsync): allow simulating the passage of time</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-19T04:51:15Z" is="time-ago">May 19, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/.bowerrc" class="js-directory-link" id="adba2f4daaaceb7e9889870260a0012e-baa91a3e3f6ceca5fdcadca90306c6ea33929a1f" title=".bowerrc">.bowerrc</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/b1bc792b56ef7a34b218d49729fcae01b80feef1" class="message" data-pjax="true" title="BUG FIX: without specification, certain versions of bower install ./app/bower_components...
+
+Closes #1409">BUG FIX: without specification, certain versions of bower install ./a…</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-21T23:31:20Z" is="time-ago">Apr 21, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/.clang-format" class="js-directory-link" id="69a68f7ce1ea3687a38d8e4705e6fa48-8d1c3c310286f5569e9ae2d99a5b50320a177e36" title=".clang-format">.clang-format</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/60e4197026c4b1946abd8ce3d8aa95f16a77aaed" class="message" data-pjax="true" title="feat(tooling): Add a .clang-format for automated JavaScript formatting.">feat(tooling): Add a .clang-format for automated JavaScript formatting.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-02T15:44:34Z" is="time-ago">Apr 2, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/.editorconfig" class="js-directory-link" id="1e70daafb475c0ce3fef7d2728279182-f1cc3ad329c5d5be1f19d75f27352ea695de0afc" title=".editorconfig">.editorconfig</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/474f1768c6f4232dc2d2c4179ff6005b6cdb231d" class="message" data-pjax="true" title="chore(.editorconfig): include markdown config">chore(.editorconfig): include markdown config</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-01-27T08:14:48Z" is="time-ago">Jan 27, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/.gitattributes" class="js-directory-link" id="fc723d30b02a4cca7a534518111c1a66-b7ca95b5b77a91a2e1b6eaf80c2a4a52a99ec378" title=".gitattributes">.gitattributes</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/7e708ccf986ea72ce4db059e9d0c42809a3bd2b9" class="message" data-pjax="true" title="chore: add .gitattributes with new lines config">chore: add .gitattributes with new lines config</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-01-07T02:06:13Z" is="time-ago">Jan 6, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/.gitignore" class="js-directory-link" id="a084b794bc0759e7a6b77810e01874f2-d1bdf64e56284dde1bbc755c0209a31038606f1b" title=".gitignore">.gitignore</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/b111ca9471425a8a73c058f8ff5731323cacd05b" class="message" data-pjax="true" title="chore(build): add tsd.cached.json to our .gitignore">chore(build): add tsd.cached.json to our .gitignore</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-27T17:47:49Z" is="time-ago">Apr 27, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/.travis.yml" class="js-directory-link" id="354f30a63fb0907d4ad57269548329e3-4e1736d7e8fadb3ed4e714bf11c2e844dd6f3eca" title=".travis.yml">.travis.yml</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/9fbb3adbe21faee9e6501385884e79a0f4232a4c" class="message" data-pjax="true" title="build(travis): bump npm version to 0.9.1
+
+this is to remove the warning in logs and align the ci with our local environment">build(travis): bump npm version to 0.9.1</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-15T23:18:01Z" is="time-ago">May 15, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/CHANGELOG.md" class="js-directory-link" id="4ac32a78649ca5bdd8e0ba38b7006a1e-89588f4d0fde010ac3c426414c64c354e356b88b" title="CHANGELOG.md">CHANGELOG.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/1ac7bb3bb82c2417cebf625d18b97538c19a8a5e" class="message" data-pjax="true" title="chore(packaging): bump version to 2.0.0-alpha.23">chore(packaging): bump version to 2.0.0-alpha.23</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-12T20:48:54Z" is="time-ago">May 12, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/CONTRIBUTING.md" class="js-directory-link" id="6a3371457528722a734f3c51d9238c13-5bb19ec5e8e62070fa96c0aeff5a22abfeb37c16" title="CONTRIBUTING.md">CONTRIBUTING.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/7ff17db113fbc6d04eb8e826d60860594c932d07" class="message" data-pjax="true" title="docs(CONTRIBUTING.md) : fix grammatical error in refactor description
+
+Grammar:
+- Consistency using &quot;neither&quot; with &quot;nor&quot;">docs(CONTRIBUTING.md) : fix grammatical error in refactor description</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-14T15:25:06Z" is="time-ago">May 14, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/DEVELOPER.md" class="js-directory-link" id="597c97dd957ad32a76360ab955f7e608-d118014af8d33e86f5320ddda00d60f6960d6eed" title="DEVELOPER.md">DEVELOPER.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/28022f472d5dbc231bb5c60da696744da40cf322" class="message" data-pjax="true" title="docs(DEVELOPER.md): Update Dart SDK Version
+
+Minimal Version set to 1.10.0-dev.1.10
+
+Closes #1771">docs(DEVELOPER.md): Update Dart SDK Version</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-10T10:08:48Z" is="time-ago">May 10, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/LICENSE" class="js-directory-link" id="9879d6db96fd29134fc802214163b95a-e06d2081865a766a8668acc12878f98b27fc9ea0" title="LICENSE">LICENSE</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/6a3abf2366e2c32ce3460155903262fee01736c8" class="message" data-pjax="true" title="Initial commit">Initial commit</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2014-09-18T16:12:01Z" is="time-ago">Sep 18, 2014</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/README.md" class="js-directory-link" id="04c6e90faac2675aa89e2176d2eec7d8-02c502a3fa8934646fc9b6f28934afc90e155f48" title="README.md">README.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/88c607da039c8db85a8816d5e24b8678dcb92e47" class="message" data-pjax="true" title="chore: update README with badges">chore: update README with badges</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-18T22:29:08Z" is="time-ago">May 18, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/bower.json" class="js-directory-link" id="0a08a7565aba4405282251491979bb6b-b98268f089df6897e22708115b10c6a8b675edb9" title="bower.json">bower.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/a963ae48e5f1c9f34132ceb72a20c90e42be350f" class="message" data-pjax="true" title="feat(benchmarks): add polymer js 0.8-preview benchmark
+
+Limitations because of preview status (see #960):
+
+- does not yet use ShadowDOM
+- does not use a builtin conditional like `if`
+- uses a temporary bower repository
+
+Closes #943">feat(benchmarks): add polymer js 0.8-preview benchmark</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-03-14T03:48:03Z" is="time-ago">Mar 13, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/gulpfile.js" class="js-directory-link" id="b9e12334e9eafd8341a6107dd98510c9-1b62b2475ead83549dbb1b0daad5765629efa0ca" title="gulpfile.js">gulpfile.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/d9ceb42bfeeacd8c5ec17a4c275c55b2c848b312" class="message" data-pjax="true" title="chore(gulp): log message when tasks triggered by watch
+
+Closes #1882
+
+Closes #1893">chore(gulp): log message when tasks triggered by watch</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-18T21:34:36Z" is="time-ago">May 18, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/karma-dart.conf.js" class="js-directory-link" id="5f5e2d20ee4661074a1ae15b58c46438-edc4ee1a62ede2d1c87ca19c5f04f2d8beba3633" title="karma-dart.conf.js">karma-dart.conf.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/bb6f59e423a80055256eb4a847e6d4a8db243022" class="message" data-pjax="true" title="chore(build): make karma watch broccoli output for dart unit tests
+
+Previously, karma used a custom preprocessor. Instead, have karma
+run built dart from the `dist` folder and use gulp and broccoli
+to watch for changes.">chore(build): make karma watch broccoli output for dart unit tests</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-06T02:24:20Z" is="time-ago">May 5, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/karma-js.conf.js" class="js-directory-link" id="c4667ceccd7e91092048e752850fab9c-2dea094ef24becfb3817ad39f92528cb9603f85f" title="karma-js.conf.js">karma-js.conf.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/c8a0ed40bdb8e67b3da3246822fe34c360c2fd48" class="message" data-pjax="true" title="refactor(NgZone): use zone.js v0.5 from npm">refactor(NgZone): use zone.js v0.5 from npm</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-12T19:07:25Z" is="time-ago">May 12, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/npm-shrinkwrap.clean.json" class="js-directory-link" id="520f47256c5cce58e00b594baf05874f-1da4bf4cc95b5055b665541809222d9ba679301c" title="npm-shrinkwrap.clean.json">npm-shrinkwrap.clean.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/04a9eb8820b83825867e94cac58ffa56725a86a4" class="message" data-pjax="true" title="fix(build): npm shrinkwrap to pick up changed SHA1.
+
+ts2dart&#39;s node-source-map-support dependency was updated to match the main
+line patch, but this changed the SHA in the existing repo, breaking Angular&#39;s
+shrink wrapped dependency.
+
+This update changes the dependency back to an existing SHA.">fix(build): npm shrinkwrap to pick up changed SHA1.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-19T09:17:13Z" is="time-ago">May 19, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/npm-shrinkwrap.json" class="js-directory-link" id="36018a6a9e1de1798516799b84841318-39d4e164d52f20a7c3b3bad79883557fa06bd210" title="npm-shrinkwrap.json">npm-shrinkwrap.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/04a9eb8820b83825867e94cac58ffa56725a86a4" class="message" data-pjax="true" title="fix(build): npm shrinkwrap to pick up changed SHA1.
+
+ts2dart&#39;s node-source-map-support dependency was updated to match the main
+line patch, but this changed the SHA in the existing repo, breaking Angular&#39;s
+shrink wrapped dependency.
+
+This update changes the dependency back to an existing SHA.">fix(build): npm shrinkwrap to pick up changed SHA1.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-19T09:17:13Z" is="time-ago">May 19, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/npm-shrinkwrap.readme.md" class="js-directory-link" id="57b0dcff918ac1b0ab8e6622c9ac2905-505b160dc6c200935c1026ab6f39a83fb8dde231" title="npm-shrinkwrap.readme.md">npm-shrinkwrap.readme.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/0efd89ae5d27131455a8a2104521575227ee2799" class="message" data-pjax="true" title="docs(npm-shrinkwrap.readme.md): add info about `from` property changes
+
+Closes #1834">docs(npm-shrinkwrap.readme.md): add info about `from` property changes</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-13T08:02:20Z" is="time-ago">May 13, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/package.json" class="js-directory-link" id="b9cfc7f2cdf78a7f4b91a753d10865a2-14e7d02ae193a966b31d7f5df8bfa5f371353420" title="package.json">package.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/6c59894a2978658f483f7324ce334960582c0172" class="message" data-pjax="true" title="chore(package.json): add rewire devDependency">chore(package.json): add rewire devDependency</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-14T06:48:37Z" is="time-ago">May 14, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/perf-cloud-secret.template.js" class="js-directory-link" id="8e734d515ce5af48261a197c89eac270-a5053070d9f365ec3110c1e640cdb0cd01ac5e1d" title="perf-cloud-secret.template.js">perf-cloud-secret.template.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/561ad3a68ca8f1c284563cc5249702167ec6edd9" class="message" data-pjax="true" title="refactor(build): support multiple configurable browsers for e2e and perf tests
+
+Also includes browser configuration for Android">refactor(build): support multiple configurable browsers for e2e and p…</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-01-20T21:06:37Z" is="time-ago">Jan 20, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/protractor-dart2js.conf.js" class="js-directory-link" id="aac1e95c12bbf168b4e08158e9250394-4506c5e428959f3299270c144992a82d36a4147b" title="protractor-dart2js.conf.js">protractor-dart2js.conf.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/e4342743c09c6ea70e9dc401eafbf77652bdf49f" class="message" data-pjax="true" title="feat(benchmark): added an implementation of the tree benchmark in React">feat(benchmark): added an implementation of the tree benchmark in React</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-01T01:12:21Z" is="time-ago">Apr 30, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/protractor-js.conf.js" class="js-directory-link" id="091203060f361cfc5dca30189fb75828-b032bfad2f19501ceb4e0fc7c63eae710cd2da2d" title="protractor-js.conf.js">protractor-js.conf.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/8b7df90b0d385bf40efb368f5a119c662fed91cb" class="message" data-pjax="true" title="fix(build): simplify the e2e/perf config via command line arguments">fix(build): simplify the e2e/perf config via command line arguments</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-02-17T19:08:04Z" is="time-ago">Feb 17, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/protractor-shared.js" class="js-directory-link" id="380331cd3e46672b2ae0a0a3c4b91579-77590a99d5683c39bfdd7bd0a6767834bb7dc2f4" title="protractor-shared.js">protractor-shared.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/47542b0cb045129913f7113f5ef52393ccba8ecc" class="message" data-pjax="true" title="fix(build): don’t read out chrome perflogs during e2e tests
+
+We do this as we are seeing flakes in Chrome with ECONNREFUSED.
+
+Also reuses the same browser window.
+
+Also reenables the infinite scroll benchmark
+
+Closes #1137">fix(build): don’t read out chrome perflogs during e2e tests</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-02T00:09:26Z" is="time-ago">Apr 1, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/pubspec.yaml" class="js-directory-link" id="fb2d52cd953afedcafc9fe7629c6f132-290f61599004c31c79c2beaf33cf3b37e65b780a" title="pubspec.yaml">pubspec.yaml</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/0f002a5b18120d1f7bdfc7dca78f4e1c53794659" class="message" data-pjax="true" title="feat(fakeAsync): allow simulating the passage of time">feat(fakeAsync): allow simulating the passage of time</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-19T04:51:15Z" is="time-ago">May 19, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/test-init.dart" class="js-directory-link" id="c2ba2621c83725c7bdfb6cd273bdbb10-7e1096de8f4b401c86bcad659bf4db97f5e34476" title="test-init.dart">test-init.dart</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/50098767fc188426adc7c2f696df00b659b4799f" class="message" data-pjax="true" title="refactor(render): use render layer fully
+
+Introduces angular2/src/core/compiler/ViewFactory which
+extracts ProtoView.instantiate and replaces ViewPool.
+
+Note: This is a work in progress commit to unblock other commits.
+There will be follow ups to add unit tests, remove TODOs, …">refactor(render): use render layer fully</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-09T03:51:31Z" is="time-ago">Apr 8, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/test-main.dart" class="js-directory-link" id="be107687a7278613d3127e1033fcb298-0726d474bb707cfe1ded652629ae77b57d17c399" title="test-main.dart">test-main.dart</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/50098767fc188426adc7c2f696df00b659b4799f" class="message" data-pjax="true" title="refactor(render): use render layer fully
+
+Introduces angular2/src/core/compiler/ViewFactory which
+extracts ProtoView.instantiate and replaces ViewPool.
+
+Note: This is a work in progress commit to unblock other commits.
+There will be follow ups to add unit tests, remove TODOs, …">refactor(render): use render layer fully</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-09T03:51:31Z" is="time-ago">Apr 9, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/test-main.js" class="js-directory-link" id="ea3cb0ae2afb80daeab453d99873893e-273d87991ed21aa72aabd3346fd2645e8c50725a" title="test-main.js">test-main.js</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/3c77855b39779c88f5d9a545aae572ab986b3cb9" class="message" data-pjax="true" title="chore(build): Remove .es6 files which shadow .ts files.
+
+This removes .es6 files which are pure duplicates of a
+.ts file in the same folder.
+Next we need to remove .js files as well, and remove karma preprocessors for dart.">chore(build): Remove .es6 files which shadow .ts files.</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-05-01T16:51:03Z" is="time-ago">May 1, 2015</time></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="icon">
+            <span class="octicon octicon-file-text"></span>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/angular/angular/blob/master/tsconfig.json" class="js-directory-link" id="e5e546dd2eb0351f813d63d1b39dbc48-eecb13438ec400d366a6bb0cef351207feba6665" title="tsconfig.json">tsconfig.json</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+              <a href="/angular/angular/commit/5b104936ae55dc1b5b5ca687a912e703dd50dfa4" class="message" data-pjax="true" title="chore(build): Add a tsconfig.json file, simply to allow Atom editor&#39;s Typescript plugin to
+work without dropping tsconfig.json files and generated .js files in the
+source directory.
+
+Closes #1538">chore(build): Add a tsconfig.json file, simply to allow Atom editor's…</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time datetime="2015-04-28T23:39:39Z" is="time-ago">Apr 28, 2015</time></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+  <div id="readme" class="boxed-group flush clearfix announce instapaper_body md">
+    <h3>
+      <span class="octicon octicon-book"></span>
+      README.md
+    </h3>
+
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><p><a href="https://travis-ci.org/angular/angular"><img src="https://camo.githubusercontent.com/8d227cc53b74107a9721d592157e02723beb43a9/68747470733a2f2f7472617669732d63692e6f72672f616e67756c61722f616e67756c61722e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/angular/angular.svg?branch=master" style="max-width:100%;"></a> 
+<a href="https://gitter.im/angular/angular?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://camo.githubusercontent.com/da2edb525cde1455a622c58c0effc3a90b9a181c/68747470733a2f2f6261646765732e6769747465722e696d2f4a6f696e253230436861742e737667" alt="Join the chat at https://gitter.im/angular/angular" data-canonical-src="https://badges.gitter.im/Join%20Chat.svg" style="max-width:100%;"></a>
+<a href="http://issuestats.com/github/angular/angular"><img src="https://camo.githubusercontent.com/366aee4bd44d826ba57aa4d36569f4da51d8be91/687474703a2f2f697373756573746174732e636f6d2f6769746875622f616e67756c61722f616e67756c61722f62616467652f7072" alt="Issue Stats" data-canonical-src="http://issuestats.com/github/angular/angular/badge/pr" style="max-width:100%;"></a>
+<a href="http://issuestats.com/github/angular/angular"><img src="https://camo.githubusercontent.com/e0291c1cd11fd994e55409e372040a50019e66a1/687474703a2f2f697373756573746174732e636f6d2f6769746875622f616e67756c61722f616e67756c61722f62616467652f6973737565" alt="Issue Stats" data-canonical-src="http://issuestats.com/github/angular/angular/badge/issue" style="max-width:100%;"></a>
+<a href="http://badge.fury.io/js/angular2"><img src="https://camo.githubusercontent.com/3b27490bb00c27024faf41034f9237375d86a50f/68747470733a2f2f62616467652e667572792e696f2f6a732f616e67756c6172322e737667" alt="npm version" data-canonical-src="https://badge.fury.io/js/angular2.svg" style="max-width:100%;"></a>
+<a href="https://npmjs.org/package/angular2"><img src="https://camo.githubusercontent.com/6146935a36f035a40e4586384bfbea8a4507d673/687474703a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f616e67756c6172322e737667" alt="Downloads" data-canonical-src="http://img.shields.io/npm/dm/angular2.svg" style="max-width:100%;"></a></p>
+
+<h1>
+<a id="user-content-angular-" class="anchor" href="#angular-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Angular </h1>
+
+<p>Angular is a development platform for building mobile and desktop web applications. This is the
+repository for <a href="http://angular.io">Angular 2</a>, both the JavaScript (JS) and <a href="http://www.dartlang.org">Dart</a> versions.</p>
+
+<p>Angular 2 is currently in <strong>Developer Preview</strong>. We recommend using Angular 1.X for production
+applications:</p>
+
+<ul>
+<li>
+<a href="http://angularjs.org">AngularJS</a>: <a href="http://github.com/angular/angular.js">angular/angular.js</a>.</li>
+<li>
+<a href="http://angulardart.org">AngularDart</a>: <a href="http://github.com/angular/angular.dart">angular/angular.dart</a>.</li>
+</ul>
+
+<h2>
+<a id="user-content-quickstart" class="anchor" href="#quickstart" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quickstart</h2>
+
+<p><a href="https://angular.io/docs/js/latest/quickstart.html">Get started in 5 minutes</a></p>
+
+<h2>
+<a id="user-content-setup--install-angular-2" class="anchor" href="#setup--install-angular-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup &amp; Install Angular 2</h2>
+
+<p>Follow the instructions given on the <a href="http://angular.io/download">Angular download page</a>.</p>
+
+<h2>
+<a id="user-content-want-to-help" class="anchor" href="#want-to-help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Want to help?</h2>
+
+<p>Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our
+guidelines for <a href="http://github.com/angular/angular/blob/master/CONTRIBUTING.md">contributing</a>.</p>
+</article>
+  </div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage">
+      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2015 <span title="0.05811s from github-fe124-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
+      aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-x flash-close js-ajax-error-dismiss" aria-label="Dismiss error"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-5c08de317e4054ec200d36d3b1361ddd3cb30c05c9070a9d72862ee28ab1d7f9.js"></script>
+      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github/index-bfb27c17548d6c05bbe36a476673446098f04766b4a2ce445e2ae9d5374622ff.js"></script>
+      
+      
+
+  </body>
+</html>
+
