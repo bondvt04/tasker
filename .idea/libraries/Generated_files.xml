@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/public/test6-es6/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/public/test6-es6/index.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/public/test6-babel/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test6-babel/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test5-flow/world-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test6-babel/lol-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test5-flow/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test5-flow/world-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test6-babel/lol-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test5-flow/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test6-es6/world-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test6-es6/world-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test6-es6/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test6-es6/index.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,11 @@
+C:\Users\Bill\Documents\GitHub\TypeScript-CodeMash\Rolodex\Rolodex\obj\Debug\Rolodex.csprojResolveAssemblyReference.cache
+C:\Users\Bill\Documents\GitHub\TypeScript-CodeMash\Rolodex\Rolodex\bin\Rolodex.dll.config
+C:\Users\Bill\Documents\GitHub\TypeScript-CodeMash\Rolodex\Rolodex\bin\Rolodex.dll
+C:\Users\Bill\Documents\GitHub\TypeScript-CodeMash\Rolodex\Rolodex\bin\Rolodex.pdb
+C:\Users\Bill\Documents\GitHub\TypeScript-CodeMash\Rolodex\Rolodex\obj\Debug\Rolodex.dll
+C:\Users\Bill\Documents\GitHub\TypeScript-CodeMash\Rolodex\Rolodex\obj\Debug\Rolodex.pdb
+C:\Users\Bill\Documents\Visual Studio 2013\Projects\Rolodex-Finished\Rolodex\obj\Debug\Rolodex.dll
+C:\Users\Bill\Documents\Visual Studio 2013\Projects\Rolodex-Finished\Rolodex\obj\Debug\Rolodex.pdb
+C:\Users\Bill\Documents\Visual Studio 2013\Projects\Rolodex-Finished\Rolodex\bin\Rolodex.dll.config
+C:\Users\Bill\Documents\Visual Studio 2013\Projects\Rolodex-Finished\Rolodex\bin\Rolodex.dll
+C:\Users\Bill\Documents\Visual Studio 2013\Projects\Rolodex-Finished\Rolodex\bin\Rolodex.pdb
