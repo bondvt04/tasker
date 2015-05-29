@@ -2,7 +2,8 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/public/test6-es6/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/public/test7-angular2/app.js" />
+        <item url="file://$PROJECT_DIR$/public/test7-angular2/TodoApp.js" />
         <item url="file://$PROJECT_DIR$/public/test6-es6/index.js" />
       </sourceFilesUrls>
     </properties>
@@ -18,6 +19,8 @@
       <root url="file://$PROJECT_DIR$/public/test6-es6/world-compiled.js" />
       <root url="file://$PROJECT_DIR$/public/test6-es6/world-compiled.js" />
       <root url="file://$PROJECT_DIR$/public/test6-es6/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/public/test7-angular2/app.js" />
+      <root url="file://$PROJECT_DIR$/public/test7-angular2/TodoApp.js" />
       <root url="file://$PROJECT_DIR$/public/test6-es6/index.js" />
     </CLASSES>
     <JAVADOC />
