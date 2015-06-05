@@ -2,6 +2,8 @@
 <project version="4">
   <component name="TypeScriptCompiler">
     <option name="isCompilerEnabled" value="true" />
-    <option name="typeScriptCompilerParams" value="--target es5" />
+    <option name="typeScriptServiceDirectory" value="$PROJECT_DIR$/public/test10-ang-es6/node_modules/typescript/bin" />
+    <option name="typeScriptCompilerParams" value="--watch -m commonjs -t es5 --emitDecoratorMetadata" />
+    <option name="versionType" value="SERVICE_DIRECTORY" />
   </component>
 </project>
