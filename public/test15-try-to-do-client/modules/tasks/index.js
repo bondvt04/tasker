@@ -1,8 +1,4 @@
-define([
-    "dojo/_base/declare",
-    "dojo/dom",
-    "app/dateFormatter"
-], function(declare, dom, dateFormatter){
+define(["dojo/_base/declare"], function(declare){
     return declare("tasks", null, {
         doSomething : function() {
             console.log("asdf");
