@@ -1,9 +1,4 @@
 define(["dojo/_base/declare"], function(declare){
-    //var controller = declare("tasksController", null, {
-    //    doSomething : function() {
-    //        console.log("asdf");
-    //    }
-    //});
 
     var module = declare(null, {
         doSomething : function() {
@@ -11,7 +6,7 @@ define(["dojo/_base/declare"], function(declare){
         },
 
         init : function() {
-            console.log("init tasks module");
+            console.log("init notes module");
         }
     });
 

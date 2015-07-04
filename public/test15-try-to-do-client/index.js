@@ -4,10 +4,35 @@
 //    tasks.doSomething();
 //});
 
-var hello = require([ "./modules/tasks/index.js" ]);
+//var hello = require([ "./modules/tasks/index.js" ]);
+
+require([
+    "modules/tasks/index.js",
+    "modules/notes/index.js"
+], function(tasksModuleClass){
+
+
+    var modules = arguments;
+
+    /**
+     * Init all modules
+     */
+    (function initModules() {
+        for(var i in modules) {
+            (function() {
+                var module = new modules[i]();
+
+                if(module && module.init && "function" === typeof module.init) {
+                    module.init.bind(module)();
+                }
+            })();
+        }
+    })();
 
 
 
-console.log(hello);
+
+});
+
 
 //http://dojotoolkit.org/reference-guide/1.10/dojo/_base/declare.html#dojo-base-declare
