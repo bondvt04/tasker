@@ -7,8 +7,8 @@
 //var hello = require([ "./modules/tasks/index.js" ]);
 
 require([
-    "modules/tasks/index.js",
-    "modules/notes/index.js"
+    //"modules/tasks/index.js",
+    "notesModule"
 ], function(tasksModuleClass){
 
 
