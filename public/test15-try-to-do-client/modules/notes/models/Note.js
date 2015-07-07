@@ -1,11 +1,11 @@
 define(['dojo/_base/declare'], function(declare){
-    var Note = declare(null, {
+    var NoteClass = declare(null, {
         constructor: function(){
-            console.debug("this is Note object #" + Note.counter++);
+            console.debug("this is Note object #" + NoteClass.counter++);
         }
     });
 
-    Note.counter = 0;
+    NoteClass.counter = 0;
 
-    return Note;
+    return NoteClass;
 });

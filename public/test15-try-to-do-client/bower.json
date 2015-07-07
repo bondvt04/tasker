@@ -1,0 +1,22 @@
+{
+  "name": "test15-try-to-do-client",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bondvt04/tasker",
+  "authors": [
+    "bondvt04 <bondvt04@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "111promise-polyfill": "https://github.com/taylorhakes/promise-polyfill",
+    "promise-polyfill": "~2.1.0",
+    "webcomponentsjs": "~0.7.5"
+  }
+}

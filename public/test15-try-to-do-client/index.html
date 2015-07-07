@@ -3,11 +3,14 @@
     <head lang="en">
         <meta charset="UTF-8">
         <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <script type="text/javascript" src="bower_components/promise-polyfill/Promise.js"></script>
         <script>
             var dojoConfig = {
                 baseUrl: "/tasker/public/test15-try-to-do-client/",
 //                tlmSiblingOfDojo: false,
                 packages: [
+                    { name: "services_router", location: "services/router", main: "index"},
+                    { name: "services_network", location: "services/network", main: "index"},
                     { name: "modules_notes", location: "modules/notes", main: "index"}
                     //{ name: "modules/tasks", location: "modules/tasks" }
 //                    { name: "dojox", location: "lib/dojox" },

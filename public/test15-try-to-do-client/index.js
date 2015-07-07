@@ -1,38 +1,56 @@
-//define([
-//    "./tasks/index",
-//], function(tasks){
-//    tasks.doSomething();
-//});
-
-//var hello = require([ "./modules/tasks/index.js" ]);
+//http://dojotoolkit.org/reference-guide/1.10/dojo/_base/declare.html#dojo-base-declare
+//http://habrahabr.ru/post/209662/
 
 require([
-    //"modules_tasks",
-    "modules_notes"
-], function(tasksModuleClass){
+    "services_router",
+    "services_network",
+], function(routerClass, networkClass){
+    require([
+        //"modules_tasks",
+        "modules_notes"
+    ], function() {
+        var modules = arguments;
 
+        try {
+            var router = new routerClass();
+            var routerReadyPromise = router.init();
+        } catch(e) {
+            console.error(e);
+        }
 
-    var modules = arguments;
+        try {
+            var network = new networkClass();
+            var networkReadyPromise = network.init();
+        } catch(e) {
+            console.error(e);
+        }
 
-    /**
-     * Init all modules
-     */
-    (function initModules() {
-        for(var i in modules) {
-            (function() {
-                var module = new modules[i]();
+        Promise.all([
+            routerReadyPromise,
+            networkReadyPromise
+        ]).then(function(arrayOfResults) {
+            var router = arrayOfResults[0];
+            var network = arrayOfResults[1];
 
-                if(module && module.init && "function" === typeof module.init) {
-                    module.init.bind(module)();
+            /**
+             * Init all modules
+             */
+            (function initModules() {
+                for(var i in modules) {
+                    (function() {
+                        var module = new modules[i]();
+
+                        if(module && module.init && "function" === typeof module.init) {
+                            module.init.bind(module)(router, network);
+                        }
+                    })();
                 }
             })();
-        }
-    })();
 
-
-
-
+        }, function(err) {
+            console.error(err);
+        });
+    });
 });
 
 
-//http://dojotoolkit.org/reference-guide/1.10/dojo/_base/declare.html#dojo-base-declare

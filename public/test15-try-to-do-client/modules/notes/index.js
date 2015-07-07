@@ -19,7 +19,7 @@ define([
     //    console.log("hello");
     //});
 
-    var module = declare(null, {
+    var moduleClass = declare(null, {
         /**
          * @todo inits via promises
          */
@@ -39,5 +39,5 @@ define([
         }
     });
 
-    return module;
+    return moduleClass;
 });

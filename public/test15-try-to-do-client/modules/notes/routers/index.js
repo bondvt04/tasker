@@ -1,20 +1,22 @@
 define([
-    "dojo/_base/declare",
-    "dojo/topic",
-    "dojo/router"
-], function(declare, router, topic){
-
-
-
-
+    "dojo/_base/declare"
+], function(declare){
     var routerClass = declare(null, {
-        baseUrl : "/notes",
-        init : function() {
-            router.register("/user/:id", function (event) {
-                console.log("Hash change", event.params.id);
-            });
 
-            router.go("hash");
+        _routes : {
+            "/notes": function () {
+                console.log("> route /notes");
+            },
+            "/notes/add" : function() {
+                console.log("> route /notes/add");
+            }
+        },
+
+        init : function(router) {
+
+            if(router) {
+                router.addRoutes(this._routes)
+            }
 
             console.log("init notes router");
         }
