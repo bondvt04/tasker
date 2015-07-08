@@ -24,7 +24,6 @@ define([
         },
 
         checkRoutesAndRunIfMatch : function(routes) {
-            console.log("+++ check");
             var routesToCheck = routes || this._routes;
 
             this._currentHash = hash();

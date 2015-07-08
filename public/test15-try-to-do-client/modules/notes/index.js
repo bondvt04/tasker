@@ -28,12 +28,18 @@ define([
             var router = new routerClass();
 
             if(controller && controller.init && "function" === typeof controller.init) {
-                controller.init.bind(controller)(mainRouter, mainNetwork);
+                var controllerReadyPromise = controller.init.bind(controller)(mainRouter, mainNetwork);
             }
 
-            if(router && router.init && "function" === typeof router.init) {
-                router.init.bind(router)(mainRouter, mainNetwork);
-            }
+            controllerReadyPromise.then(function(result) {
+                if(router && router.init && "function" === typeof router.init) {
+                    router.init.bind(router)(mainRouter, mainNetwork, controller);
+                }
+
+                console.log("init notes controller");
+            }, function(err) {
+                console.error(err);
+            });
 
             console.log("init notes module");
         }
