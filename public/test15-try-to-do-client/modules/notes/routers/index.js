@@ -22,7 +22,7 @@ define([
                     "/notes/add": controller.actions.add
                 })
             } catch(e) {
-                console.error(e);``
+                console.error(e);
             }
 
             console.log("init notes router");
