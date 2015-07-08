@@ -6,10 +6,46 @@ define([
 ], function(declare, router, topic, hash){
     var routerClass = declare(null, {
 
-        _routes : [],
+        _currentHash : null,
+
+        _currentRoute : null,
+
+        _routes : {},
 
         addRoutes : function(routes) {
+            if(routes) {
+                for (var routeName in routes) {
+                    this._routes[routeName] = routes[routeName];
+                }
+            }
 
+            // check only new routes
+            this.checkRoutesAndRunIfMatch(routes);
+        },
+
+        checkRoutesAndRunIfMatch : function(routes) {
+            console.log("+++ check");
+            var routesToCheck = routes || this._routes;
+
+            this._currentHash = hash();
+
+            if(!this._currentHash) {
+                this._currentHash = "/"
+            }
+
+            if(routesToCheck) {
+                for(var routeName in routesToCheck) {
+                    if(this._currentHash === routeName) {
+                        this._currentRoute = {
+                            name: routeName,
+                            callback: this._routes[routeName]
+                        };
+
+                        // run callback
+                        this._currentRoute.callback();
+                    }
+                }
+            }
         },
 
         init : function() {
@@ -20,11 +56,13 @@ define([
                 //    console.log("Hash change", event.params.id);
                 //});
 
-                console.log(hash());
+                //console.log(hash());
 
                 topic.subscribe("/dojo/hashchange", function(changedHash){
-                    console.log(changedHash);
+                    self.checkRoutesAndRunIfMatch();
                 });
+
+                self.checkRoutesAndRunIfMatch();
 
                 //router.go("hash");
                 //hash("someURL");

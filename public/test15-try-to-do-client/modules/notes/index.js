@@ -23,16 +23,16 @@ define([
         /**
          * @todo inits via promises
          */
-        init : function() {
+        init : function(mainRouter, mainNetwork) {
             var controller = new controllerClass();
             var router = new routerClass();
 
             if(controller && controller.init && "function" === typeof controller.init) {
-                controller.init.bind(controller)();
+                controller.init.bind(controller)(mainRouter, mainNetwork);
             }
 
             if(router && router.init && "function" === typeof router.init) {
-                router.init.bind(router)();
+                router.init.bind(router)(mainRouter, mainNetwork);
             }
 
             console.log("init notes module");

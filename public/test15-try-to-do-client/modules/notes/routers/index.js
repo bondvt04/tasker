@@ -12,10 +12,9 @@ define([
             }
         },
 
-        init : function(router) {
-
-            if(router) {
-                router.addRoutes(this._routes)
+        init : function(mainRouter, mainNetwork) {
+            if(mainRouter) {
+                mainRouter.addRoutes(this._routes)
             }
 
             console.log("init notes router");
