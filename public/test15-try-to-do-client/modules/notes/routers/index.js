@@ -18,8 +18,8 @@ define([
         init : function(mainRouter, mainNetwork, controller) {
             try {
                 mainRouter.addRoutes({
-                    "/notes": controller.actions.index,
-                    "/notes/add": controller.actions.add
+                    "/notes": {callback: controller.actions.index, context: controller},
+                    "/notes/add": {callback: controller.actions.add, context: controller}
                 })
             } catch(e) {
                 console.error(e);

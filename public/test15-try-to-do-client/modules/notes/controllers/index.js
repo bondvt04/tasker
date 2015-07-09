@@ -3,9 +3,27 @@ define([
 ], function(declare){
 
     var controllerClass = declare(null, {
+        /**
+         * Adding webcomponents, needed for this controller's views
+         * @private
+         */
+        _loadViewComponents : function() {
+            window.appendLinkToHead("modules/notes/views/webcomponents/note.html");
+        },
+
+        _beforeAction : function() {
+            this._loadViewComponents();
+        },
+
+        _afterAction : function() {
+
+        },
+
         init : function() {
+            //debugger;
             var self = this;
             var promise = new Promise(function(resolve, reject) {
+
                 if (true) {
                     resolve(self);
                 } else {
@@ -17,31 +35,29 @@ define([
         },
 
         actions : {
+
             index : function() {
+                this._beforeAction();
                 console.log(">> notes.controller.actions.index");
 
-                try {
-                    template = new EJS({url: '/modules/notes/views/index/index.ejs'})
-                } catch(e) {
-                    console.error(e);
-                    debugger;
+                data = {
+                    notes : [
+                        {text : "hello"},
+                        {text : "world"},
+                        {text : "lol"}
+                    ]
                 }
 
+                html = new EJS({url: '/modules/notes/views/index/index.ejs'}).render(data);
+                document.getElementById("content").innerHTML = html;
 
-                //data = {
-                //    notes : [
-                //        {text : "hello"},
-                //        {text : "world"},
-                //        {text : "lol"}
-                //    ]
-                //}
-                //
-                //html = new ejs({url: '/modules/notes/views/index/index.ejs'}).render(data);
-                //document.getElementById("content").innerHTML = html;
+                this._afterAction();
             },
 
             add : function() {
+                this._beforeAction();
                 console.log(">> notes.controller.actions.add");
+                this._afterAction();
             }
         }
     });

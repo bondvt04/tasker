@@ -1,9 +1,12 @@
 Notes:
 
 <ul>
-    <% for(var i in this.notes) { %>
+    <% _.each(this.notes, function(note) { %>
         <li>
-            <%= "asddf" %>
+            <%= note.text %>
         </li>
-    <% } %>
+    <% }) %>
+
+    <x-note></x-note>
+    <x-lol></x-lol>
 </ul>

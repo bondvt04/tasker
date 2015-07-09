@@ -18,6 +18,7 @@
     "111promise-polyfill": "https://github.com/taylorhakes/promise-polyfill",
     "promise-polyfill": "~2.1.0",
     "webcomponentsjs": "~0.7.5",
-    "ejs": "~1.0.0"
+    "ejs": "~1.0.0",
+    "polymer": "Polymer/polymer#^1.0.0"
   }
 }

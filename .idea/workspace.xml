@@ -2,11 +2,90 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f793e04c-2225-459d-ac05-7881fa2302c8" name="Default" comment="lol">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/index.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/note.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/test4/1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/test4/2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/CustomElements.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/CustomElements.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/HTMLImports.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/HTMLImports.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/MutationObserver.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/MutationObserver.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/ShadowDOM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/ShadowDOM.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/ejs_1.0_developer/ejs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/ejs_1.0_developer/ejs_production.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/test2/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/test2/lol.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/test4/my-element.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/webcomponents/note.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/test1/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/utils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/ejs_1.0_developer/view.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/test1/wc.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/webcomponents-lite.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/webcomponents-lite.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/webcomponents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/webcomponents.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/.bower.json" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/.bower.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/.gitignore" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/.gitmodules" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/.gitmodules" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/.travis.yml" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/.travis.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/History.md" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/History.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/Makefile" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/Makefile" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/Readme.md" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/Readme.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/benchmark.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/benchmark.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/ejs.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/ejs.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/ejs.min.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/ejs.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/client.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/client.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/functions.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/functions.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/functions.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/functions.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/list.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/list.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/list.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/list.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/index.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/index.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/lib/ejs.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/lib/ejs.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/lib/filters.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/lib/filters.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/lib/utils.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/lib/utils.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/package.json" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/support/compile.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/support/compile.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/ejs.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/ejs.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/backslash.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/backslash.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/backslash.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/backslash.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/comments.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/comments.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/comments.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/comments.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/double-quote.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/double-quote.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/double-quote.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/double-quote.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/error.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/error.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/error.out" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/error.out" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/fail.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/fail.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/include.css.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/include.css.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/include.css.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/include.css.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/include.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/include.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/include.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/include.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/includes/menu-item.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/includes/menu-item.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/includes/menu/item.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/includes/menu/item.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/menu.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/menu.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/menu.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/menu.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/messed.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/messed.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/messed.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/messed.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/newlines.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/newlines.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/newlines.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/newlines.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/no.newlines.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/no.newlines.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/no.newlines.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/no.newlines.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/para.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/para.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/pet.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/pet.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/single-quote.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/single-quote.ejs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/single-quote.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/single-quote.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/style.css" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/test/fixtures/user.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/test/fixtures/user.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test8-ang-q/quickstart" afterPath="$PROJECT_DIR$/public/test8-ang-q/quickstart" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/bower.json" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/index.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/index.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/index.html" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/index.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/controllers/index.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/controllers/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/routers/index.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/routers/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/services/router/index.js" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/services/router/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/note.ejs" afterPath="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/note.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tasker.iws" />
@@ -29,51 +108,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/routers/index.js">
+      <file leaf-file-name="1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test4/1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state vertical-scroll-proportion="-6.875">
+              <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my-element.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test4/my-element.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.64467007">
+              <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/index.html">
+      <file leaf-file-name="2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test4/2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
-              <caret line="18" column="78" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/index.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/controllers/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="client.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/client.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.625">
+              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -85,8 +146,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="Html5" />
         <option value="JavaScript File" />
+        <option value="Html5" />
       </list>
     </option>
   </component>
@@ -106,18 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/test6-es6/index.html" />
-        <option value="$PROJECT_DIR$/public/test6-es6/index.es6" />
-        <option value="$PROJECT_DIR$/public/test6-es6/index.js" />
-        <option value="$PROJECT_DIR$/public/test7-angular2/index.html" />
-        <option value="$PROJECT_DIR$/public/test7-angular2/app.ts" />
-        <option value="$PROJECT_DIR$/public/test7-angular2/TodoApp.es6" />
-        <option value="$PROJECT_DIR$/public/test7-angular2/app.js" />
-        <option value="$PROJECT_DIR$/public/test7-angular2/app.es6" />
-        <option value="$PROJECT_DIR$/public/test7-angular2/services/TodoStore.js" />
-        <option value="$PROJECT_DIR$/public/test7-angular2/dist/es6-shim.js" />
-        <option value="$PROJECT_DIR$/public/test7-angular2/index2.html" />
-        <option value="$PROJECT_DIR$/public/test8-ang-q/quickstart/app/TodoStore.js" />
         <option value="$PROJECT_DIR$/public/test8-ang-q/quickstart/app/ItemEditor.js" />
         <option value="$PROJECT_DIR$/public/test8-ang-q/quickstart/index.html" />
         <option value="$PROJECT_DIR$/public/test8-ang-q/quickstart/app/todo.html" />
@@ -150,13 +199,25 @@
         <option value="$PROJECT_DIR$/server/routes/tasks.js" />
         <option value="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/models/Note.js" />
         <option value="$PROJECT_DIR$/public/test15-try-to-do-client/services/network/index.js" />
-        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/index.js" />
-        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/services/router/index.js" />
         <option value="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/index.js" />
-        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/routers/index.js" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/note.ejs" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/index.js" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/lol.html" />
         <option value="$PROJECT_DIR$/public/test15-try-to-do-client/index.html" />
-        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/index.ejs" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/services/router/index.js" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/routers/index.js" />
         <option value="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/controllers/index.js" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/lib/utils.js" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/index.ejs" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/webcomponents/note.html" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/wc.html" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/test.html" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/ShadowDOM.js" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/test2/index.html" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/test2/lol.html" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/test4/2.html" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/test4/1.html" />
+        <option value="$PROJECT_DIR$/public/test15-try-to-do-client/test4/my-element.html" />
       </list>
     </option>
   </component>
@@ -176,9 +237,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="68" />
+    <option name="x" value="52" />
     <option name="y" value="23" />
-    <option name="width" value="1852" />
+    <option name="width" value="1868" />
     <option name="height" value="1057" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -283,7 +344,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,10 +362,6 @@
               <option name="myItemId" value="tasker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -342,7 +399,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
+              <option name="myItemId" value="test4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -364,11 +421,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="network" />
+              <option name="myItemId" value="test1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -390,7 +443,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,161 +458,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test15-try-to-do-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test15-try-to-do-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="index" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test15-try-to-do-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test15-try-to-do-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ejs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test15-try-to-do-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bower_components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ejs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="examples" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -567,7 +472,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ims-tiles-front-end" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
@@ -575,7 +480,7 @@
     <property name="LayoutCode.rearrangeEntriesJavaScript 1.5" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -586,18 +491,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol" />
+      <recent name="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/webcomponents" />
+      <recent name="$PROJECT_DIR$/public/test15-try-to-do-client/lib" />
       <recent name="$PROJECT_DIR$/public/test15-try-to-do-client" />
       <recent name="$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes" />
-      <recent name="$PROJECT_DIR$/public/test15-try-to-do-client/modules" />
-      <recent name="$PROJECT_DIR$/public/test10-ang-es6" />
-      <recent name="$PROJECT_DIR$/public/test9-ang-from-scratch" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/test15-try-to-do-client/test1" />
       <recent name="$PROJECT_DIR$/server/111old" />
       <recent name="$PROJECT_DIR$/public/test4-TypeScript" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/server/controllers/site/tasks/actions" />
-      <recent name="$PROJECT_DIR$/server/controllers/site/tasks" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (4)">
@@ -668,6 +573,17 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <module name="" />
       <envs />
       <method />
@@ -833,6 +749,18 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <setting name="tags" value="" />
+      <setting name="parallelNodes" value="" />
+      <setting name="execInParallel" value="false" />
+      <setting name="programParameters" value="" />
+      <setting name="workingDirectory" value="" />
+      <envMap />
+      <setting name="rowsRange" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -840,12 +768,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
     <list size="5">
@@ -893,21 +815,23 @@
       <workItem from="1436180754072" duration="5525000" />
       <workItem from="1436259515985" duration="6412000" />
       <workItem from="1436351490806" duration="6591000" />
+      <workItem from="1436424005973" duration="13351000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56640000" />
+    <option name="totallyTimeSpent" value="69991000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="68" y="23" width="1852" height="1057" extended-state="6" />
+    <frame x="52" y="23" width="1868" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32793522" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32746115" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327818" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -917,16 +841,15 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3340081" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33367875" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27105832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2705367" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39958593" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -958,167 +881,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/test6-es6/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test3/Rolodex-Finished/Rolodex/Scripts/angular-scenario.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-188.78151">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test2/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test2/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/TodoApp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/typings/angular2/angular2.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12116317">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/app.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/services/TodoStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/TodoApp.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/todo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75">
-          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/dist/es6-shim.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.95">
-          <caret line="30540" column="2" selection-start-line="30540" selection-start-column="2" selection-end-line="30540" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test7-angular2/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10084034">
-          <caret line="4" column="108" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test9-ang-from-scratch/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test10-ang-es6/typings/angular2/angular2.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test9-ang-from-scratch/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test10-ang-es6/111app.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24232633">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test10-ang-es6/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10084034">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test10-ang-es6/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19480519">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test11-traceur/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4560811">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test13-react/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.094339624">
-          <caret line="4" column="74" selection-start-line="4" selection-start-column="74" selection-end-line="4" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/test12-dojo/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5147059">
@@ -1196,7 +958,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/models/note.js">
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/models/Note.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="73" selection-start-line="3" selection-start-column="73" selection-end-line="3" selection-end-column="73" />
@@ -1210,53 +972,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47619048">
-          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/services/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30952382">
-          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/services/network/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/routers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/note.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1268,18 +987,136 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/index.ejs">
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.2857143">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/functions.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/list.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/111ejs/examples/client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/index.html">
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/lib/ejs_1.0_developer/ejs_production.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="18" column="78" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/note.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/lib/ejs_1.0_developer/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23193277">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/111old/views/layout.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/111old/views/asdf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/111old/views/error.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/111old/views/tasks/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/lib/ejs_1.0_developer/ejs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="401" column="31" selection-start-line="401" selection-start-column="31" selection-end-line="401" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="71" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/node_modules/ejs/ejs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/routers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="89" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/services/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="84" selection-start-line="46" selection-start-column="84" selection-end-line="46" selection-end-column="84" />
           <folding />
         </state>
       </provider>
@@ -1287,20 +1124,70 @@
     <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/controllers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/functions.js">
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/lib/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2857143">
-          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/functions.ejs">
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/index/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/modules/notes/views/webcomponents/note.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/webcomponentsjs/webcomponents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.259259">
+          <caret line="5701" column="49" selection-start-line="5701" selection-start-column="36" selection-end-line="5701" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/lib/polymer_lol/ShadowDOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7670068">
+          <caret line="1766" column="40" selection-start-line="1766" selection-start-column="40" selection-end-line="1766" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test3/tools/repo-configs/polymer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1308,26 +1195,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/list.ejs">
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test3/tools/bin/pull-all.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4589372">
+          <caret line="19" column="103" selection-start-line="19" selection-start-column="103" selection-end-line="19" selection-end-column="103" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/list.js">
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/polymer/polymer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="104.8421">
+          <caret line="3984" column="12" selection-start-line="3984" selection-start-column="12" selection-end-line="3984" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower_components/ejs/examples/client.html">
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test2/lol.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.26286966">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test1/wc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02538071">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test1/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7461929">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="50" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test4/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test4/2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test15-try-to-do-client/test4/my-element.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64467007">
+          <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
           <folding />
         </state>
       </provider>

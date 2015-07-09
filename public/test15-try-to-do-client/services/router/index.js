@@ -29,6 +29,7 @@ define([
             this._currentHash = hash();
 
             if(!this._currentHash) {
+                hash("/");
                 this._currentHash = "/"
             }
 
@@ -37,11 +38,14 @@ define([
                     if(this._currentHash === routeName) {
                         this._currentRoute = {
                             name: routeName,
-                            callback: this._routes[routeName]
+                            callback: this._routes[routeName].callback,
+                            context: this._routes[routeName].context
                         };
 
                         // run callback
-                        this._currentRoute.callback();
+                        //this._currentRoute.callback();
+                        this._currentRoute.callback.apply(this._currentRoute.context);
+
                     }
                 }
             }
