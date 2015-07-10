@@ -38,7 +38,7 @@ var Lol = React.createClass({
                     console.log(this);
                     return "kkk__"
                 }).bind(this)()}
-                asdfasdfsadfl
+                asdfasdfsadfla
             </div>
         );
     }

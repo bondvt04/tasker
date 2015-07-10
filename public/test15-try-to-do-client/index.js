@@ -1,6 +1,8 @@
 //http://dojotoolkit.org/reference-guide/1.10/dojo/_base/declare.html#dojo-base-declare
 //http://habrahabr.ru/post/209662/
 //https://scotch.io/tutorials/use-ejs-to-template-your-node-application
+//http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/
+
 
 require([
     "services_router",
