@@ -34,6 +34,10 @@ var Lol = React.createClass({
     render: function() {
         return (
             <div>
+                {(function() {
+                    console.log(this);
+                    return "kkk__"
+                }).bind(this)()}
                 asdfasdfsadf
             </div>
         );
