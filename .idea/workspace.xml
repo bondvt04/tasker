@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f793e04c-2225-459d-ac05-7881fa2302c8" name="Default" comment="lol">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/src/amdConfig.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/src/test3/tools" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/documentation 2.0/index.html" afterPath="$PROJECT_DIR$/documentation 2.0/hello/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/src/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/index.js" afterPath="$PROJECT_DIR$/public/src/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/src/test1/test.html" afterPath="$PROJECT_DIR$/public/111old/test21/test.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/src/test1/wc.html" afterPath="$PROJECT_DIR$/public/111old/test21/wc.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/src/test2/index.html" afterPath="$PROJECT_DIR$/public/111old/test22/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/src/test2/lol.html" afterPath="$PROJECT_DIR$/public/111old/test22/lol.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/src/test4/1.html" afterPath="$PROJECT_DIR$/public/111old/test24/1.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/src/test4/2.html" afterPath="$PROJECT_DIR$/public/111old/test24/2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/src/test4/bower.json" afterPath="$PROJECT_DIR$/public/111old/test24/bower.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/src/test4/my-element.html" afterPath="$PROJECT_DIR$/public/111old/test24/my-element.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/111old/test8-ang-q/quickstart" afterPath="$PROJECT_DIR$/public/111old/test8-ang-q/quickstart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bower.json" afterPath="$PROJECT_DIR$/public/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/src/modules/notes/controllers/index.js" afterPath="$PROJECT_DIR$/public/src/modules/notes/controllers/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/src/services/network/index.js" afterPath="$PROJECT_DIR$/public/src/services/network/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/src/services/router/index.js" afterPath="$PROJECT_DIR$/public/src/services/router/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/documentation 2.0/server.js" afterPath="$PROJECT_DIR$/documentation 2.0/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/server.js" afterPath="$PROJECT_DIR$/public/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/webpack.config.js" afterPath="$PROJECT_DIR$/public/webpack.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/111old/test23/tools" afterPath="$PROJECT_DIR$/public/111old/test23/tools" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tasker.iws" />
@@ -547,10 +528,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="23" width="1870" height="1057" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32746115" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32746115" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32746115" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
