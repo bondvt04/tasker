@@ -1,5 +1,5 @@
 define([
-    "../../../../test12-dojo/bower_components/dojo/_base/declare",
+    "dojo/_base/declare",
     "dojo/router",
     "dojo/topic",
     "dojo/hash"

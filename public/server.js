@@ -13,6 +13,7 @@ var server = new WebpackDevServer(webpack(config), {
     },
     publicPath: config.output.publicPath,
     historyApiFallback: true,
+    contentBase: "./src/",
     hot: true
 });
 

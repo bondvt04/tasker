@@ -15,10 +15,13 @@
     "tests"
   ],
   "dependencies": {
-    "111promise-polyfill": "https://github.com/taylorhakes/promise-polyfill",
     "promise-polyfill": "~2.1.0",
     "webcomponentsjs": "~0.7.5",
     "ejs": "~1.0.0",
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^1.0.0",
+    "dojo": "dojo/dojo#~1.10.4",
+    "dijit": "dojo/dijit#~1.10.4",
+    "dojox": "dojo/dojox#~1.10.4",
+    "util": "dojo/util#~1.10.4"
   }
 }

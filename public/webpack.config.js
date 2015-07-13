@@ -11,11 +11,14 @@ var development = {
         'webpack/hot/only-dev-server'
     ],
     output: {
-        path: path.join(__dirname, 'build'),
+        path: path.join(__dirname, 'builded_dev'),
         filename: 'bundle.js',
-        publicPath: '/build/'
+        publicPath: '/builded_dev/'
     },
     plugins: [
+        new webpack.ResolverPlugin(
+            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+        ),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
@@ -34,7 +37,14 @@ var development = {
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx'],
+        alias: {
+            services_router: './services/router/index.js',
+            services_network: './services/network/index.js',
+            modules_notes: './modules/notes/index.js'
+            //dojo: ""
+        },
+        root: [path.join(__dirname, "bower_components")]// add to PATH ./bower_components
     }
 };
 
