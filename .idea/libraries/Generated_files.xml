@@ -3,14 +3,17 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/public/test7-angular2/app.js" />
-        <item url="file://$PROJECT_DIR$/public/test15-try-to-do-client/test5/components/hello.js" />
-        <item url="file://$PROJECT_DIR$/public/test10-ang-es6/111app.js" />
+        <item url="file://$PROJECT_DIR$/public/test15-try-to-do-client/111server.js" />
         <item url="file://$PROJECT_DIR$/public/test9-ang-from-scratch/app.js" />
         <item url="file://$PROJECT_DIR$/public/test14-wc/node_modules/bower/node_modules/inquirer/node_modules/rx/ts/rx.async-tests.js" />
+        <item url="file://$PROJECT_DIR$/public/test15-try-to-do-client/lol.js" />
+        <item url="file://$PROJECT_DIR$/public/test15-try-to-do-client/webpack.config.js" />
         <item url="file://$PROJECT_DIR$/public/test14-wc/node_modules/bower/node_modules/inquirer/node_modules/rx/ts/rx.backpressure-tests.js" />
-        <item url="file://$PROJECT_DIR$/public/test7-angular2/TodoApp.js" />
         <item url="file://$PROJECT_DIR$/public/test14-wc/node_modules/bower/node_modules/inquirer/node_modules/rx/src/core/expressions/compiler.js" />
         <item url="file://$PROJECT_DIR$/public/test6-es6/index.js" />
+        <item url="file://$PROJECT_DIR$/public/test10-ang-es6/111app.js" />
+        <item url="file://$PROJECT_DIR$/public/test15-try-to-do-client/test5/components/hello.js" />
+        <item url="file://$PROJECT_DIR$/public/test7-angular2/TodoApp.js" />
         <item url="file://$PROJECT_DIR$/public/test10-ang-es6/app.js" />
       </sourceFilesUrls>
     </properties>
@@ -30,14 +33,17 @@
       <root url="file://$PROJECT_DIR$/public/test9-angular-from-scratch/app.js" />
       <root url="file://$PROJECT_DIR$/public/test9-angular-from-scratch/app.js" />
       <root url="file://$PROJECT_DIR$/public/test7-angular2/app.js" />
+      <root url="file://$PROJECT_DIR$/public/test15-try-to-do-client/server.js" />
       <root url="file://$PROJECT_DIR$/public/test9-ang-from-scratch/app.js" />
-      <root url="file://$PROJECT_DIR$/public/test10-ang-es6/111app.js" />
-      <root url="file://$PROJECT_DIR$/public/test15-try-to-do-client/test5/components/hello.js" />
+      <root url="file://$PROJECT_DIR$/public/test15-try-to-do-client/lol.js" />
       <root url="file://$PROJECT_DIR$/public/test14-wc/node_modules/bower/node_modules/inquirer/node_modules/rx/ts/rx.async-tests.js" />
+      <root url="file://$PROJECT_DIR$/public/test15-try-to-do-client/webpack.config.js" />
       <root url="file://$PROJECT_DIR$/public/test14-wc/node_modules/bower/node_modules/inquirer/node_modules/rx/ts/rx.backpressure-tests.js" />
-      <root url="file://$PROJECT_DIR$/public/test7-angular2/TodoApp.js" />
       <root url="file://$PROJECT_DIR$/public/test14-wc/node_modules/bower/node_modules/inquirer/node_modules/rx/src/core/expressions/compiler.js" />
       <root url="file://$PROJECT_DIR$/public/test6-es6/index.js" />
+      <root url="file://$PROJECT_DIR$/public/test5/components/hello.js" />
+      <root url="file://$PROJECT_DIR$/public/test10-ang-es6/111app.js" />
+      <root url="file://$PROJECT_DIR$/public/test7-angular2/TodoApp.js" />
       <root url="file://$PROJECT_DIR$/public/test10-ang-es6/app.js" />
     </CLASSES>
     <SOURCES />

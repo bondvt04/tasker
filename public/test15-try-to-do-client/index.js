@@ -2,6 +2,10 @@
 //http://habrahabr.ru/post/209662/
 //https://scotch.io/tutorials/use-ejs-to-template-your-node-application
 //http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/
+// подключаем компоненты https://github.com/substack/browserify-handbook?md-time=1436784389971#reusable-components
+// webpack --progress --colors
+
+// npm install -g webpack
 
 
 require([
