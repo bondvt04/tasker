@@ -3,6 +3,8 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var BowerWebpackPlugin = require("bower-webpack-plugin");
+
 var development = {
     devtool: 'eval',
     entry: [
@@ -16,6 +18,12 @@ var development = {
         publicPath: '/builded_dev/'
     },
     plugins: [
+        new BowerWebpackPlugin({
+            modulesDirectories: ['bower_components'],
+            manifestFiles: ['bower.json', '.bower.json'],
+            includes: /.*/,
+            excludes: /.*\.less$/
+        }),
         new webpack.ResolverPlugin(
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
         ),
@@ -30,7 +38,8 @@ var development = {
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
+                //test: /\.jsx$/, loader: 'jsx-loader',
+                //test: /\.jsx?$/,
                 loaders: ['react-hot', 'babel'],
                 include: path.join(__dirname, 'src')
             }

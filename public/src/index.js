@@ -7,6 +7,8 @@
 
 // npm install -g webpack
 
+// просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
+
 var dojoConfig = {
     //baseUrl: "/tasker/public/test15-try-to-do-client/",
     baseUrl: "/",

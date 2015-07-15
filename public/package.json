@@ -20,6 +20,9 @@
     "eslint-plugin-react": "^2.3.0",
     "react-hot-loader": "^1.2.7",
     "webpack": "^1.9.6",
-    "webpack-dev-server": "^1.8.2"
+    "webpack-dev-server": "^1.8.2",
+    "bower-webpack-plugin": "~0.1.8",
+    "jsx-loader": "~0.13.2",
+    "react": "~0.13.3"
   }
 }
