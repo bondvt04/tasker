@@ -1,10 +1,16 @@
 define([
-    "dojo/_base/declare",
-    "dojo/router",
-    "dojo/topic",
-    "dojo/hash"
-], function(declare, router, topic, hash){
-    var routerClass = declare(null, {
+    //"dojo/_base/declare",
+    //"dojo/router",
+    //"dojo/topic",
+    //"dojo/hash"
+], function(router, topic, hash){
+    var Router = function() {
+        console.log("> Router");
+    }
+
+    return Router;
+
+    /*var routerClass = declare(null, {
 
         _currentHash : null,
 
@@ -81,5 +87,5 @@ define([
         }
     });
 
-    return routerClass;
+    return routerClass;*/
 });

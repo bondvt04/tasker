@@ -9,7 +9,7 @@
 
 // просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
-var dojoConfig = {
+/*var dojoConfig = {
     //baseUrl: "/tasker/public/test15-try-to-do-client/",
     baseUrl: "/",
 //                tlmSiblingOfDojo: false,
@@ -22,16 +22,18 @@ var dojoConfig = {
 //                    { name: "app/index", location: "modules/tasks/index.js", main: "app" },
 //                    { name: "app/tasks", location: "index.js", main: "app" }
     ]
-};
+};*/
 
 require([
     "./amdConfig.js"
 ], function(config){
 
     require([
-        //"services_router",
+        "services_router",
         "services_network",
     ], function(routerClass, networkClass){
+        routerClass();
+        networkClass();
         //require([
         //    //"modules_tasks",
         //    "modules_notes"
