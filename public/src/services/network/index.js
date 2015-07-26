@@ -1,29 +1,27 @@
-/*define([
-    "dojo/_base/declare"
-], function(declare){
-    var networkClass = declare(null, {
-        //init : function() {
-        //    var self = this;
-        //    var promise = new Promise(function(resolve, reject) {
-        //        if (true) {
-        //            resolve(self);
-        //        } else {
-        //            reject(new Error("Error while network.init"));
-        //        }
-        //    });
-        //
-        //    return promise;
-        //}
-    });
+class Network {
+    constructor(options) {
+        //this.model = options.model;
+        //this.template = options.template;
+    }
 
-    return networkClass;
-});*/
+    init() {
+        var self = this;
+        var promise = new Promise(function(resolve, reject) {
+
+            console.log(">>> network.init()");
+
+            if (true) {
+                resolve(self);
+            } else {
+                reject(new Error("Error while network.init"));
+            }
+        });
+
+        return promise;
+    }
+}
 
 define([], function() {
-
-    var Network = function(){
-        console.log("> Network");
-    };
-
-    return Network;
+    var network = new Network();
+    return network;
 });

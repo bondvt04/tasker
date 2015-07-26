@@ -1,4 +1,42 @@
+class Router {
+    constructor(options) {
+        //this.model = options.model;
+        //this.template = options.template;
+    }
+
+    init() {
+        var self = this;
+        var promise = new Promise(function(resolve, reject) {
+
+            console.log(">>> router.init()");
+
+            if (true) {
+                resolve(self);
+            } else {
+                reject(new Error("Error while router.init"));
+            }
+        });
+
+        return promise;
+    }
+}
+
 define([
+    "../../../lib/router.js/router-amd.js"
+], function(Routerrr) {
+    //console.log(Routerrr, Router);
+    //var lol = new Routerrr();
+    var router = new Router();
+    return router;
+});
+
+
+
+
+
+
+
+/*define([
     //"dojo/_base/declare",
     //"dojo/router",
     //"dojo/topic",
@@ -87,5 +125,5 @@ define([
         }
     });
 
-    return routerClass;*/
-});
+    return routerClass;
+});*/

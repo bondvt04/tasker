@@ -31,9 +31,9 @@ require([
     require([
         "services_router",
         "services_network",
-    ], function(routerClass, networkClass){
-        routerClass();
-        networkClass();
+    ], function(router, network){
+        router.init();
+        network.init();
         //require([
         //    //"modules_tasks",
         //    "modules_notes"
