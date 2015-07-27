@@ -22,8 +22,11 @@ class Router {
 }
 
 define([
-    "../../../lib/router.js/router-amd.js"
-], function(Routerrr) {
+    //"../../../lib/router.js/router-amd.js"
+    "../../../lib/rad-router/bin/router.js"
+], function(RADRouter) {
+
+    console.log(RADRouter);
     //console.log(Routerrr, Router);
     //var lol = new Routerrr();
     var router = new Router();
