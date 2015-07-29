@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function lol() {
+            var instance;
+            function MyClass() {
+                this.name = '';
+            }
+            MyClass.prototype = {
+                setName: function (newName) {
+                    this.name = newName;
+                }
+            };
+
+            return function getSingleton() {
+                debugger;
+                return (instance = (instance || new MyClass()));
+            };
+        }
+
+        var getSingletonLOL = lol();
+        var a = getSingletonLOL();
+        a.setName("aaaaa");
+        var b = getSingletonLOL();
+        b.setName("bbbbb");
+
+        console.log(a.name, b.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

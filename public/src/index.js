@@ -27,13 +27,87 @@
 require([
     "./amdConfig.js"
 ], function(config){
+    require([
+        "services_router",
+    ], function(routerPromise){
+        routerPromise.then(function(router) {
+            router.setName("aaaaa");
+            console.log("+1", router.getName());
+
+            setTimeout(function() {
+                console.log("+2", router.getName());
+            }, 5000);
+        });
+    });
 
     require([
         "services_router",
+    ], function(routerPromise){
+        routerPromise.then(function(router) {
+            router.setName("bbbbb");
+            console.log("++2", router.getName());
+
+            setTimeout(function() {
+                console.log("++", router.getName());
+            }, 5000);
+        });
+    });
+
+    setTimeout(function() {
+        require([
+            "services_router",
+        ], function(routerPromise){
+            routerPromise.then(function(router) {
+                console.log(">>>", router.getName());
+            });
+        });
+    }, 5000);
+
+
+    //require([
+    //    "services_network",
+    //], function(networkPromise){
+    //    networkPromise.then(function(network) {
+    //        network.setName("aaaaa");
+    //        console.log("+1", network.getName());
+    //
+    //        setTimeout(function() {
+    //            console.log("+2", network.getName());
+    //        }, 5000);
+    //    });
+    //});
+    //
+    //require([
+    //    "services_network",
+    //], function(networkPromise){
+    //    networkPromise.then(function(network) {
+    //        network.setName("bbbbb");
+    //        console.log("++2", network.getName());
+    //
+    //        setTimeout(function() {
+    //            console.log("++", network.getName());
+    //        }, 5000);
+    //    });
+    //});
+    //
+    //setTimeout(function() {
+    //    require([
+    //        "services_network",
+    //    ], function(networkPromise){
+    //        networkPromise.then(function(network) {
+    //            console.log(">>>", network.getName());
+    //        });
+    //    });
+    //}, 5000);
+
+    /*require([
+        "services_router",
         "services_network",
     ], function(router, network){
-        router.init();
-        network.init();
+        //router.init();
+        //network.init();
+
+
         //require([
         //    //"modules_tasks",
         //    "modules_notes"
@@ -63,7 +137,7 @@ require([
         //
         //        /**
         //         * Init all modules
-        //         */
+        //         *
         //        (function initModules() {
         //            for(var i in modules) {
         //                (function() {
@@ -80,5 +154,5 @@ require([
         //        console.error(err);
         //    });
         //});
-    });
+    });*/
 });

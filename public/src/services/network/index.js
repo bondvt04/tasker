@@ -1,7 +1,6 @@
 class Network {
     constructor(options) {
         //this.model = options.model;
-        //this.template = options.template;
     }
 
     init() {
@@ -22,6 +21,9 @@ class Network {
 }
 
 define([], function() {
-    var network = new Network();
-    return network;
+    var instance;
+
+    return (function() {
+        return (instance = (instance || (new Network()).init()));
+    })();
 });

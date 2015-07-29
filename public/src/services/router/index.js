@@ -1,13 +1,13 @@
 class Router {
     constructor(options) {
         //this.model = options.model;
-        //this.template = options.template;
     }
 
-    init() {
+    init(routerEngine) {
         var self = this;
         var promise = new Promise(function(resolve, reject) {
 
+            self._router = routerEngine;
             console.log(">>> router.init()");
 
             if (true) {
@@ -25,12 +25,11 @@ define([
     //"../../../lib/router.js/router-amd.js"
     "../../../lib/rad-router/bin/router.js"
 ], function(RADRouter) {
+    var instance;
 
-    console.log(RADRouter);
-    //console.log(Routerrr, Router);
-    //var lol = new Routerrr();
-    var router = new Router();
-    return router;
+    return (function() {
+        return (instance = (instance || (new Router(RADRouter)).init()));
+    })();
 });
 
 
