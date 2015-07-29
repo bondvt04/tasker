@@ -1,3 +1,11 @@
+// одна сущность, вроде:
+// data
+//   -role:knowledge|knowledge+learn|cloth|cloth+diary
+//   -owner
+//   -history_of_changes
+// стало быть, все модули можно реализовать, как плагины, которые могут работать с этими сущностями
+// но тогда все маршруты и нетворк должны быть инкапсулированы в модулях
+
 //http://dojotoolkit.org/reference-guide/1.10/dojo/_base/declare.html#dojo-base-declare
 //http://habrahabr.ru/post/209662/
 //https://scotch.io/tutorials/use-ejs-to-template-your-node-application
@@ -5,7 +13,7 @@
 // подключаем компоненты https://github.com/substack/browserify-handbook?md-time=1436784389971#reusable-components
 // webpack --progress --colors
 
-// npm install -g webpack
+
 
 // просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
