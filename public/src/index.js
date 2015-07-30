@@ -17,59 +17,38 @@
 
 // просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
-/*var dojoConfig = {
-    //baseUrl: "/tasker/public/test15-try-to-do-client/",
-    baseUrl: "/",
-//                tlmSiblingOfDojo: false,
-    packages: [
-        { name: "services_router", location: "services/router", main: "index"},
-        { name: "services_network", location: "services/network", main: "index"},
-        { name: "modules_notes", location: "modules/notes", main: "index"}
-        //{ name: "modules/tasks", location: "modules/tasks" }
-//                    { name: "dojox", location: "lib/dojox" },
-//                    { name: "app/index", location: "modules/tasks/index.js", main: "app" },
-//                    { name: "app/tasks", location: "index.js", main: "app" }
-    ]
-};*/
+/*require([
+    //"./config/amd.js",
+    //"./config/modules.js"
+], function(amdConfig, modulesConfig){
 
-require([
-    "./amdConfig.js"
-], function(config){
-    require([
-        "services_router",
-    ], function(routerPromise){
-        routerPromise.then(function(router) {
-            router.setName("aaaaa");
-            console.log("+1", router.getName());
+    // load aliases and pathes to AMD require system
+    //require.config(amdConfig);
 
-            setTimeout(function() {
-                console.log("+2", router.getName());
-            }, 5000);
-        });
+    // load modules
+    console.log(modulesConfig.modules);
+
+    var zlo = [];
+    //
+    require(zlo, function() {
+        console.log("asdf");
     });
 
-    require([
-        "services_router",
-    ], function(routerPromise){
-        routerPromise.then(function(router) {
-            router.setName("bbbbb");
-            console.log("++2", router.getName());
+    //require(modulesConfig.modules, function(){
+    //    debugger;
+    //    console.log(arguments);
+    //});
 
-            setTimeout(function() {
-                console.log("++", router.getName());
-            }, 5000);
-        });
-    });
 
-    setTimeout(function() {
-        require([
-            "services_router",
-        ], function(routerPromise){
-            routerPromise.then(function(router) {
-                console.log(">>>", router.getName());
-            });
-        });
-    }, 5000);
+    //setTimeout(function() {
+    //    require([
+    //        "services_router",
+    //    ], function(routerPromise){
+    //        routerPromise.then(function(router) {
+    //            console.log(">>>", router.getName());
+    //        });
+    //    });
+    //}, 5000);
 
 
     //require([
@@ -162,5 +141,11 @@ require([
         //        console.error(err);
         //    });
         //});
-    });*/
-});
+    });
+});*/
+
+
+define(["require"], function(require) {
+    require();
+})
+
