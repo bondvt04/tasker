@@ -36,8 +36,16 @@ require([
     //
     //console.log(context.resolve("notes"));
 
-    //var zlo = "notes";
-    ////require("./modules/"+zlo+"/index.js");
+    var zlo = "notes";
+    //require("./modules/"+zlo+"/index.js", function(note) {
+    //    console.log(note);
+    //});
+
+    //console.log(require("./modules/"+zlo+"/index.js"));
+    require(["./modules/"+zlo+"/index.js"], function(note) {
+        console.log("###", note);
+    });
+
     //
     //
     //require.context(
@@ -58,7 +66,6 @@ require([
     //});
 
 
-    console.log("asdf");
 
 
     //var zlo = [];

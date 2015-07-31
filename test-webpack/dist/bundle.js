@@ -97,11 +97,9 @@
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__], __WEBPACK_AMD_DEFINE_RESULT__ = function(require) {
 	    var a = "hello";
-	    var zlo = __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(1)("./"+a+".js")]; (function(hello) {
+	    __webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [!(function webpackMissingModule() { var e = new Error("Cannot find module \"./aaa\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())]; (function(hello) {
 	        console.log(hello());
 	    }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
-
-	    console.log(zlo);
 
 	    //var b = "./aaa/hello";
 	    //require([b+".js"], function(hello) {

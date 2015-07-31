@@ -3,17 +3,17 @@
 var path = require('path');
 var webpack = require('webpack');
 var ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
-var glob = require("glob");
+//var glob = require("glob");
 
 //var BowerWebpackPlugin = require("bower-webpack-plugin");
 
 var development = {
     //devtool: 'eval',
     //entry: glob.sync("(./src/index.js|./src/modules/*/index.js)"),
-    entry: {
-        "modules": glob.sync("./src/modules/*/index.js"),
-        "app":"./src/index.js"
-    }
+    entry: "./src/index.js"
+        //"modules": glob.sync("./src/modules/*/index.js"),
+
+
 
         //glob.sync("./src/modules/*/index.js")
     //    //'webpack-dev-server/client?http://localhost:8080',
@@ -25,6 +25,15 @@ var development = {
         publicPath: '/builded_dev/'
     },
     plugins: [
+        new ContextReplacementPlugin(
+            /modules/, // change all contexts matching this RegExp
+            //"./modules/notes/index.js",
+            /\/notes\/index\.js/,
+            //"/Users/bond-it/www/tasker/public/src/modules/notes/index.js",
+            ///\.\/modules\/notes\/index\.js/,
+            false
+        )
+
         //new ContextReplacementPlugin(
         //    /folder[\\\/]modules$/, // change all contexts matching this RegExp
         //    /^\.\/[^\/]+\/index\.js$/ // Exchange the RegExp with this new RegExp
