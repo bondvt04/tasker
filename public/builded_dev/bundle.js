@@ -1,34 +1,6 @@
 /******/ (function(modules) { // webpackBootstrap
-/******/ 	// install a JSONP callback for chunk loading
-/******/ 	var parentJsonpFunction = window["webpackJsonp"];
-/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules) {
-/******/ 		// add "moreModules" to the modules object,
-/******/ 		// then flag all "chunkIds" as loaded and fire callback
-/******/ 		var moduleId, chunkId, i = 0, callbacks = [];
-/******/ 		for(;i < chunkIds.length; i++) {
-/******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId])
-/******/ 				callbacks.push.apply(callbacks, installedChunks[chunkId]);
-/******/ 			installedChunks[chunkId] = 0;
-/******/ 		}
-/******/ 		for(moduleId in moreModules) {
-/******/ 			modules[moduleId] = moreModules[moduleId];
-/******/ 		}
-/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules);
-/******/ 		while(callbacks.length)
-/******/ 			callbacks.shift().call(null, __webpack_require__);
-
-/******/ 	};
-
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
-/******/ 	// object to store loaded and loading chunks
-/******/ 	// "0" means "already loaded"
-/******/ 	// Array means "loading", array contains callbacks
-/******/ 	var installedChunks = {
-/******/ 		0:0
-/******/ 	};
 
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -54,29 +26,6 @@
 /******/ 		return module.exports;
 /******/ 	}
 
-/******/ 	// This file contains only the entry chunk.
-/******/ 	// The chunk loading function for additional chunks
-/******/ 	__webpack_require__.e = function requireEnsure(chunkId, callback) {
-/******/ 		// "0" is the signal for "already loaded"
-/******/ 		if(installedChunks[chunkId] === 0)
-/******/ 			return callback.call(null, __webpack_require__);
-
-/******/ 		// an array means "currently loading".
-/******/ 		if(installedChunks[chunkId] !== undefined) {
-/******/ 			installedChunks[chunkId].push(callback);
-/******/ 		} else {
-/******/ 			// start chunk loading
-/******/ 			installedChunks[chunkId] = [callback];
-/******/ 			var head = document.getElementsByTagName('head')[0];
-/******/ 			var script = document.createElement('script');
-/******/ 			script.type = 'text/javascript';
-/******/ 			script.charset = 'utf-8';
-/******/ 			script.async = true;
-
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".bundle.js";
-/******/ 			head.appendChild(script);
-/******/ 		}
-/******/ 	};
 
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -95,189 +44,47 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(1);
+	__webpack_require__(3);
+	module.exports = __webpack_require__(4);
 
 
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// одна сущность, вроде:
-	// data
-	//   -role:knowledge|knowledge+learn|cloth|cloth+diary
-	//   -owner
-	//   -history_of_changes
-	// стало быть, все модули можно реализовать, как плагины, которые могут работать с этими сущностями
-	// но тогда все маршруты и нетворк должны быть инкапсулированы в модулях
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	    return "notes module";
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
-	//http://dojotoolkit.org/reference-guide/1.10/dojo/_base/declare.html#dojo-base-declare
-	//http://habrahabr.ru/post/209662/
-	//https://scotch.io/tutorials/use-ejs-to-template-your-node-application
-	//http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/
-	// подключаем компоненты https://github.com/substack/browserify-handbook?md-time=1436784389971#reusable-components
-	// webpack --progress --colors
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
 
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	    return "tasks module";
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
-
-	// просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
-
-	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
-	    __webpack_require__(2),
-	    __webpack_require__(22),
-	    __webpack_require__(23)
-	]; (function(glob, amdConfig, modulesConfig){
-
-	    // load aliases and pathes to AMD require system
-	    //require.config(amdConfig);
-
-	    // load modules
-	    //console.log(modulesConfig.modules);
-
-	    //_.each(modulesConfig.modules, function(value, index) {
-	    //    console.log(index+"="+value);
-	    //})
-
-	    //var context = require.context("./modules/", false, /[^\/]+\/index\.js/);
-	    //
-	    //console.log(context.resolve("notes"));
-
-	    //var zlo = "notes";
-	    ////require("./modules/"+zlo+"/index.js");
-	    //
-	    //
-	    //require.context(
-	    //    "./", // context folder
-	    //    true, // include subdirectories
-	    //    /^\.\/modules\/[^\/]+\/index\.js$/ // RegExp
-	    //)(["./" + zlo + "/index.js"], function() {
-	    //    console.log("###", arguments);
-	    //})
-
-	//console.log("asdf");
-
-	    __webpack_require__(24)!/* require */(/* empty */function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = glob.sync("./modules/*/index.js"); (function() {
-
-	    }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}());
-
-
-
-	    //var zlo = [];
-	    ////
-	    //require(zlo, function() {
-	    //    console.log("asdf");
-	    //});
-
-	    //require(modulesConfig.modules, function(){
-	    //    debugger;
-	    //    console.log(arguments);
-	    //});
-
-
-	    //setTimeout(function() {
-	    //    require([
-	    //        "services_router",
-	    //    ], function(routerPromise){
-	    //        routerPromise.then(function(router) {
-	    //            console.log(">>>", router.getName());
-	    //        });
-	    //    });
-	    //}, 5000);
-
-
-	    //require([
-	    //    "services_network",
-	    //], function(networkPromise){
-	    //    networkPromise.then(function(network) {
-	    //        network.setName("aaaaa");
-	    //        console.log("+1", network.getName());
-	    //
-	    //        setTimeout(function() {
-	    //            console.log("+2", network.getName());
-	    //        }, 5000);
-	    //    });
-	    //});
-	    //
-	    //require([
-	    //    "services_network",
-	    //], function(networkPromise){
-	    //    networkPromise.then(function(network) {
-	    //        network.setName("bbbbb");
-	    //        console.log("++2", network.getName());
-	    //
-	    //        setTimeout(function() {
-	    //            console.log("++", network.getName());
-	    //        }, 5000);
-	    //    });
-	    //});
-	    //
-	    //setTimeout(function() {
-	    //    require([
-	    //        "services_network",
-	    //    ], function(networkPromise){
-	    //        networkPromise.then(function(network) {
-	    //            console.log(">>>", network.getName());
-	    //        });
-	    //    });
-	    //}, 5000);
-
-	    /*require([
-	        "services_router",
-	        "services_network",
-	    ], function(router, network){
-	        //router.init();
-	        //network.init();
-
-
-	        //require([
-	        //    //"modules_tasks",
-	        //    "modules_notes"
-	        //], function() {
-	        //    var modules = arguments;
-	        //
-	        //    try {
-	        //        var router = new routerClass();
-	        //        var routerReadyPromise = router.init();
-	        //    } catch(e) {
-	        //        console.error(e);
-	        //    }
-	        //
-	        //    try {
-	        //        var network = new networkClass();
-	        //        var networkReadyPromise = network.init();
-	        //    } catch(e) {
-	        //        console.error(e);
-	        //    }
-	        //
-	        //    Promise.all([
-	        //        routerReadyPromise,
-	        //        networkReadyPromise
-	        //    ]).then(function(arrayOfResults) {
-	        //        var router = arrayOfResults[0];
-	        //        var network = arrayOfResults[1];
-	        //
-	        //        /**
-	        //         * Init all modules
-	        //         *
-	        //        (function initModules() {
-	        //            for(var i in modules) {
-	        //                (function() {
-	        //                    var module = new modules[i]();
-	        //
-	        //                    if(module && module.init && "function" === typeof module.init) {
-	        //                        module.init.bind(module)(router, network);
-	        //                    }
-	        //                })();
-	        //            }
-	        //        })();
-	        //
-	        //    }, function(err) {
-	        //        console.error(err);
-	        //    });
-	        //});
-	    });*/
-	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
-
-
+	//define(["../../../../test12-dojo/bower_components/dojo/_base/declare"], function(declare){
+	//    //var controller = declare("tasksController", null, {
+	//    //    doSomething : function() {
+	//    //        console.log("asdf");
+	//    //    }
+	//    //});
+	//
+	//    var module = declare(null, {
+	//        doSomething : function() {
+	//            console.log("asdf");
+	//        },
+	//
+	//        init : function() {
+	//            console.log("init tasks module");
+	//        }
+	//    });
+	//
+	//    return module;
+	//});
 
 
 /***/ }

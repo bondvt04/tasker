@@ -18,10 +18,9 @@
 // просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
 require([
-    "glob",
     "./config/amd.js",
     "./config/modules.js"
-], function(glob, amdConfig, modulesConfig){
+], function(amdConfig, modulesConfig){
 
     // load aliases and pathes to AMD require system
     //require.config(amdConfig);
@@ -51,10 +50,15 @@ require([
 
 //console.log("asdf");
 
-    require(glob.sync("./modules/*/index.js"), function() {
+    //var zlo = "notes";
+    //require.ensure([], function(require) {
+    //    require(["./modules/notes/index.js"], function(note) {
+    //        console.log(note);
+    //    });
+    //});
 
-    });
 
+    console.log("asdf");
 
 
     //var zlo = [];

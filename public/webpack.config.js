@@ -10,12 +10,15 @@ var glob = require("glob");
 var development = {
     //devtool: 'eval',
     //entry: glob.sync("(./src/index.js|./src/modules/*/index.js)"),
-    entry: [
-        "./src/index.js",
-        glob.sync("./src/modules/*/index.js")
+    entry: {
+        "modules": glob.sync("./src/modules/*/index.js"),
+        "app":"./src/index.js"
+    }
+
+        //glob.sync("./src/modules/*/index.js")
     //    //'webpack-dev-server/client?http://localhost:8080',
     //    //'webpack/hot/only-dev-server'
-    ],
+    ,
     output: {
         path: path.join(__dirname, 'builded_dev'),
         filename: 'bundle.js',
