@@ -2,15 +2,19 @@
 
 var path = require('path');
 var webpack = require('webpack');
+var ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
+var glob = require("glob");
 
 //var BowerWebpackPlugin = require("bower-webpack-plugin");
 
 var development = {
     //devtool: 'eval',
+    //entry: glob.sync("(./src/index.js|./src/modules/*/index.js)"),
     entry: [
         "./src/index.js",
-        //'webpack-dev-server/client?http://localhost:8080',
-        //'webpack/hot/only-dev-server'
+        glob.sync("./src/modules/*/index.js")
+    //    //'webpack-dev-server/client?http://localhost:8080',
+    //    //'webpack/hot/only-dev-server'
     ],
     output: {
         path: path.join(__dirname, 'builded_dev'),
@@ -18,6 +22,12 @@ var development = {
         publicPath: '/builded_dev/'
     },
     plugins: [
+        //new ContextReplacementPlugin(
+        //    /folder[\\\/]modules$/, // change all contexts matching this RegExp
+        //    /^\.\/[^\/]+\/index\.js$/ // Exchange the RegExp with this new RegExp
+        //    // which matches only files in styles, templates and xyz
+        //)
+
         //new BowerWebpackPlugin({
         //    modulesDirectories: ['bower_components'],
         //    manifestFiles: ['bower.json', '.bower.json'],

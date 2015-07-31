@@ -17,22 +17,51 @@
 
 // просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
-/*require([
-    //"./config/amd.js",
-    //"./config/modules.js"
-], function(amdConfig, modulesConfig){
+require([
+    "glob",
+    "./config/amd.js",
+    "./config/modules.js"
+], function(glob, amdConfig, modulesConfig){
 
     // load aliases and pathes to AMD require system
     //require.config(amdConfig);
 
     // load modules
-    console.log(modulesConfig.modules);
+    //console.log(modulesConfig.modules);
 
-    var zlo = [];
+    //_.each(modulesConfig.modules, function(value, index) {
+    //    console.log(index+"="+value);
+    //})
+
+    //var context = require.context("./modules/", false, /[^\/]+\/index\.js/);
     //
-    require(zlo, function() {
-        console.log("asdf");
+    //console.log(context.resolve("notes"));
+
+    //var zlo = "notes";
+    ////require("./modules/"+zlo+"/index.js");
+    //
+    //
+    //require.context(
+    //    "./", // context folder
+    //    true, // include subdirectories
+    //    /^\.\/modules\/[^\/]+\/index\.js$/ // RegExp
+    //)(["./" + zlo + "/index.js"], function() {
+    //    console.log("###", arguments);
+    //})
+
+//console.log("asdf");
+
+    require(glob.sync("./modules/*/index.js"), function() {
+
     });
+
+
+
+    //var zlo = [];
+    ////
+    //require(zlo, function() {
+    //    console.log("asdf");
+    //});
 
     //require(modulesConfig.modules, function(){
     //    debugger;
@@ -141,11 +170,7 @@
         //        console.error(err);
         //    });
         //});
-    });
-});*/
+    });*/
+});
 
-
-define(["require"], function(require) {
-    require();
-})
 

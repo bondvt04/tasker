@@ -1,3 +1,3 @@
 define([], function() {
-    return "Hello, notes!";
+    return "notes module";
 });
