@@ -6,7 +6,8 @@ webpackJsonp([2],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./notes/index.js": 4
+		"./notes/index.js": 4,
+		"./tasks/index.js": 5
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -29,6 +30,35 @@ webpackJsonp([2],[
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
 	    return "notes module";
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	    return "tasks module";
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+	//define(["../../../../test12-dojo/bower_components/dojo/_base/declare"], function(declare){
+	//    //var controller = declare("tasksController", null, {
+	//    //    doSomething : function() {
+	//    //        console.log("asdf");
+	//    //    }
+	//    //});
+	//
+	//    var module = declare(null, {
+	//        doSomething : function() {
+	//            console.log("asdf");
+	//        },
+	//
+	//        init : function() {
+	//            console.log("init tasks module");
+	//        }
+	//    });
+	//
+	//    return module;
+	//});
+
 
 /***/ }
 ]);

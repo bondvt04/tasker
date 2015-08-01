@@ -115,6 +115,7 @@
 	// просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
 	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
+	    //"require",
 	    __webpack_require__(1),
 	    __webpack_require__(2)
 	]; (function(amdConfig, modulesConfig){
@@ -133,15 +134,17 @@
 	    //
 	    //console.log(context.resolve("notes"));
 
-	    var zlo = "notes";
-	    //require("./modules/"+zlo+"/index.js", function(note) {
-	    //    console.log(note);
-	    //});
+	    if(true) {
+	        var zlo = "notes";
+	        __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(3)("./"+zlo+"/index.js")]; (function(note) {
+	            console.log("###", note);
+	        }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 
-	    //console.log(require("./modules/"+zlo+"/index.js"));
-	    __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(3)("./"+zlo+"/index.js")]; (function(note) {
-	        console.log("###", note);
-	    }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
+	        var zlo2 = "tasks"
+	        __webpack_require__.e/* require */(2/* duplicate */, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(3)("./"+zlo2+"/index.js")]; (function(task) {
+	            console.log("###", task);
+	        }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
+	    }
 
 	    //
 	    //

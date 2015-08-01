@@ -18,6 +18,7 @@
 // просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
 require([
+    //"require",
     "./config/amd.js",
     "./config/modules.js"
 ], function(amdConfig, modulesConfig){
@@ -36,15 +37,17 @@ require([
     //
     //console.log(context.resolve("notes"));
 
-    var zlo = "notes";
-    //require("./modules/"+zlo+"/index.js", function(note) {
-    //    console.log(note);
-    //});
+    if(true) {
+        var zlo = "notes";
+        require(["./modules/"+zlo+"/index.js"], function(note) {
+            console.log("###", note);
+        });
 
-    //console.log(require("./modules/"+zlo+"/index.js"));
-    require(["./modules/"+zlo+"/index.js"], function(note) {
-        console.log("###", note);
-    });
+        var zlo2 = "tasks"
+        require(["./modules/"+zlo2+"/index.js"], function(task) {
+            console.log("###", task);
+        });
+    }
 
     //
     //

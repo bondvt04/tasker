@@ -26,13 +26,24 @@ var development = {
     },
     plugins: [
         new ContextReplacementPlugin(
-            /modules/, // change all contexts matching this RegExp
-            //"./modules/notes/index.js",
-            /\/notes\/index\.js/,
-            //"/Users/bond-it/www/tasker/public/src/modules/notes/index.js",
-            ///\.\/modules\/notes\/index\.js/,
-            false
+            /modules/,
+            /^.\/[^\/]+\/index\.js$/
         )
+
+        // also works
+        //new ContextReplacementPlugin(
+        //    /modules/, // change all contexts matching this RegExp
+        //    /\/[notes]+\/index\.js/,
+        //    true,
+        //    /\/notes\/indes\.js/
+        //)
+
+        // works:
+        //new ContextReplacementPlugin(
+        //    /modules/, // change all contexts matching this RegExp
+        //    /\/notes\/index\.js/,
+        //    false
+        //)
 
         //new ContextReplacementPlugin(
         //    /folder[\\\/]modules$/, // change all contexts matching this RegExp
