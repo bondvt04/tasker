@@ -14,28 +14,20 @@
 
 <script type="text/javascript">
 
-    var pathHome = 'home';
-    var pathDoc = 'docs/:id';
-    var subpathParagraph = '/paragraph/:number'; // !!! you must use '/' for nested routing
-    Router
-            .config({mode: 'hash'})
-            .add(pathHome, function () {
-                console.log(pathHome)
-            })
-            .add(pathDoc, function (params) {
-                console.log(pathDoc);
-            })
-            .add(function () { // default routing
-                console.log('default');
-                Router.navigate(pathHome);
-            });
-    Router
-            .to(pathDoc)
-            .add(subpathParagraph, function (params) {
-                console.log(subpathParagraph);
-            });
-    Router.listen(); // todo listen & navigate
-    Router.navigate('home');
+    Router.listen();
+
+    Router.config({mode: 'hash'})
+
+    Router.add("hello(/)", function () {
+        console.log("* hello");
+    });
+
+    Router.add("hello/world", function () {
+        console.log("* hello/world");
+    });
+
+    //Router.listen();
+    //Router.navigate('home');
 </script>
 </body>
 </html>

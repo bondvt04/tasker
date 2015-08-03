@@ -13,13 +13,17 @@ class Router {
             //#default
 
 
-            var router = self._routerEngine = routerEngine;
+            var router = window.routerRR = self._routerEngine = routerEngine;
             //var Router = window.Router;
 
-            var pathHome = 'home';
-            var pathDoc = 'docs/:id';
-            var subpathParagraph = '/paragraph/:number'; // !!! you must use '/' for nested routing
-            router.config({mode: 'hash'});
+            router.listen();
+
+            router.config({
+                mode: 'hash',
+                keys: true,
+                //root: "/"
+            });
+
 
 
             //router.add(pathHome, function () {
@@ -54,7 +58,7 @@ class Router {
                 //complete();
             });
 
-            router.listen();
+
             //router.route('/home-page');
 
             console.log(">>> router.init()");
