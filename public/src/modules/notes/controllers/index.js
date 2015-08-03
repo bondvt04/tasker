@@ -10,7 +10,7 @@ class Controller {
         var self = this;
         var promise = new Promise(function(resolve, reject) {
 
-            //self._router = routerEngine;
+            self.actions = actions;
             console.log(">>> NotesController.init()");
 
             if (true) {
@@ -24,13 +24,20 @@ class Controller {
     }
 }
 
+var actions = {
+    index : function() {
+        console.log("> Notes.controller.actions.index");
+    }
+}
+
 define([
+    "../networks/index.js",
     "../models/Note.js"
 ], function(noteModel){
     var instance;
 
     return (function() {
-        return (instance = (instance || (new Module({
+        return (instance = (instance || (new Controller({
             model: noteModel
         })).init()));
     })();

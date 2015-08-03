@@ -6,7 +6,7 @@ webpackJsonp([2],[
 
 	var map = {
 		"./notes/index.js": 3,
-		"./tasks/index.js": 6
+		"./tasks/index.js": 11
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -65,7 +65,7 @@ webpackJsonp([2],[
 	    return Module;
 	})();
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_RESULT__ = function (mainRouter, moduleRouter, mainNetwork, moduleNetwork, controller) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_RESULT__ = function (moduleRouter) {
 	    var instance;
 
 	    return (function () {
@@ -123,15 +123,141 @@ webpackJsonp([2],[
 
 	//this.model = options.model;
 
-	//"./routers/index.js",
-	//"services_network",
-	//"./networks/index.js",
-	//"./controllers/index.js",
-
 	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } })(); }
 
 /***/ },
 /* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	/**
+	 * @class NotesRouter
+	 */
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Router = (function () {
+	    function Router(options) {
+	        _classCallCheck(this, Router);
+	    }
+
+	    _createClass(Router, [{
+	        key: "init",
+	        value: function init(options) {
+	            var self = this;
+	            var promise = new Promise(function (resolve, reject) {
+
+	                options.mainRouterPromise.then(function (mainRouter) {
+	                    console.log("#####", mainRouter);
+
+	                    var router = mainRouter.getRouterEngine();
+
+	                    router.add("notes(/)", function (params, complete) {
+	                        console.log("route 'notes/'");
+	                        complete();
+	                    });
+
+	                    router.add("notes/add", function (params, complete) {
+	                        console.log("route 'notes/add'");
+	                        complete();
+	                    });
+
+	                    //mainRouter.addRoutes({
+	                    //    "notes(/)": function(params, complete) {
+	                    //        console.log("route 'notes/'");
+	                    //        complete();
+	                    //    },
+	                    //    "notes/add": function(params, complete) {
+	                    //        console.log("route 'notes/add'");
+	                    //        complete();
+	                    //    }
+	                    //});
+	                });
+
+	                //Router
+	                //    .add(about, function(params) { // ~about ('/about/:id')
+	                //        // todo your code
+	                //    })
+	                //    .add(posts, function(params, complete) { // ~posts ('/posts')
+	                //        // todo your code
+	                //        complete(); // do it by async way
+	                //    })
+	                //    .add(function(){ // default route  for ~index ('/')
+	                //        // todo default code
+	                //    });
+
+	                //self._router = routerEngine;
+	                console.log("> NotesRouter.init()");
+
+	                if (true) {
+	                    resolve(self);
+	                } else {
+	                    reject(new Error("Error while notes.router.init"));
+	                }
+	            });
+
+	            return promise;
+	        }
+	    }]);
+
+	    return Router;
+	})();
+
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5), __webpack_require__(7)], __WEBPACK_AMD_DEFINE_RESULT__ = function (mainRouter, indexController) {
+	    var instance;
+
+	    return (function () {
+	        return instance = instance || new Router().init({
+	            mainRouterPromise: mainRouter,
+	            controllers: {
+	                index: indexController
+	            }
+	        });
+	    })();
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+	//define([
+	//    "../../../../../test12-dojo/bower_components/dojo/_base/declare"
+	//], function(declare){
+	//    var routerClass = declare(null, {
+	//
+	//        _controller : null,
+	//
+	//        _routes : {
+	//
+	//            //"/notes": function () {
+	//            //    //console.log("> route /notes");
+	//            //},
+	//            //"/notes/add" : function() {
+	//            //    //console.log("> route /notes/add");
+	//            //}
+	//        },
+	//
+	//        init : function(mainRouter, mainNetwork, controller) {
+	//            try {
+	//                mainRouter.addRoutes({
+	//                    "/notes": {callback: controller.actions.index, context: controller},
+	//                    "/notes/add": {callback: controller.actions.add, context: controller}
+	//                })
+	//            } catch(e) {
+	//                console.error(e);
+	//            }
+	//
+	//            console.log("init notes router");
+	//        }
+	//    });
+	//
+	//    return routerClass;
+	//});
+
+	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } })(); }
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -153,7 +279,7 @@ webpackJsonp([2],[
 	            var self = this;
 	            var promise = new Promise(function (resolve, reject) {
 
-	                self._router = routerEngine;
+	                self._routerEngine = routerEngine;
 	                console.log(">>> router.init()");
 
 	                if (true) {
@@ -165,6 +291,11 @@ webpackJsonp([2],[
 
 	            return promise;
 	        }
+	    }, {
+	        key: "getRouterEngine",
+	        value: function getRouterEngine() {
+	            return this._routerEngine;
+	        }
 	    }]);
 
 	    return Router;
@@ -172,11 +303,11 @@ webpackJsonp([2],[
 
 	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
 	//"../../../lib/router.js/router-amd.js"
-	__webpack_require__(5)], __WEBPACK_AMD_DEFINE_RESULT__ = function (RADRouter) {
+	__webpack_require__(6)], __WEBPACK_AMD_DEFINE_RESULT__ = function (RADRouter) {
 	    var instance;
 
 	    return (function () {
-	        return instance = instance || new Router(RADRouter).init();
+	        return instance = instance || new Router().init(RADRouter);
 	    })();
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -277,7 +408,7 @@ webpackJsonp([2],[
 	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } })(); }
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -620,7 +751,333 @@ webpackJsonp([2],[
 
 
 /***/ },
-/* 6 */
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	/**
+	 * @class NotesController
+	 */
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Controller = (function () {
+	    function Controller(options) {
+	        _classCallCheck(this, Controller);
+
+	        this._modelPromise = options.model;
+	    }
+
+	    _createClass(Controller, [{
+	        key: "init",
+	        value: function init() {
+	            var self = this;
+	            var promise = new Promise(function (resolve, reject) {
+
+	                self.actions = actions;
+	                console.log(">>> NotesController.init()");
+
+	                if (true) {
+	                    resolve(self);
+	                } else {
+	                    reject(new Error("Error while controller.init"));
+	                }
+	            });
+
+	            return promise;
+	        }
+	    }]);
+
+	    return Controller;
+	})();
+
+	var actions = {
+	    index: function index() {
+	        console.log("> Notes.controller.actions.index");
+	    }
+	};
+
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(8), __webpack_require__(10)], __WEBPACK_AMD_DEFINE_RESULT__ = function (noteModel) {
+	    var instance;
+
+	    return (function () {
+	        return instance = instance || new Controller({
+	            model: noteModel
+	        }).init();
+	    })();
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+	//define([
+	//
+	//], function(){
+	//
+	//    var controllerClass = declare(null, {
+	//        /**
+	//         * Adding webcomponents, needed for this controller's views
+	//         * @private
+	//         */
+	//        _loadViewComponents : function() {
+	//            window.appendLinkToHead("modules/notes/views/webcomponents/note.html");
+	//        },
+	//
+	//        _beforeAction : function() {
+	//            this._loadViewComponents();
+	//        },
+	//
+	//        _afterAction : function() {
+	//
+	//        },
+	//
+	//        init : function() {
+	//            //debugger;
+	//            var self = this;
+	//            var promise = new Promise(function(resolve, reject) {
+	//
+	//                if (true) {
+	//                    resolve(self);
+	//                } else {
+	//                    reject(new Error("Error while notes.controller.init"));
+	//                }
+	//            });
+	//
+	//            return promise;
+	//        },
+	//
+	//        actions : {
+	//
+	//            index : function() {
+	//                this._beforeAction();
+	//                console.log(">> notes.controller.actions.index");
+	//
+	//                data = {
+	//                    notes : [
+	//                        {text : "hello"},
+	//                        {text : "world"},
+	//                        {text : "lol"}
+	//                    ]
+	//                }
+	//
+	//                html = new EJS({url: '/modules/notes/views/index/index.ejs'}).render(data);
+	//                document.getElementById("content").innerHTML = html;
+	//
+	//                this._afterAction();
+	//            },
+	//
+	//            add : function() {
+	//                this._beforeAction();
+	//                console.log(">> notes.controller.actions.add");
+	//                this._afterAction();
+	//            }
+	//        }
+	//    });
+	//
+	//    return controllerClass;
+	//});
+
+	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } })(); }
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	/**
+	 * @class NotesNetwork
+	 */
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Network = (function () {
+	    function Network(options) {
+	        _classCallCheck(this, Network);
+	    }
+
+	    _createClass(Network, [{
+	        key: "init",
+	        value: function init() {
+	            var self = this;
+	            var promise = new Promise(function (resolve, reject) {
+
+	                //self._router = routerEngine;
+	                console.log("> NotesNetwork.init()");
+
+	                if (true) {
+	                    resolve(self);
+	                } else {
+	                    reject(new Error("Error while notes.network.init"));
+	                }
+	            });
+
+	            return promise;
+	        }
+	    }]);
+
+	    return Network;
+	})();
+
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(9)], __WEBPACK_AMD_DEFINE_RESULT__ = function (mainNetwork) {
+	    var instance;
+
+	    return (function () {
+	        return instance = instance || new Network().init();
+	    })();
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+	//define([
+	//    "../../../../../test12-dojo/bower_components/dojo/_base/declare"
+	//], function(declare){
+	//    var routerClass = declare(null, {
+	//
+	//        _controller : null,
+	//
+	//        _routes : {
+	//
+	//            //"/notes": function () {
+	//            //    //console.log("> route /notes");
+	//            //},
+	//            //"/notes/add" : function() {
+	//            //    //console.log("> route /notes/add");
+	//            //}
+	//        },
+	//
+	//        init : function(mainRouter, mainNetwork, controller) {
+	//            try {
+	//                mainRouter.addRoutes({
+	//                    "/notes": {callback: controller.actions.index, context: controller},
+	//                    "/notes/add": {callback: controller.actions.add, context: controller}
+	//                })
+	//            } catch(e) {
+	//                console.error(e);
+	//            }
+	//
+	//            console.log("init notes router");
+	//        }
+	//    });
+	//
+	//    return routerClass;
+	//});
+
+	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } })(); }
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Network = (function () {
+	    function Network(options) {
+	        _classCallCheck(this, Network);
+	    }
+
+	    _createClass(Network, [{
+	        key: "init",
+	        value: function init() {
+	            var self = this;
+	            var promise = new Promise(function (resolve, reject) {
+
+	                console.log(">>> network.init()");
+
+	                if (true) {
+	                    resolve(self);
+	                } else {
+	                    reject(new Error("Error while network.init"));
+	                }
+	            });
+
+	            return promise;
+	        }
+	    }]);
+
+	    return Network;
+	})();
+
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	    var instance;
+
+	    return (function () {
+	        return instance = instance || new Network().init();
+	    })();
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+	//this.model = options.model;
+
+	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } })(); }
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
+	/**
+	 * NoteModel
+	 */
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Model = (function () {
+	    function Model() {
+	        _classCallCheck(this, Model);
+	    }
+
+	    _createClass(Model, [{
+	        key: "init",
+	        value: function init() {
+	            var self = this;
+	            var promise = new Promise(function (resolve, reject) {
+
+	                self.resetToDefaults();
+	                console.log(">>> Notes.NoteModel.init()");
+
+	                if (true) {
+	                    resolve(self);
+	                } else {
+	                    reject(new Error("Error while model.init"));
+	                }
+	            });
+
+	            return promise;
+	        }
+	    }, {
+	        key: "resetToDefaults",
+	        value: function resetToDefaults() {
+	            this._text = "";
+	        }
+	    }]);
+
+	    return Model;
+	})();
+
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	    var instance;
+
+	    return (function () {
+	        return instance = instance || new Model().init();
+	    })();
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Note.js" + ": " + err.message); } }); } } })(); }
+
+/***/ },
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {

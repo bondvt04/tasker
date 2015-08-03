@@ -25,12 +25,8 @@ class Module {
 }
 
 define([
-    "services_router",
-    //"./routers/index.js",
-    //"services_network",
-    //"./networks/index.js",
-    //"./controllers/index.js",
-], function(mainRouter, moduleRouter, mainNetwork, moduleNetwork, controller) {
+    "./routers/index.js",
+], function(moduleRouter) {
     var instance;
 
     return (function() {

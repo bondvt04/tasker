@@ -7,7 +7,7 @@ class Router {
         var self = this;
         var promise = new Promise(function(resolve, reject) {
 
-            self._router = routerEngine;
+            self._routerEngine = routerEngine;
             console.log(">>> router.init()");
 
             if (true) {
@@ -19,6 +19,10 @@ class Router {
 
         return promise;
     }
+
+    getRouterEngine() {
+        return this._routerEngine;
+    }
 }
 
 define([
@@ -28,7 +32,7 @@ define([
     var instance;
 
     return (function() {
-        return (instance = (instance || (new Router(RADRouter)).init()));
+        return (instance = (instance || (new Router()).init(RADRouter)));
     })();
 });
 
