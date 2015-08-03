@@ -154,17 +154,11 @@ webpackJsonp([2],[
 	                options.mainRouterPromise.then(function (mainRouter) {
 	                    console.log("#####", mainRouter);
 
-	                    var router = mainRouter.getRouterEngine();
+	                    //var router = mainRouter.getRouterEngine();
+	                    //var router = window.Router;
+	                    //window.routerLOL = router;
 
-	                    router.add("notes(/)", function (params, complete) {
-	                        console.log("route 'notes/'");
-	                        complete();
-	                    });
-
-	                    router.add("notes/add", function (params, complete) {
-	                        console.log("route 'notes/add'");
-	                        complete();
-	                    });
+	                    //router.listen();
 
 	                    //mainRouter.addRoutes({
 	                    //    "notes(/)": function(params, complete) {
@@ -262,11 +256,11 @@ webpackJsonp([2],[
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
 
-	"use strict";
+	'use strict';
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 	var Router = (function () {
 	    function Router(options) {
@@ -274,25 +268,72 @@ webpackJsonp([2],[
 	    }
 
 	    _createClass(Router, [{
-	        key: "init",
+	        key: 'init',
 	        value: function init(routerEngine) {
 	            var self = this;
 	            var promise = new Promise(function (resolve, reject) {
 
-	                self._routerEngine = routerEngine;
-	                console.log(">>> router.init()");
+	                //#home
+	                //#docs/16
+	                //#docs/16/paragraph/17
+	                //#default
+
+	                var router = self._routerEngine = routerEngine;
+	                //var Router = window.Router;
+
+	                var pathHome = 'home';
+	                var pathDoc = 'docs/:id';
+	                var subpathParagraph = '/paragraph/:number'; // !!! you must use '/' for nested routing
+	                router.config({ mode: 'hash' });
+
+	                //router.add(pathHome, function () {
+	                //        console.log(pathHome)
+	                //    })
+	                //    .add(pathDoc, function (params) {
+	                //        console.log(pathDoc);
+	                //    })
+	                //    .add(function () { // default routing
+	                //        console.log('default');
+	                //        router.navigate(pathHome);
+	                //    });
+	                //router
+	                //    .to(pathDoc)
+	                //    .add(subpathParagraph, function (params) {
+	                //        console.log(subpathParagraph);
+	                //    });
+	                //router.listen(); // todo listen & navigate
+	                //router.navigate('home');
+
+	                router.add('/home-page', function () {
+	                    console.log('* route \'/home-page\'');
+	                });
+
+	                router.add('/notes(/)', function (params) {
+	                    console.log('* route \'notes/\'');
+	                    //complete();
+	                });
+
+	                router.add('/notes/add', function (params) {
+	                    console.log('* route \'notes/add\'');
+	                    //complete();
+	                });
+
+	                router.listen();
+	                //router.route('/home-page');
+
+	                console.log('>>> router.init()');
 
 	                if (true) {
 	                    resolve(self);
 	                } else {
-	                    reject(new Error("Error while router.init"));
+	                    reject(new Error('Error while router.init'));
 	                }
 	            });
 
 	            return promise;
 	        }
 	    }, {
-	        key: "getRouterEngine",
+	        key: 'getRouterEngine',
 	        value: function getRouterEngine() {
 	            return this._routerEngine;
 	        }

@@ -7,7 +7,56 @@ class Router {
         var self = this;
         var promise = new Promise(function(resolve, reject) {
 
-            self._routerEngine = routerEngine;
+            //#home
+            //#docs/16
+            //#docs/16/paragraph/17
+            //#default
+
+
+            var router = self._routerEngine = routerEngine;
+            //var Router = window.Router;
+
+            var pathHome = 'home';
+            var pathDoc = 'docs/:id';
+            var subpathParagraph = '/paragraph/:number'; // !!! you must use '/' for nested routing
+            router.config({mode: 'hash'});
+
+
+            //router.add(pathHome, function () {
+            //        console.log(pathHome)
+            //    })
+            //    .add(pathDoc, function (params) {
+            //        console.log(pathDoc);
+            //    })
+            //    .add(function () { // default routing
+            //        console.log('default');
+            //        router.navigate(pathHome);
+            //    });
+            //router
+            //    .to(pathDoc)
+            //    .add(subpathParagraph, function (params) {
+            //        console.log(subpathParagraph);
+            //    });
+            //router.listen(); // todo listen & navigate
+            //router.navigate('home');
+
+            router.add("/home-page", function() {
+                console.log("* route '/home-page'");
+            });
+
+            router.add("/notes(/)", function(params) {
+                console.log("* route 'notes/'");
+                //complete();
+            });
+
+            router.add("/notes/add", function(params) {
+                console.log("* route 'notes/add'");
+                //complete();
+            });
+
+            router.listen();
+            //router.route('/home-page');
+
             console.log(">>> router.init()");
 
             if (true) {

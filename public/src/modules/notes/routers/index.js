@@ -13,17 +13,13 @@ class Router {
             options.mainRouterPromise.then(function(mainRouter) {
                 console.log("#####", mainRouter);
 
-                var router = mainRouter.getRouterEngine();
+                //var router = mainRouter.getRouterEngine();
+                //var router = window.Router;
+                //window.routerLOL = router;
 
-                router.add("notes(/)", function(params, complete) {
-                    console.log("route 'notes/'");
-                    complete();
-                });
 
-                router.add("notes/add", function(params, complete) {
-                    console.log("route 'notes/add'");
-                    complete();
-                });
+
+                //router.listen();
 
                 //mainRouter.addRoutes({
                 //    "notes(/)": function(params, complete) {
