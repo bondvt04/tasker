@@ -18,14 +18,8 @@
 // просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
 require([
-    //"require",
-    "./config/amd.js",
-    "./config/modules.js"
-], function(amdConfig, modulesConfig){
-
-    // load aliases and pathes to AMD require system
-    //require.config(amdConfig);
-
+    "config/modules.js"
+], function(modulesConfig){
     // load modules
     //console.log(modulesConfig.modules);
 
@@ -39,13 +33,17 @@ require([
 
     if(true) {
         var zlo = "notes";
-        require(["./modules/"+zlo+"/index.js"], function(note) {
-            console.log("###", note);
+        require(["./modules/"+zlo+"/index.js"], function(moduleInitPromise) {
+            moduleInitPromise.then(function(module) {
+                console.log("###", module);
+            });
         });
 
         var zlo2 = "tasks"
-        require(["./modules/"+zlo2+"/index.js"], function(task) {
-            console.log("###", task);
+        require(["./modules/"+zlo2+"/index.js"], function(moduleInitPromise) {
+            moduleInitPromise.then(function(module) {
+                console.log("###", module);
+            });
         });
     }
 
@@ -77,10 +75,7 @@ require([
     //    console.log("asdf");
     //});
 
-    //require(modulesConfig.modules, function(){
-    //    debugger;
-    //    console.log(arguments);
-    //});
+
 
 
     //setTimeout(function() {

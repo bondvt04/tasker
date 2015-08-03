@@ -1,7 +1,7 @@
 /**
  * @class NotesModule
  */
-class NotesModule {
+class Module {
     constructor(options) {
         //this.model = options.model;
     }
@@ -25,12 +25,16 @@ class NotesModule {
 }
 
 define([
-
-], function() {
+    "services_router",
+    //"./routers/index.js",
+    //"services_network",
+    //"./networks/index.js",
+    //"./controllers/index.js",
+], function(mainRouter, moduleRouter, mainNetwork, moduleNetwork, controller) {
     var instance;
 
     return (function() {
-        return (instance = (instance || (new NotesModule()).init()));
+        return (instance = (instance || (new Module()).init()));
     })();
 });
 

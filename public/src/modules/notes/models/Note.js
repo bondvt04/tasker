@@ -1,11 +1,38 @@
-define(['../../../../../test12-dojo/bower_components/dojo/_base/declare'], function(declare){
-    var NoteClass = declare(null, {
-        constructor: function(){
-            console.debug("this is Note object #" + NoteClass.counter++);
-        }
-    });
+/**
+ * NoteModel
+ */
+class Model {
+    constructor() {
 
-    NoteClass.counter = 0;
+    }
 
-    return NoteClass;
+    init() {
+        var self = this;
+        var promise = new Promise(function(resolve, reject) {
+
+            self.resetToDefaults()
+            console.log(">>> Notes.NoteModel.init()");
+
+            if (true) {
+                resolve(self);
+            } else {
+                reject(new Error("Error while model.init"));
+            }
+        });
+
+        return promise;
+
+    }
+
+    resetToDefaults() {
+        this._text = "";
+    }
+}
+
+define([], function(){
+    var instance;
+
+    return (function() {
+        return (instance = (instance || (new Model()).init()));
+    })();
 });

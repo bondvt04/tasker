@@ -95,6 +95,8 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
+
 	// одна сущность, вроде:
 	// data
 	//   -role:knowledge|knowledge+learn|cloth|cloth+diary
@@ -110,19 +112,11 @@
 	// подключаем компоненты https://github.com/substack/browserify-handbook?md-time=1436784389971#reusable-components
 	// webpack --progress --colors
 
-
-
 	// просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
-	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
-	    //"require",
-	    __webpack_require__(1),
-	    __webpack_require__(2)
-	]; (function(amdConfig, modulesConfig){
+	"use strict";
 
-	    // load aliases and pathes to AMD require system
-	    //require.config(amdConfig);
-
+	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(1)]; (function (modulesConfig) {
 	    // load modules
 	    //console.log(modulesConfig.modules);
 
@@ -134,15 +128,19 @@
 	    //
 	    //console.log(context.resolve("notes"));
 
-	    if(true) {
+	    if (true) {
 	        var zlo = "notes";
-	        __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(3)("./"+zlo+"/index.js")]; (function(note) {
-	            console.log("###", note);
+	        __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(2)("./" + zlo + "/index.js")]; (function (moduleInitPromise) {
+	            moduleInitPromise.then(function (module) {
+	                console.log("###", module);
+	            });
 	        }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 
-	        var zlo2 = "tasks"
-	        __webpack_require__.e/* require */(2/* duplicate */, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(3)("./"+zlo2+"/index.js")]; (function(task) {
-	            console.log("###", task);
+	        var zlo2 = "tasks";
+	        __webpack_require__.e/* require */(2/* duplicate */, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(2)("./" + zlo2 + "/index.js")]; (function (moduleInitPromise) {
+	            moduleInitPromise.then(function (module) {
+	                console.log("###", module);
+	            });
 	        }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 	    }
 
@@ -156,7 +154,7 @@
 	    //    console.log("###", arguments);
 	    //})
 
-	//console.log("asdf");
+	    //console.log("asdf");
 
 	    //var zlo = "notes";
 	    //require.ensure([], function(require) {
@@ -165,20 +163,11 @@
 	    //    });
 	    //});
 
-
-
-
 	    //var zlo = [];
 	    ////
 	    //require(zlo, function() {
 	    //    console.log("asdf");
 	    //});
-
-	    //require(modulesConfig.modules, function(){
-	    //    debugger;
-	    //    console.log(arguments);
-	    //});
-
 
 	    //setTimeout(function() {
 	    //    require([
@@ -189,7 +178,6 @@
 	    //        });
 	    //    });
 	    //}, 5000);
-
 
 	    //require([
 	    //    "services_network",
@@ -233,9 +221,7 @@
 	    ], function(router, network){
 	        //router.init();
 	        //network.init();
-
-
-	        //require([
+	          //require([
 	        //    //"modules_tasks",
 	        //    "modules_notes"
 	        //], function() {
@@ -284,8 +270,7 @@
 	    });*/
 	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 
-
-
+	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/bond-it/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } })(); }
 
 /***/ }
 /******/ ]);
