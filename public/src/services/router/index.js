@@ -20,7 +20,7 @@ class Router {
 
             router.config({
                 mode: 'hash',
-                keys: true,
+                keys: true
                 //root: "/"
             });
 
@@ -44,17 +44,27 @@ class Router {
             //router.listen(); // todo listen & navigate
             //router.navigate('home');
 
-            router.add("/home-page", function() {
+            router.add("home-page", function() {
                 console.log("* route '/home-page'");
             });
 
-            router.add("/notes(/)", function(params) {
+            router.add("notes(/)", function(params) {
                 console.log("* route 'notes/'");
                 //complete();
             });
 
-            router.add("/notes/add", function(params) {
+            router.add("notes/add", function(params) {
                 console.log("* route 'notes/add'");
+                //complete();
+            });
+
+            router.add("notes/addffff", function(params) {
+                console.log("* route 'notes/addffff'");
+                //complete();
+            });
+
+            router.add("notes/addfff", function(params) {
+                console.log("* route 'notes/addfff'");
                 //complete();
             });
 

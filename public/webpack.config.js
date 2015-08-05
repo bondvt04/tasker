@@ -80,12 +80,12 @@ var development = {
     },
     resolve: {
         //extensions: ['', '.js', '.jsx']
-        root: "/Users/bond-it/www/tasker/public/src",
+        root: path.join(__dirname, "src"),
         alias: {
             services_router: 'services/router/index.js',
             //services_router: '/Users/bond-it/www/tasker/public/src/services/router/index.js',
             services_network: 'services/network/index.js'
-        },
+        }
 
         //root: [path.join(__dirname, "bower_components")]// add to PATH ./bower_components
     }
