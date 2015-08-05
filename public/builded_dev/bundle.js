@@ -123,25 +123,34 @@
 	     * Load modules and start routing when all routes loaded
 	     */
 	    (function () {
+
+	        var modulesToLoadLeft = modulesConfig.enabledModules.length;
 	        var modulePromises = [];
 
 	        _.each(modulesConfig.enabledModules, function (moduleName) {
 	            __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(2)("./" + moduleName + "/index.js")]; (function (modulePromise) {
 	                modulePromises.push(modulePromise);
+
+	                modulesToLoadLeft--;
+	                if (modulesToLoadLeft <= 0) {
+	                    startRouter();
+	                }
 	            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 	        });
 
-	        Promise.all(modulePromises).then(function (arrayOfResults) {
-	            __webpack_require__.e/* require */(3, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(5)]; (function (mainRouterPromise) {
-	                mainRouterPromise.then(function (mainRouter) {
-	                    console.log("---", mainRouter);
-	                    mainRouter.listen();
-	                    mainRouter.check(mainRouter.getCurrent());
-	                });
-	            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
-	        }, function (err) {
-	            console.error(err);
-	        });
+	        function startRouter() {
+	            Promise.all(modulePromises).then(function (arrayOfResults) {
+	                __webpack_require__.e/* require */(3, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(5)]; (function (mainRouterPromise) {
+	                    mainRouterPromise.then(function (mainRouter) {
+	                        console.log("---", mainRouter);
+	                        mainRouter.listen();
+	                        mainRouter.check(mainRouter.getCurrent());
+	                    });
+	                }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
+	            }, function (err) {
+	                console.error(err);
+	            });
+	        }
 	    })();
 
 	    //

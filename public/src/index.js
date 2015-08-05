@@ -26,25 +26,35 @@ require([
      * Load modules and start routing when all routes loaded
      */
     (function() {
+
+
+        var modulesToLoadLeft = modulesConfig.enabledModules.length;
         var modulePromises = [];
 
         _.each(modulesConfig.enabledModules, function(moduleName) {
             require(["./modules/"+moduleName+"/index.js"], function(modulePromise) {
                 modulePromises.push(modulePromise);
+
+                modulesToLoadLeft--;
+                if(modulesToLoadLeft <= 0) {
+                    startRouter();
+                }
             });
         });
 
-        Promise.all(modulePromises).then(function(arrayOfResults) {
-            require(["services_router"], function(mainRouterPromise) {
-                mainRouterPromise.then(function(mainRouter) {
-                    console.log("---", mainRouter);
-                    mainRouter.listen();
-                    mainRouter.check(mainRouter.getCurrent());
+        function startRouter() {
+            Promise.all(modulePromises).then(function(arrayOfResults) {
+                require(["services_router"], function(mainRouterPromise) {
+                    mainRouterPromise.then(function(mainRouter) {
+                        console.log("---", mainRouter);
+                        mainRouter.listen();
+                        mainRouter.check(mainRouter.getCurrent());
+                    });
                 });
+            }, function(err) {
+                console.error(err);
             });
-        }, function(err) {
-            console.error(err);
-        });
+        }
     })();
 
     //
