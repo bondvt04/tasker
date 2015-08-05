@@ -26,8 +26,24 @@ class Controller {
 }
 
 var actions = {
-    index : function() {
-        console.log("> Notes.controller.actions.index");
+    index: function(params, complete) {
+        console.log("* notes.controller.index");
+        complete();
+    },
+
+    add: function(params, complete) {
+        console.log("* notes.controller.add");
+        complete();
+    },
+
+    addfff: function(params, complete) {
+        console.log("* notes.controller.addfff");
+        complete();
+    },
+
+    addffff: function(params, complete) {
+        console.log("* notes.controller.addffff");
+        complete();
     }
 }
 

@@ -14,31 +14,12 @@ class Router {
 
             Promise.all(promises).then(function(arrayOfResults) {
                 var mainRouter = arrayOfResults[0];
-                var indexController = arrayOfResults[1];
+                var controller = arrayOfResults[1];
 
-                mainRouter.add("home-page", function() {
-                    console.log("* route '/home-page'");
-                });
-
-                mainRouter.add("notes(/)", function(params) {
-                    console.log("* route 'notes/'");
-                    //complete();
-                });
-
-                mainRouter.add("notes/add", function(params) {
-                    console.log("* route 'notes/add'");
-                    //complete();
-                });
-
-                mainRouter.add("notes/addffff", function(params) {
-                    console.log("* route 'notes/addffff'");
-                    //complete();
-                });
-
-                mainRouter.add("notes/addfff", function(params) {
-                    console.log("* route 'notes/addfff'");
-                    //complete();
-                });
+                mainRouter.add("notes(/)", controller.actions.index);
+                mainRouter.add("notes/add", controller.actions.add);
+                mainRouter.add("notes/addffff", controller.actions.addffff);
+                mainRouter.add("notes/addfff", controller.actions.addfff);
 
                 console.log("> NotesRouter.init()");
 
