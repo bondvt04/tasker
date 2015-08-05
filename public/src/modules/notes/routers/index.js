@@ -16,10 +16,10 @@ class Router {
                 var mainRouter = arrayOfResults[0];
                 var controller = arrayOfResults[1];
 
-                mainRouter.add("notes(/)", controller.actions.index);
-                mainRouter.add("notes/add", controller.actions.add);
-                mainRouter.add("notes/addffff", controller.actions.addffff);
-                mainRouter.add("notes/addfff", controller.actions.addfff);
+                mainRouter.add("notes(/)", function(params, complete) {controller.doAction("index", arguments)});
+                mainRouter.add("notes/add", function(params, complete) {controller.doAction("add", arguments)});
+                mainRouter.add("notes/addffff", function(params, complete) {controller.doAction("addffff", arguments)});
+                mainRouter.add("notes/addfff", function(params, complete) {controller.doAction("addfff", arguments)});
 
                 console.log("> NotesRouter.init()");
 

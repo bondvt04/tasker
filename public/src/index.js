@@ -19,6 +19,9 @@
 
 // просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
+/**
+ * @todo spinner while modules load
+ */
 require([
     "config/modules.js",
 ], function(modulesConfig){

@@ -116,6 +116,9 @@
 
 	// просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
+	/**
+	 * @todo spinner while modules load
+	 */
 	"use strict";
 
 	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(1)]; (function (modulesConfig) {

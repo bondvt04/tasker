@@ -6,7 +6,7 @@ webpackJsonp([2,3],[
 
 	var map = {
 		"./notes/index.js": 3,
-		"./tasks/index.js": 11
+		"./tasks/index.js": 12
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -166,10 +166,18 @@ webpackJsonp([2,3],[
 	                    var mainRouter = arrayOfResults[0];
 	                    var controller = arrayOfResults[1];
 
-	                    mainRouter.add("notes(/)", controller.actions.index);
-	                    mainRouter.add("notes/add", controller.actions.add);
-	                    mainRouter.add("notes/addffff", controller.actions.addffff);
-	                    mainRouter.add("notes/addfff", controller.actions.addfff);
+	                    mainRouter.add("notes(/)", function (params, complete) {
+	                        controller.doAction("index", arguments);
+	                    });
+	                    mainRouter.add("notes/add", function (params, complete) {
+	                        controller.doAction("add", arguments);
+	                    });
+	                    mainRouter.add("notes/addffff", function (params, complete) {
+	                        controller.doAction("addffff", arguments);
+	                    });
+	                    mainRouter.add("notes/addfff", function (params, complete) {
+	                        controller.doAction("addfff", arguments);
+	                    });
 
 	                    console.log("> NotesRouter.init()");
 
@@ -747,6 +755,7 @@ webpackJsonp([2,3],[
 
 	/**
 	 * @class NotesIndexController
+	 * @todo lazy load of models etc
 	 */
 	"use strict";
 
@@ -773,7 +782,6 @@ webpackJsonp([2,3],[
 	                    var network = arrayOfResults[0];
 	                    var noteModel = self._noteModel = arrayOfResults[1];
 
-	                    self.actions = actions;
 	                    console.log("> NotesIndexController.init()");
 
 	                    resolve(self);
@@ -784,34 +792,52 @@ webpackJsonp([2,3],[
 
 	            return promise;
 	        }
+	    }, {
+	        key: "__beforeAction",
+	        value: function __beforeAction() {}
+	    }, {
+	        key: "__afterAction",
+	        value: function __afterAction(routerComplete) {
+	            routerComplete();
+	        }
+	    }, {
+	        key: "doAction",
+	        value: function doAction(actionName, args) {
+	            var functionName = "_" + actionName + "Action";
+
+	            if (this[functionName] && "function" === typeof this[functionName]) {
+	                this.__beforeAction();
+	                this[functionName].apply(this, _toConsumableArray(Array.prototype.slice.call(args)));
+	                this.__afterAction(args[1]);
+	            }
+	        }
+	    }, {
+	        key: "_indexAction",
+	        value: function _indexAction(routerParams, routerComplete) {
+	            console.log("* notes.controller.index");
+
+	            var model = {
+	                models: [{ text: "hello" }, { text: "world" }]
+	            };
+
+	            var data = {
+	                model: model
+	            };
+
+	            !(function webpackMissingModule() { var e = new Error("Cannot find module \".\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())!/* require */(/* empty */function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = "html!/Users/anatoliybondar/www/tasker/public/src/modules/notes/views/index/lol.html"; (function (html) {
+	                console.log(html);
+	                document.getElementById("content").innerHTML = html;
+	            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}());
+
+	            //html = new EJS({url: '/modules/notes/views/index/index.ejs'}).render(data);
+	            //document.getElementById("content").innerHTML = html;
+	        }
 	    }]);
 
 	    return Controller;
 	})();
 
-	var actions = {
-	    index: function index(params, complete) {
-	        console.log("* notes.controller.index");
-	        complete();
-	    },
-
-	    add: function add(params, complete) {
-	        console.log("* notes.controller.add");
-	        complete();
-	    },
-
-	    addfff: function addfff(params, complete) {
-	        console.log("* notes.controller.addfff");
-	        complete();
-	    },
-
-	    addffff: function addffff(params, complete) {
-	        console.log("* notes.controller.addffff");
-	        complete();
-	    }
-	};
-
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(8), __webpack_require__(10)], __WEBPACK_AMD_DEFINE_RESULT__ = function (network, model) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(9), __webpack_require__(11)], __WEBPACK_AMD_DEFINE_RESULT__ = function (network, model) {
 	    var instance;
 	    var promises = arguments;
 	    //console.log("^^^", promises);
@@ -895,6 +921,19 @@ webpackJsonp([2,3],[
 
 /***/ },
 /* 8 */
+/***/ function(module, exports) {
+
+	function webpackContext(req) {
+		throw new Error("Cannot find module '" + req + "'.");
+	}
+	webpackContext.keys = function() { return []; };
+	webpackContext.resolve = webpackContext;
+	module.exports = webpackContext;
+	webpackContext.id = 8;
+
+
+/***/ },
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -937,7 +976,7 @@ webpackJsonp([2,3],[
 	    return Network;
 	})();
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(9)], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(10)], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    var instance;
 	    var promises = arguments;
 	    //console.log("^^^", promises);
@@ -987,7 +1026,7 @@ webpackJsonp([2,3],[
 	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } })(); }
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -1045,7 +1084,7 @@ webpackJsonp([2,3],[
 	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } })(); }
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
@@ -1110,7 +1149,7 @@ webpackJsonp([2,3],[
 	/* REACT HOT LOADER */ }).call(this); if (false) { (function () { module.hot.dispose(function (data) { data.makeHot = module.makeHot; }); if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/makeExportsHot.js"), foundReactClasses = false; if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Note.js" + ": " + err.message); } }); } } })(); }
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {

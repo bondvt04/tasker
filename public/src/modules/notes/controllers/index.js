@@ -1,5 +1,6 @@
 /**
  * @class NotesIndexController
+ * @todo lazy load of models etc
  */
 class Controller {
     init() {
@@ -12,7 +13,6 @@ class Controller {
                 var network = arrayOfResults[0];
                 var noteModel = self._noteModel = arrayOfResults[1];
 
-                self.actions = actions;
                 console.log("> NotesIndexController.init()");
 
                 resolve(self);
@@ -23,27 +23,46 @@ class Controller {
 
         return promise;
     }
-}
 
-var actions = {
-    index: function(params, complete) {
+    __beforeAction() {
+
+    }
+
+    __afterAction(routerComplete) {
+        routerComplete();
+    }
+
+    doAction(actionName, args) {
+        var functionName = "_"+actionName+"Action";
+
+        if(this[functionName] && "function" === typeof this[functionName]) {
+            this.__beforeAction();
+            this[functionName](...Array.prototype.slice.call(args));
+            this.__afterAction(args[1]);
+        }
+    }
+
+    _indexAction(routerParams, routerComplete) {
         console.log("* notes.controller.index");
-        complete();
-    },
 
-    add: function(params, complete) {
-        console.log("* notes.controller.add");
-        complete();
-    },
+        var model = {
+            models: [
+                {text: "hello"},
+                {text: "world"},
+            ]
+        }
 
-    addfff: function(params, complete) {
-        console.log("* notes.controller.addfff");
-        complete();
-    },
+        var data = {
+            model: model
+        }
 
-    addffff: function(params, complete) {
-        console.log("* notes.controller.addffff");
-        complete();
+        require("html!/Users/anatoliybondar/www/tasker/public/src/modules/notes/views/index/lol.html", function(html) {
+            console.log(html);
+            document.getElementById("content").innerHTML = html;
+        });
+
+        //html = new EJS({url: '/modules/notes/views/index/index.ejs'}).render(data);
+        //document.getElementById("content").innerHTML = html;
     }
 }
 
