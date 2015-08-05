@@ -1,3 +1,5 @@
+// @todo class and see "annotations" for WebStorm
+
 // одна сущность, вроде:
 // data
 //   -role:knowledge|knowledge+learn|cloth|cloth+diary
@@ -18,34 +20,32 @@
 // просто про webpack - кукбук - http://habrahabr.ru/post/245991/ - лоадеры картинок и стилей супер!!!
 
 require([
-    "config/modules.js"
+    "config/modules.js",
 ], function(modulesConfig){
-    // load modules
-    //console.log(modulesConfig.modules);
+    /**
+     * Load modules and start routing when all routes loaded
+     */
+    (function() {
+        var modulePromises = [];
 
-    //_.each(modulesConfig.modules, function(value, index) {
-    //    console.log(index+"="+value);
-    //})
-
-    //var context = require.context("./modules/", false, /[^\/]+\/index\.js/);
-    //
-    //console.log(context.resolve("notes"));
-
-    if(true) {
-        var zlo = "notes";
-        require(["./modules/"+zlo+"/index.js"], function(moduleInitPromise) {
-            moduleInitPromise.then(function(module) {
-                console.log("###", module);
+        _.each(modulesConfig.enabledModules, function(moduleName) {
+            require(["./modules/"+moduleName+"/index.js"], function(modulePromise) {
+                modulePromises.push(modulePromise);
             });
         });
 
-        var zlo2 = "tasks"
-        require(["./modules/"+zlo2+"/index.js"], function(moduleInitPromise) {
-            moduleInitPromise.then(function(module) {
-                console.log("###", module);
+        Promise.all(modulePromises).then(function(arrayOfResults) {
+            require(["services_router"], function(mainRouterPromise) {
+                mainRouterPromise.then(function(mainRouter) {
+                    console.log("---", mainRouter);
+                    mainRouter.listen();
+                    mainRouter.check(mainRouter.getCurrent());
+                });
             });
+        }, function(err) {
+            console.error(err);
         });
-    }
+    })();
 
     //
     //

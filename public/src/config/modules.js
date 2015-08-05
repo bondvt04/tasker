@@ -1,6 +1,6 @@
 define([], function() {
     return {
-        modules: [
+        enabledModules: [
             "tasks",
             "notes"
             //diary: "",

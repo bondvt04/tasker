@@ -10,8 +10,8 @@ class Model {
         var self = this;
         var promise = new Promise(function(resolve, reject) {
 
-            self.resetToDefaults()
-            console.log(">>> Notes.NoteModel.init()");
+            self.resetToDefaults();
+            console.log("> Notes.NoteModel.init()");
 
             if (true) {
                 resolve(self);
@@ -21,7 +21,6 @@ class Model {
         });
 
         return promise;
-
     }
 
     resetToDefaults() {
@@ -31,8 +30,11 @@ class Model {
 
 define([], function(){
     var instance;
+    var promises = arguments;
+    //console.log("^^^", promises);
 
     return (function() {
-        return (instance = (instance || (new Model()).init()));
+        // fill init function with arguments as is (not as array)
+        return (instance = (instance || (new Model()).init(...Array.prototype.slice.call(promises))));
     })();
 });

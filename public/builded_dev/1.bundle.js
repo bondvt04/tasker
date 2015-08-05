@@ -9,7 +9,7 @@ webpackJsonp([1],[
 
 	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    return {
-	        modules: ["tasks", "notes"
+	        enabledModules: ["tasks", "notes"
 	        //diary: "",
 	        //"../modules/notes/index.js"
 	        ]

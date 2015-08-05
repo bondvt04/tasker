@@ -8,16 +8,15 @@ class Network {
 
     init() {
         var self = this;
+        var promises = arguments;
+
         var promise = new Promise(function(resolve, reject) {
-
-            //self._router = routerEngine;
-            console.log("> NotesNetwork.init()");
-
-            if (true) {
+            Promise.all(promises).then(function(arrayOfResults) {
+                console.log("> NotesNetwork.init()");
                 resolve(self);
-            } else {
-                reject(new Error("Error while notes.network.init"));
-            }
+            }, function(err) {
+                reject(err);
+            });
         });
 
         return promise;
@@ -26,11 +25,14 @@ class Network {
 
 define([
     "services_network"
-], function(mainNetwork) {
+], function() {
     var instance;
+    var promises = arguments;
+    //console.log("^^^", promises);
 
     return (function() {
-        return (instance = (instance || (new Network()).init()));
+        // fill init function with arguments as is (not as array)
+        return (instance = (instance || (new Network()).init(...Array.prototype.slice.call(promises))));
     })();
 });
 

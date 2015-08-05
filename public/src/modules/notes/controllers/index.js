@@ -1,23 +1,24 @@
 /**
- * @class NotesController
+ * @class NotesIndexController
  */
 class Controller {
-    constructor(options) {
-        this._modelPromise = options.model;
-    }
-
     init() {
         var self = this;
+        var promises = arguments;
+
         var promise = new Promise(function(resolve, reject) {
 
-            self.actions = actions;
-            console.log(">>> NotesController.init()");
+            Promise.all(promises).then(function(arrayOfResults) {
+                var network = arrayOfResults[0];
+                var noteModel = self._noteModel = arrayOfResults[1];
 
-            if (true) {
+                self.actions = actions;
+                console.log("> NotesIndexController.init()");
+
                 resolve(self);
-            } else {
-                reject(new Error("Error while controller.init"));
-            }
+            }, function(err) {
+                reject(err);
+            });
         });
 
         return promise;
@@ -33,13 +34,14 @@ var actions = {
 define([
     "../networks/index.js",
     "../models/Note.js"
-], function(noteModel){
+], function(network, model){
     var instance;
+    var promises = arguments;
+    //console.log("^^^", promises);
 
     return (function() {
-        return (instance = (instance || (new Controller({
-            model: noteModel
-        })).init()));
+        // fill init function with arguments as is (not as array)
+        return (instance = (instance || (new Controller()).init(...Array.prototype.slice.call(promises))));
     })();
 });
 

@@ -6,19 +6,17 @@ class Module {
         //this.model = options.model;
     }
 
-    init(options) {
+    init() {
         var self = this;
+        var promises = arguments;
+
         var promise = new Promise(function(resolve, reject) {
-
-            //self._router = routerEngine;
-            console.log(">>> TasksModule.init()");
-            console.log(options);
-
-            if (true) {
+            Promise.all(promises).then(function(arrayOfResults) {
+                console.log("> TasksModule.init()");
                 resolve(self);
-            } else {
-                reject(new Error("Error while router.init"));
-            }
+            }, function(err) {
+                reject(err);
+            });
         });
 
         return promise;
@@ -33,9 +31,12 @@ define([
     //"./controllers/index.js",
 ], function(mainRouter, router, mainNetwork, network, controller) {
     var instance;
+    var promises = arguments;
+    //console.log("^^^", promises);
 
     return (function() {
-        return (instance = (instance || (new Module()).init(arguments)));
+        // fill init function with arguments as is (not as array)
+        return (instance = (instance || (new Module()).init(...Array.prototype.slice.call(promises))));
     })();
 });
 

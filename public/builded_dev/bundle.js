@@ -97,6 +97,8 @@
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
 
+	// @todo class and see "annotations" for WebStorm
+
 	// одна сущность, вроде:
 	// data
 	//   -role:knowledge|knowledge+learn|cloth|cloth+diary
@@ -117,32 +119,30 @@
 	"use strict";
 
 	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(1)]; (function (modulesConfig) {
-	    // load modules
-	    //console.log(modulesConfig.modules);
+	    /**
+	     * Load modules and start routing when all routes loaded
+	     */
+	    (function () {
+	        var modulePromises = [];
 
-	    //_.each(modulesConfig.modules, function(value, index) {
-	    //    console.log(index+"="+value);
-	    //})
+	        _.each(modulesConfig.enabledModules, function (moduleName) {
+	            __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(2)("./" + moduleName + "/index.js")]; (function (modulePromise) {
+	                modulePromises.push(modulePromise);
+	            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
+	        });
 
-	    //var context = require.context("./modules/", false, /[^\/]+\/index\.js/);
-	    //
-	    //console.log(context.resolve("notes"));
-
-	    if (true) {
-	        var zlo = "notes";
-	        __webpack_require__.e/* require */(2, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(2)("./" + zlo + "/index.js")]; (function (moduleInitPromise) {
-	            moduleInitPromise.then(function (module) {
-	                console.log("###", module);
-	            });
-	        }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
-
-	        var zlo2 = "tasks";
-	        __webpack_require__.e/* require */(2/* duplicate */, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(2)("./" + zlo2 + "/index.js")]; (function (moduleInitPromise) {
-	            moduleInitPromise.then(function (module) {
-	                console.log("###", module);
-	            });
-	        }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
-	    }
+	        Promise.all(modulePromises).then(function (arrayOfResults) {
+	            __webpack_require__.e/* require */(3, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(5)]; (function (mainRouterPromise) {
+	                mainRouterPromise.then(function (mainRouter) {
+	                    console.log("---", mainRouter);
+	                    mainRouter.listen();
+	                    mainRouter.check(mainRouter.getCurrent());
+	                });
+	            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
+	        }, function (err) {
+	            console.error(err);
+	        });
+	    })();
 
 	    //
 	    //

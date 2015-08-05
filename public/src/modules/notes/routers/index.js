@@ -6,55 +6,46 @@ class Router {
 
     }
 
-    init(options) {
+    init() {
         var self = this;
+        var promises = arguments;
+
         var promise = new Promise(function(resolve, reject) {
 
-            options.mainRouterPromise.then(function(mainRouter) {
-                console.log("#####", mainRouter);
+            Promise.all(promises).then(function(arrayOfResults) {
+                var mainRouter = arrayOfResults[0];
+                var indexController = arrayOfResults[1];
 
-                //var router = mainRouter.getRouterEngine();
-                //var router = window.Router;
-                //window.routerLOL = router;
+                mainRouter.add("home-page", function() {
+                    console.log("* route '/home-page'");
+                });
 
+                mainRouter.add("notes(/)", function(params) {
+                    console.log("* route 'notes/'");
+                    //complete();
+                });
 
+                mainRouter.add("notes/add", function(params) {
+                    console.log("* route 'notes/add'");
+                    //complete();
+                });
 
-                //router.listen();
+                mainRouter.add("notes/addffff", function(params) {
+                    console.log("* route 'notes/addffff'");
+                    //complete();
+                });
 
-                //mainRouter.addRoutes({
-                //    "notes(/)": function(params, complete) {
-                //        console.log("route 'notes/'");
-                //        complete();
-                //    },
-                //    "notes/add": function(params, complete) {
-                //        console.log("route 'notes/add'");
-                //        complete();
-                //    }
-                //});
-            });
+                mainRouter.add("notes/addfff", function(params) {
+                    console.log("* route 'notes/addfff'");
+                    //complete();
+                });
 
+                console.log("> NotesRouter.init()");
 
-
-            //Router
-            //    .add(about, function(params) { // ~about ('/about/:id')
-            //        // todo your code
-            //    })
-            //    .add(posts, function(params, complete) { // ~posts ('/posts')
-            //        // todo your code
-            //        complete(); // do it by async way
-            //    })
-            //    .add(function(){ // default route  for ~index ('/')
-            //        // todo default code
-            //    });
-
-            //self._router = routerEngine;
-            console.log("> NotesRouter.init()");
-
-            if (true) {
                 resolve(self);
-            } else {
-                reject(new Error("Error while notes.router.init"));
-            }
+            }, function(err) {
+                reject(err);
+            });
         });
 
         return promise;
@@ -64,16 +55,14 @@ class Router {
 define([
     "services_router",
     "../controllers/index.js",
-], function(mainRouter, indexController) {
+], function() {
     var instance;
+    var promises = arguments;
+    //console.log("^^^", promises);
 
     return (function() {
-        return (instance = (instance || (new Router()).init({
-            mainRouterPromise: mainRouter,
-            controllers: {
-                index: indexController
-            }
-        })));
+        // fill init function with arguments as is (not as array)
+        return (instance = (instance || (new Router()).init(...Array.prototype.slice.call(promises))));
     })();
 });
 

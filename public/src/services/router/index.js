@@ -6,75 +6,17 @@ class Router {
     init(routerEngine) {
         var self = this;
         var promise = new Promise(function(resolve, reject) {
-
-            //#home
-            //#docs/16
-            //#docs/16/paragraph/17
-            //#default
-
-
-            var router = window.routerRR = self._routerEngine = routerEngine;
-            //var Router = window.Router;
-
-            router.listen();
-
-            router.config({
-                mode: 'hash',
-                keys: true
-                //root: "/"
-            });
-
-
-
-            //router.add(pathHome, function () {
-            //        console.log(pathHome)
-            //    })
-            //    .add(pathDoc, function (params) {
-            //        console.log(pathDoc);
-            //    })
-            //    .add(function () { // default routing
-            //        console.log('default');
-            //        router.navigate(pathHome);
-            //    });
-            //router
-            //    .to(pathDoc)
-            //    .add(subpathParagraph, function (params) {
-            //        console.log(subpathParagraph);
-            //    });
-            //router.listen(); // todo listen & navigate
-            //router.navigate('home');
-
-            router.add("home-page", function() {
-                console.log("* route '/home-page'");
-            });
-
-            router.add("notes(/)", function(params) {
-                console.log("* route 'notes/'");
-                //complete();
-            });
-
-            router.add("notes/add", function(params) {
-                console.log("* route 'notes/add'");
-                //complete();
-            });
-
-            router.add("notes/addffff", function(params) {
-                console.log("* route 'notes/addffff'");
-                //complete();
-            });
-
-            router.add("notes/addfff", function(params) {
-                console.log("* route 'notes/addfff'");
-                //complete();
-            });
-
-
-            //router.route('/home-page');
-
-            console.log(">>> router.init()");
-
             if (true) {
-                resolve(self);
+                var router = self._routerEngine = routerEngine;
+
+                router.config({
+                    mode: 'hash',
+                    keys: true
+                    //root: "/"
+                });
+
+                console.log("> !mainRouter.init()");
+                resolve(self._routerEngine);
             } else {
                 reject(new Error("Error while router.init"));
             }
@@ -83,9 +25,9 @@ class Router {
         return promise;
     }
 
-    getRouterEngine() {
-        return this._routerEngine;
-    }
+    //getRouterEngine() {
+    //    return this._routerEngine;
+    //}
 }
 
 define([

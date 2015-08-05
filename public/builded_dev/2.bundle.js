@@ -1,4 +1,4 @@
-webpackJsonp([2],[
+webpackJsonp([2,3],[
 /* 0 */,
 /* 1 */,
 /* 2 */
@@ -35,6 +35,8 @@ webpackJsonp([2],[
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Module = (function () {
@@ -46,16 +48,16 @@ webpackJsonp([2],[
 	        key: "init",
 	        value: function init() {
 	            var self = this;
+	            var promises = arguments;
+
 	            var promise = new Promise(function (resolve, reject) {
-
-	                //self._router = routerEngine;
-	                console.log(">>> NotesModule.init()");
-
-	                if (true) {
+	                Promise.all(promises).then(function (arrayOfResults) {
+	                    var router = arrayOfResults[0];
+	                    console.log("> NotesModule.init()");
 	                    resolve(self);
-	                } else {
-	                    reject(new Error("Error while router.init"));
-	                }
+	                }, function (err) {
+	                    reject(err);
+	                });
 	            });
 
 	            return promise;
@@ -65,11 +67,16 @@ webpackJsonp([2],[
 	    return Module;
 	})();
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_RESULT__ = function (moduleRouter) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    var instance;
+	    var promises = arguments;
+	    //console.log("^^^", promises);
 
 	    return (function () {
-	        return instance = instance || new Module().init();
+	        var _ref;
+
+	        // fill init function with arguments as is (not as array)
+	        return instance = instance || (_ref = new Module()).init.apply(_ref, _toConsumableArray(Array.prototype.slice.call(promises)));
 	    })();
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -138,6 +145,8 @@ webpackJsonp([2],[
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Router = (function () {
@@ -147,51 +156,46 @@ webpackJsonp([2],[
 
 	    _createClass(Router, [{
 	        key: "init",
-	        value: function init(options) {
+	        value: function init() {
 	            var self = this;
+	            var promises = arguments;
+
 	            var promise = new Promise(function (resolve, reject) {
 
-	                options.mainRouterPromise.then(function (mainRouter) {
-	                    console.log("#####", mainRouter);
+	                Promise.all(promises).then(function (arrayOfResults) {
+	                    var mainRouter = arrayOfResults[0];
+	                    var indexController = arrayOfResults[1];
 
-	                    //var router = mainRouter.getRouterEngine();
-	                    //var router = window.Router;
-	                    //window.routerLOL = router;
+	                    mainRouter.add("home-page", function () {
+	                        console.log("* route '/home-page'");
+	                    });
 
-	                    //router.listen();
+	                    mainRouter.add("notes(/)", function (params) {
+	                        console.log("* route 'notes/'");
+	                        //complete();
+	                    });
 
-	                    //mainRouter.addRoutes({
-	                    //    "notes(/)": function(params, complete) {
-	                    //        console.log("route 'notes/'");
-	                    //        complete();
-	                    //    },
-	                    //    "notes/add": function(params, complete) {
-	                    //        console.log("route 'notes/add'");
-	                    //        complete();
-	                    //    }
-	                    //});
-	                });
+	                    mainRouter.add("notes/add", function (params) {
+	                        console.log("* route 'notes/add'");
+	                        //complete();
+	                    });
 
-	                //Router
-	                //    .add(about, function(params) { // ~about ('/about/:id')
-	                //        // todo your code
-	                //    })
-	                //    .add(posts, function(params, complete) { // ~posts ('/posts')
-	                //        // todo your code
-	                //        complete(); // do it by async way
-	                //    })
-	                //    .add(function(){ // default route  for ~index ('/')
-	                //        // todo default code
-	                //    });
+	                    mainRouter.add("notes/addffff", function (params) {
+	                        console.log("* route 'notes/addffff'");
+	                        //complete();
+	                    });
 
-	                //self._router = routerEngine;
-	                console.log("> NotesRouter.init()");
+	                    mainRouter.add("notes/addfff", function (params) {
+	                        console.log("* route 'notes/addfff'");
+	                        //complete();
+	                    });
 
-	                if (true) {
+	                    console.log("> NotesRouter.init()");
+
 	                    resolve(self);
-	                } else {
-	                    reject(new Error("Error while notes.router.init"));
-	                }
+	                }, function (err) {
+	                    reject(err);
+	                });
 	            });
 
 	            return promise;
@@ -201,16 +205,16 @@ webpackJsonp([2],[
 	    return Router;
 	})();
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5), __webpack_require__(7)], __WEBPACK_AMD_DEFINE_RESULT__ = function (mainRouter, indexController) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5), __webpack_require__(7)], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    var instance;
+	    var promises = arguments;
+	    //console.log("^^^", promises);
 
 	    return (function () {
-	        return instance = instance || new Router().init({
-	            mainRouterPromise: mainRouter,
-	            controllers: {
-	                index: indexController
-	            }
-	        });
+	        var _ref;
+
+	        // fill init function with arguments as is (not as array)
+	        return instance = instance || (_ref = new Router()).init.apply(_ref, _toConsumableArray(Array.prototype.slice.call(promises)));
 	    })();
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -272,71 +276,17 @@ webpackJsonp([2],[
 	        value: function init(routerEngine) {
 	            var self = this;
 	            var promise = new Promise(function (resolve, reject) {
-
-	                //#home
-	                //#docs/16
-	                //#docs/16/paragraph/17
-	                //#default
-
-	                var router = window.routerRR = self._routerEngine = routerEngine;
-	                //var Router = window.Router;
-
-	                router.listen();
-
-	                router.config({
-	                    mode: "hash",
-	                    keys: true
-	                    //root: "/"
-	                });
-
-	                //router.add(pathHome, function () {
-	                //        console.log(pathHome)
-	                //    })
-	                //    .add(pathDoc, function (params) {
-	                //        console.log(pathDoc);
-	                //    })
-	                //    .add(function () { // default routing
-	                //        console.log('default');
-	                //        router.navigate(pathHome);
-	                //    });
-	                //router
-	                //    .to(pathDoc)
-	                //    .add(subpathParagraph, function (params) {
-	                //        console.log(subpathParagraph);
-	                //    });
-	                //router.listen(); // todo listen & navigate
-	                //router.navigate('home');
-
-	                router.add("home-page", function () {
-	                    console.log("* route '/home-page'");
-	                });
-
-	                router.add("notes(/)", function (params) {
-	                    console.log("* route 'notes/'");
-	                    //complete();
-	                });
-
-	                router.add("notes/add", function (params) {
-	                    console.log("* route 'notes/add'");
-	                    //complete();
-	                });
-
-	                router.add("notes/addffff", function (params) {
-	                    console.log("* route 'notes/addffff'");
-	                    //complete();
-	                });
-
-	                router.add("notes/addfff", function (params) {
-	                    console.log("* route 'notes/addfff'");
-	                    //complete();
-	                });
-
-	                //router.route('/home-page');
-
-	                console.log(">>> router.init()");
-
 	                if (true) {
-	                    resolve(self);
+	                    var router = self._routerEngine = routerEngine;
+
+	                    router.config({
+	                        mode: "hash",
+	                        keys: true
+	                        //root: "/"
+	                    });
+
+	                    console.log("> !mainRouter.init()");
+	                    resolve(self._routerEngine);
 	                } else {
 	                    reject(new Error("Error while router.init"));
 	                }
@@ -344,11 +294,11 @@ webpackJsonp([2],[
 
 	            return promise;
 	        }
-	    }, {
-	        key: "getRouterEngine",
-	        value: function getRouterEngine() {
-	            return this._routerEngine;
-	        }
+
+	        //getRouterEngine() {
+	        //    return this._routerEngine;
+	        //}
+
 	    }]);
 
 	    return Router;
@@ -815,35 +765,40 @@ webpackJsonp([2],[
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/anatoliybondar/www/tasker/public/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } (function () {
 
 	/**
-	 * @class NotesController
+	 * @class NotesIndexController
 	 */
 	"use strict";
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Controller = (function () {
-	    function Controller(options) {
+	    function Controller() {
 	        _classCallCheck(this, Controller);
-
-	        this._modelPromise = options.model;
 	    }
 
 	    _createClass(Controller, [{
 	        key: "init",
 	        value: function init() {
 	            var self = this;
+	            var promises = arguments;
+
 	            var promise = new Promise(function (resolve, reject) {
 
-	                self.actions = actions;
-	                console.log(">>> NotesController.init()");
+	                Promise.all(promises).then(function (arrayOfResults) {
+	                    var network = arrayOfResults[0];
+	                    var noteModel = self._noteModel = arrayOfResults[1];
 
-	                if (true) {
+	                    self.actions = actions;
+	                    console.log("> NotesIndexController.init()");
+
 	                    resolve(self);
-	                } else {
-	                    reject(new Error("Error while controller.init"));
-	                }
+	                }, function (err) {
+	                    reject(err);
+	                });
 	            });
 
 	            return promise;
@@ -859,13 +814,16 @@ webpackJsonp([2],[
 	    }
 	};
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(8), __webpack_require__(10)], __WEBPACK_AMD_DEFINE_RESULT__ = function (noteModel) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(8), __webpack_require__(10)], __WEBPACK_AMD_DEFINE_RESULT__ = function (network, model) {
 	    var instance;
+	    var promises = arguments;
+	    //console.log("^^^", promises);
 
 	    return (function () {
-	        return instance = instance || new Controller({
-	            model: noteModel
-	        }).init();
+	        var _ref;
+
+	        // fill init function with arguments as is (not as array)
+	        return instance = instance || (_ref = new Controller()).init.apply(_ref, _toConsumableArray(Array.prototype.slice.call(promises)));
 	    })();
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -951,6 +909,8 @@ webpackJsonp([2],[
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Network = (function () {
@@ -962,16 +922,15 @@ webpackJsonp([2],[
 	        key: "init",
 	        value: function init() {
 	            var self = this;
+	            var promises = arguments;
+
 	            var promise = new Promise(function (resolve, reject) {
-
-	                //self._router = routerEngine;
-	                console.log("> NotesNetwork.init()");
-
-	                if (true) {
+	                Promise.all(promises).then(function (arrayOfResults) {
+	                    console.log("> NotesNetwork.init()");
 	                    resolve(self);
-	                } else {
-	                    reject(new Error("Error while notes.network.init"));
-	                }
+	                }, function (err) {
+	                    reject(err);
+	                });
 	            });
 
 	            return promise;
@@ -981,11 +940,16 @@ webpackJsonp([2],[
 	    return Network;
 	})();
 
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(9)], __WEBPACK_AMD_DEFINE_RESULT__ = function (mainNetwork) {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(9)], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    var instance;
+	    var promises = arguments;
+	    //console.log("^^^", promises);
 
 	    return (function () {
-	        return instance = instance || new Network().init();
+	        var _ref;
+
+	        // fill init function with arguments as is (not as array)
+	        return instance = instance || (_ref = new Network()).init.apply(_ref, _toConsumableArray(Array.prototype.slice.call(promises)));
 	    })();
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -1035,6 +999,8 @@ webpackJsonp([2],[
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Network = (function () {
@@ -1048,7 +1014,7 @@ webpackJsonp([2],[
 	            var self = this;
 	            var promise = new Promise(function (resolve, reject) {
 
-	                console.log(">>> network.init()");
+	                console.log("> !mainNetwork.init()");
 
 	                if (true) {
 	                    resolve(self);
@@ -1066,9 +1032,14 @@ webpackJsonp([2],[
 
 	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    var instance;
+	    var promises = arguments;
+	    //console.log("^^^", promises);
 
 	    return (function () {
-	        return instance = instance || new Network().init();
+	        var _ref;
+
+	        // fill init function with arguments as is (not as array)
+	        return instance = instance || (_ref = new Network()).init.apply(_ref, _toConsumableArray(Array.prototype.slice.call(promises)));
 	    })();
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -1089,6 +1060,8 @@ webpackJsonp([2],[
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Model = (function () {
@@ -1103,7 +1076,7 @@ webpackJsonp([2],[
 	            var promise = new Promise(function (resolve, reject) {
 
 	                self.resetToDefaults();
-	                console.log(">>> Notes.NoteModel.init()");
+	                console.log("> Notes.NoteModel.init()");
 
 	                if (true) {
 	                    resolve(self);
@@ -1126,9 +1099,14 @@ webpackJsonp([2],[
 
 	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	    var instance;
+	    var promises = arguments;
+	    //console.log("^^^", promises);
 
 	    return (function () {
-	        return instance = instance || new Model().init();
+	        var _ref;
+
+	        // fill init function with arguments as is (not as array)
+	        return instance = instance || (_ref = new Model()).init.apply(_ref, _toConsumableArray(Array.prototype.slice.call(promises)));
 	    })();
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -1147,6 +1125,8 @@ webpackJsonp([2],[
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Module = (function () {
@@ -1156,19 +1136,17 @@ webpackJsonp([2],[
 
 	    _createClass(Module, [{
 	        key: "init",
-	        value: function init(options) {
+	        value: function init() {
 	            var self = this;
+	            var promises = arguments;
+
 	            var promise = new Promise(function (resolve, reject) {
-
-	                //self._router = routerEngine;
-	                console.log(">>> TasksModule.init()");
-	                console.log(options);
-
-	                if (true) {
+	                Promise.all(promises).then(function (arrayOfResults) {
+	                    console.log("> TasksModule.init()");
 	                    resolve(self);
-	                } else {
-	                    reject(new Error("Error while router.init"));
-	                }
+	                }, function (err) {
+	                    reject(err);
+	                });
 	            });
 
 	            return promise;
@@ -1180,9 +1158,14 @@ webpackJsonp([2],[
 
 	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function (mainRouter, router, mainNetwork, network, controller) {
 	    var instance;
+	    var promises = arguments;
+	    //console.log("^^^", promises);
 
 	    return (function () {
-	        return instance = instance || new Module().init(arguments);
+	        var _ref;
+
+	        // fill init function with arguments as is (not as array)
+	        return instance = instance || (_ref = new Module()).init.apply(_ref, _toConsumableArray(Array.prototype.slice.call(promises)));
 	    })();
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 

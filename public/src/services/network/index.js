@@ -7,7 +7,7 @@ class Network {
         var self = this;
         var promise = new Promise(function(resolve, reject) {
 
-            console.log(">>> network.init()");
+            console.log("> !mainNetwork.init()");
 
             if (true) {
                 resolve(self);
@@ -22,8 +22,11 @@ class Network {
 
 define([], function() {
     var instance;
+    var promises = arguments;
+    //console.log("^^^", promises);
 
     return (function() {
-        return (instance = (instance || (new Network()).init()));
+        // fill init function with arguments as is (not as array)
+        return (instance = (instance || (new Network()).init(...Array.prototype.slice.call(promises))));
     })();
 });
