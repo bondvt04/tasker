@@ -143,7 +143,7 @@
 
 	        function startRouter() {
 	            Promise.all(modulePromises).then(function (arrayOfResults) {
-	                __webpack_require__.e/* require */(3, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(5)]; (function (mainRouterPromise) {
+	                __webpack_require__.e/* require */(4, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(5)]; (function (mainRouterPromise) {
 	                    mainRouterPromise.then(function (mainRouter) {
 	                        console.log("---", mainRouter);
 	                        mainRouter.listen();

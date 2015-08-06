@@ -3,15 +3,17 @@
   "version": "2.0.0",
   "scripts": {
     "build": "webpack",
-    "lint": "eslint src",
-    "start": "node server.js"
+    "mega-start-commented": "webpack-dev-server --config webpack.development.js --devtool eval --progress --colors --hot --inline --history-api-fallback --content-base build",
+    "start": "webpack"
   },
   "dependencies": {
     "react": "^0.13.3",
     "react-router": "^0.13.3",
     "redux": "1.0.0-alpha",
     "underscore": "^1.8.3",
-    "ejs": "~2.3.3"
+    "ejs": "~2.3.3",
+    "html-loader": "~0.3.0",
+    "ejs-loader": "~0.2.1"
   },
   "devDependencies": {
     "babel-core": "^5.5.8",
@@ -24,11 +26,5 @@
     "bower-webpack-plugin": "~0.1.8",
     "jsx-loader": "~0.13.2",
     "react": "~0.13.3"
-  },
-
-  "scripts": {
-    "build": "webpack",
-    "mega-start-commented": "webpack-dev-server --config webpack.development.js --devtool eval --progress --colors --hot --inline --history-api-fallback --content-base build",
-    "start": "webpack"
   }
 }

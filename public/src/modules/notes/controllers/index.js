@@ -37,6 +37,8 @@ class Controller {
 
         if(this[functionName] && "function" === typeof this[functionName]) {
             this.__beforeAction();
+
+            // fill with arguments as is (not as array)
             this[functionName](...Array.prototype.slice.call(args));
             this.__afterAction(args[1]);
         }
@@ -56,10 +58,19 @@ class Controller {
             model: model
         }
 
-        require("html!/Users/anatoliybondar/www/tasker/public/src/modules/notes/views/index/lol.html", function(html) {
-            console.log(html);
+        //require("./loader!./dir/file.txt");
+
+        console.log("asdfasdfasdf");
+
+        require(["/Users/anatoliybondar/www/tasker/public/src/modules/notes/views/index/lol.html"], function(html) {
+            console.log("888", html);
             document.getElementById("content").innerHTML = html;
         });
+
+        //require("html!/Users/anatoliybondar/www/tasker/public/src/modules/notes/views/index/lol.html", function(html) {
+        //    console.log(html);
+        //    document.getElementById("content").innerHTML = html;
+        //});
 
         //html = new EJS({url: '/modules/notes/views/index/index.ejs'}).render(data);
         //document.getElementById("content").innerHTML = html;
