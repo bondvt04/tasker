@@ -77,7 +77,7 @@ class Controller {
             var html = ejsRender(data);
             document.getElementById("content").innerHTML = html;
 
-            React.render(<NotesListReactComponent />, document.getElementById('notes-list-container'));
+            React.render(<NotesListReactComponent src='http://jscoderetreat.com/img/why-js.png' caption='New York!'  />, document.getElementById('notes-list-container'));
         });
     }
 }

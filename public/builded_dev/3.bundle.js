@@ -18166,14 +18166,74 @@ webpackJsonp([3],[
 /* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict'
-	var React = __webpack_require__(12);
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+	    __webpack_require__(12)
+	], __WEBPACK_AMD_DEFINE_RESULT__ = function(React) {
+	    return React.createClass({
+	        toggleLiked: function() {
+	            this.setState({
+	                liked: !this.state.liked
+	            });
+	        },
 
-	module.exports = React.createClass({displayName: "module.exports",
-	    render: function() {
-	        return React.createElement("b", null, "Hello, world!")
-	    }
-	});
+	        getInitialState: function() {
+	            return {
+	                liked: false
+	            }
+	        },
+
+	        render: function() {
+	            var buttonClass = this.state.liked ? 'active' : '';
+
+	            return (
+	                React.createElement("div", {className: "photo"}, 
+	                    React.createElement("img", {src: ""}), 
+
+	                    React.createElement("div", {className: "bar"}, 
+	                        React.createElement("button", {onClick: this.toggleLiked, className: buttonClass}, 
+	                            "like button ♥"
+	                        ), 
+	                        React.createElement("span", null, "asdf")
+	                    )
+	                )
+	            );
+	        }
+	    });
+	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+
+
+
+	//module.exports = React.createClass({
+	//    toggleLiked: function() {
+	//        this.setState({
+	//            liked: !this.state.liked
+	//        });
+	//    },
+	//
+	//    getInitialState: function() {
+	//        return {
+	//            liked: false
+	//        }
+	//    },
+	//
+	//    render: function() {
+	//        var buttonClass = this.state.liked ? 'active' : '';
+	//
+	//        return (
+	//            <div className='photo'>
+	//                <img src="" />
+	//
+	//                <div className='bar'>
+	//                    <button onClick={this.toggleLiked} className={buttonClass} >
+	//                    ♥
+	//                    </button>
+	//                    <span>asdf</span>
+	//                </div>
+	//            </div>
+	//        );
+	//    }
+	//});
 
 /***/ }
 ]);

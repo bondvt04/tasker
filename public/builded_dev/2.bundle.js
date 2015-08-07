@@ -825,7 +825,7 @@ webpackJsonp([2,4],{
 	                var html = ejsRender(data);
 	                document.getElementById("content").innerHTML = html;
 
-	                React.render(React.createElement(NotesListReactComponent, null), document.getElementById("notes-list-container"));
+	                React.render(React.createElement(NotesListReactComponent, { src: "http://jscoderetreat.com/img/why-js.png", caption: "New York!" }), document.getElementById("notes-list-container"));
 	            }.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));});
 	        }
 	    }]);
