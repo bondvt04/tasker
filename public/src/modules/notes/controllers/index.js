@@ -58,23 +58,27 @@ class Controller {
             model: model
         }
 
-        //require("./loader!./dir/file.txt");
 
-        console.log("asdfasdfasdf");
+        //var React = require('react');
+        //var Hello = require('../views/components/notes-list.jsx');
+        //
+        //setTimeout(function() {
+        //    React.render(<Hello />, document.getElementById('content'));
+        //}, 5000);
 
-        ///Users/anatoliybondar/www/tasker/public/src/modules/notes
-        require(["../views/index/lol.html"], function(html) {
-            console.log("888", html);
+
+
+
+        require([
+            "../views/index/index.ejs",
+            "react",
+            "../views/components/notes-list.jsx"
+        ], function(ejsRender, React, NotesListReactComponent) {
+            var html = ejsRender(data);
             document.getElementById("content").innerHTML = html;
+
+            React.render(<NotesListReactComponent />, document.getElementById('notes-list-container'));
         });
-
-        //require("html!/Users/anatoliybondar/www/tasker/public/src/modules/notes/views/index/lol.html", function(html) {
-        //    console.log(html);
-        //    document.getElementById("content").innerHTML = html;
-        //});
-
-        //html = new EJS({url: '/modules/notes/views/index/index.ejs'}).render(data);
-        //document.getElementById("content").innerHTML = html;
     }
 }
 

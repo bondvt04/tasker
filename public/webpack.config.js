@@ -71,19 +71,33 @@ var development = {
     module: {
         loaders: [
             {
+                test: /\.ejs$/,
+                loader: 'ejs-loader',
+            },
+            {
+                test: /\.jsx$/,
+                //loader: 'jsx-loader?insertPragma=React.DOM&harmony',
+                loader: 'jsx',
+            },
+            {
                 test: /\.html$/,
                 loader: "html"
             },
             {
-                //test: /\.jsx$/, loader: 'jsx-loader',
+                //
                 //test: /\.jsx?$/,
                 //loaders: ['react-hot', 'babel'],
                 test: /\.js$/,
-                loaders: [ 'babel'],
-                include: path.join(__dirname, 'src')
+                loaders: ['babel'],
+                //include: path.join(__dirname, 'src')
             }
         ]
     },
+    //externals: {
+    //    //don't bundle the 'react' npm package with our bundle.js
+    //    //but get it from a global 'React' variable
+    //    'react': 'React'
+    //},
     resolve: {
         //extensions: ['', '.js', '.jsx']
         root: path.join(__dirname, "src"),
