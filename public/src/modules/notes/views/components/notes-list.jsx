@@ -4,6 +4,10 @@ define([
 
     var Photo = React.createClass({
 
+        componentDidMount: function() {
+            console.log("photoComponentDidMount");
+        },
+
         toggleLiked: function() {
             this.setState({
                 liked: !this.state.liked
@@ -21,7 +25,7 @@ define([
 
             return (
                 <div className='photo'>
-                    <img src="" />
+                    <img height="200" src={this.props.src} />
 
                     <div className='bar'>
                         <button onClick={this.toggleLiked} className={buttonClass}>
@@ -35,6 +39,10 @@ define([
     });
 
     var PhotoGallery = React.createClass({
+
+        componentDidMount: function() {
+            console.log("galleryComponentDidMount");
+        },
 
         writeHello: function(newGreeting) {
             this.setState({

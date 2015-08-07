@@ -18189,7 +18189,7 @@ webpackJsonp([3],[
 
 	            return (
 	                React.createElement("div", {className: "photo"}, 
-	                    React.createElement("img", {src: ""}), 
+	                    React.createElement("img", {height: "200", src: this.props.src}), 
 
 	                    React.createElement("div", {className: "bar"}, 
 	                        React.createElement("button", {onClick: this.toggleLiked, className: buttonClass}, 
