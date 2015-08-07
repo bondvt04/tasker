@@ -63,7 +63,7 @@ class Controller {
         console.log("asdfasdfasdf");
 
         ///Users/anatoliybondar/www/tasker/public/src/modules/notes
-        require(["html!../views/index/lol.html"], function(html) {
+        require(["../views/index/lol.html"], function(html) {
             console.log("888", html);
             document.getElementById("content").innerHTML = html;
         });

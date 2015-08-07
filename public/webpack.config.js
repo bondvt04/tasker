@@ -71,9 +71,14 @@ var development = {
     module: {
         loaders: [
             {
+                test: /\.html$/,
+                loader: "html"
+            },
+            {
                 //test: /\.jsx$/, loader: 'jsx-loader',
                 //test: /\.jsx?$/,
                 //loaders: ['react-hot', 'babel'],
+                test: /\.js$/,
                 loaders: [ 'babel'],
                 include: path.join(__dirname, 'src')
             }
