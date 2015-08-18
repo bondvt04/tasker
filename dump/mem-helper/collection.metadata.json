@@ -1,0 +1,1 @@
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "mem-helper.collection" }, { "v" : 1, "key" : { "_fts" : "text", "_ftsx" : 1 }, "name" : "subject_text_content_text", "ns" : "mem-helper.collection", "weights" : { "content" : 1, "subject" : 1 }, "default_language" : "english", "language_override" : "language", "textIndexVersion" : 2 } ] }

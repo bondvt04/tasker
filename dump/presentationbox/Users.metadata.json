@@ -1,0 +1,1 @@
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "presentationbox.Users" }, { "v" : 1, "unique" : true, "key" : { "userName" : 1 }, "name" : "userName_1", "ns" : "presentationbox.Users", "background" : true, "safe" : null } ] }
