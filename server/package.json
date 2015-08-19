@@ -1,18 +1,23 @@
 {
-  "name": "tasker-server",
+  "name": "server",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
+    "env": "env | less",
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-sever-production": "node index.js",
-    "start-sever-development": "node-debug -p 7789 index.js",
+    "start-server-production": "node ./bin/www",
+    "start-server-development": "node-debug -p 7789 ./bin/www #starts webinspector in chrome with ability make brakpoints",
     "build": "webpack",
     "mega-start-commented": "webpack-dev-server --config webpack.development.js --devtool eval --progress --colors --hot --inline --history-api-fallback --content-base build"
   },
-  "author": "",
-  "license": "BSD-2-Clause",
   "dependencies": {
-    "express": "~4.13.3"
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
   }
 }
