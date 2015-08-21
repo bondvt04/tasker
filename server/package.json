@@ -6,9 +6,8 @@
     "env": "env | less",
     "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-prod": "node ./dist/bin/www.js",
-    "start-dev": "node-debug -p 7789 ./dist/bin/www.js #starts webinspector in chrome with ability make brakpoints",
-    "start-dev2": "node --debug-brk ./dist/bin/www.js",
+    "start-prod": "gulp && node ./dist/bin/www.js",
+    "start-dev": "gulp && node-debug -p 7789 --debug-brk=false ./dist/bin/www.js #starts webinspector in chrome with ability make brakpoints",
     "build": "webpack",
     "mega-start-commented": "webpack-dev-server --config webpack.development.js --devtool eval --progress --colors --hot --inline --history-api-fallback --content-base build"
   },

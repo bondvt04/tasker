@@ -1,4 +1,5 @@
 var Node = require("../models/Node");
+var Promise = require("promise");
 
 class Controller {
 
@@ -12,13 +13,20 @@ class Controller {
 
     doAction(actionName, args) {
         var functionName = "_"+actionName+"Action";
+        var self = this;
+        var next = args[2];
 
         if(this[functionName] && "function" === typeof this[functionName]) {
             this.__beforeAction();
 
             // fill with arguments as is (not as array)
-            this[functionName](...Array.prototype.slice.call(args));
-            this.__afterAction(args[2]);
+            var actionPromise = this[functionName](...Array.prototype.slice.call(args));
+
+            actionPromise.then(function(result) {
+                self.__afterAction(next);
+            }).catch(function(err) {
+                console.error(err);
+            });
         }
     }
 
@@ -27,18 +35,36 @@ class Controller {
             content: 'Hello, World!'
         });
 
-        hello.save(function (err, node) {
-            if (err) return console.error(err);
+        var savePromise = new Promise(function(resolve, reject) {
+            hello.save(function (err, node) {
+                if (err) reject(err);
 
-            console.log("###", node.content);
+                console.log("###", node.content);
+                resolve(node);
+            });
         });
 
-        Node.find(function (err, nodes) {
-            if (err) return console.error(err);
-            console.log(nodes);
+        var findPromise = new Promise(function(resolve, reject) {
+            Node.find(function (err, nodes) {
+                if (err) reject(err);
+                console.log(nodes);
+
+                resolve(nodes);
+            });
+
+            //Kitten.find({ name: /^Fluff/ }, callback);
         });
 
-        //Kitten.find({ name: /^Fluff/ }, callback);
+        return new Promise(function(resolve, reject) {
+            Promise.all([
+                savePromise,
+                findPromise
+            ]).then(function(results) {
+                resolve();
+            }).catch(function(err) {
+                reject();
+            });
+        });
     }
 }
 
