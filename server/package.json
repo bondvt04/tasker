@@ -6,8 +6,8 @@
     "env": "env | less",
     "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-server-production": "node ./bin/www",
-    "start-server-development": "node-debug -p 7789 ./bin/www #starts webinspector in chrome with ability make brakpoints",
+    "start-server-production": "node ./dist/bin/www",
+    "start-server-development": "node-debug -p 7789 ./dist/bin/www #starts webinspector in chrome with ability make brakpoints",
     "build": "webpack",
     "mega-start-commented": "webpack-dev-server --config webpack.development.js --devtool eval --progress --colors --hot --inline --history-api-fallback --content-base build"
   },
@@ -18,6 +18,24 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "webpack": "~1.11.0",
+    "gulp": "~3.9.0",
+    "gulp-sourcemaps": "~1.5.2",
+    "gulp-concat": "~2.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "~5.8.22",
+    "babel-loader": "^5.1.4",
+    "babel-eslint": "^3.1.9",
+    "eslint-plugin-react": "^2.3.0",
+    "react-hot-loader": "^1.2.7",
+    "webpack": "^1.9.6",
+    "webpack-dev-server": "^1.8.2",
+    "bower-webpack-plugin": "~0.1.8",
+    "jsx-loader": "~0.13.2",
+    "react": "~0.13.3",
+    "babel": "~5.8.21",
+    "gulp-babel": "~5.2.1"
   }
 }
