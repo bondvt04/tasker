@@ -6,8 +6,8 @@
     "env": "env | less",
     "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-server-production": "node ./dist/bin/www",
-    "start-server-development": "node-debug -p 7789 ./dist/bin/www #starts webinspector in chrome with ability make brakpoints",
+    "start-server-production": "node ./dist/bin/www.js",
+    "start-server-development": "node-debug -p 7789 ./dist/bin/www.js #starts webinspector in chrome with ability make brakpoints",
     "build": "webpack",
     "mega-start-commented": "webpack-dev-server --config webpack.development.js --devtool eval --progress --colors --hot --inline --history-api-fallback --content-base build"
   },
@@ -22,7 +22,8 @@
     "webpack": "~1.11.0",
     "gulp": "~3.9.0",
     "gulp-sourcemaps": "~1.5.2",
-    "gulp-concat": "~2.6.0"
+    "gulp-concat": "~2.6.0",
+    "gulp-clean": "~0.3.1"
   },
   "devDependencies": {
     "babel-core": "~5.8.22",
