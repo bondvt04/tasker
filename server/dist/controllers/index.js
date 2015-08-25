@@ -22,6 +22,10 @@ var Controller = (function () {
         value: function __afterAction(next) {
             next();
         }
+
+        /**
+         * Args: [req, res, next]
+         */
     }, {
         key: "doAction",
         value: function doAction(actionName, args) {
@@ -36,6 +40,7 @@ var Controller = (function () {
                 var actionPromise = this[functionName].apply(this, _toConsumableArray(Array.prototype.slice.call(args)));
 
                 actionPromise.then(function (result) {
+                    console.log("___afterAction");
                     self.__afterAction(next);
                 })["catch"](function (err) {
                     console.error(err);
@@ -43,8 +48,31 @@ var Controller = (function () {
             }
         }
     }, {
+        key: "_getNodesAction",
+        value: function _getNodesAction(req, res) {
+            return new Promise(function (resolve, reject) {
+                Node.find(function (err, nodes) {
+                    if (err) reject(err);
+
+                    res.send(nodes);
+
+                    resolve(nodes);
+                });
+
+                //Kitten.find({ name: /^Fluff/ }, callback);
+            });
+        }
+    }, {
         key: "_indexAction",
-        value: function _indexAction(req, res, next) {
+        value: function _indexAction(req, res) {
+            return new Promise(function (resolve, reject) {
+                res.send("just /index action");
+                resolve();
+            });
+        }
+    }, {
+        key: "_testAction",
+        value: function _testAction(req, res) {
             var hello = new Node({
                 content: 'Hello, World!'
             });
@@ -53,7 +81,7 @@ var Controller = (function () {
                 hello.save(function (err, node) {
                     if (err) reject(err);
 
-                    console.log("###", node.content);
+                    console.log("___savePromise", node.content);
                     resolve(node);
                 });
             });
@@ -61,8 +89,8 @@ var Controller = (function () {
             var findPromise = new Promise(function (resolve, reject) {
                 Node.find(function (err, nodes) {
                     if (err) reject(err);
-                    console.log(nodes);
 
+                    console.log("___findPromise", nodes);
                     resolve(nodes);
                 });
 
@@ -71,7 +99,7 @@ var Controller = (function () {
 
             return new Promise(function (resolve, reject) {
                 Promise.all([savePromise, findPromise]).then(function (results) {
-                    resolve();
+                    resolve(results);
                 })["catch"](function (err) {
                     reject();
                 });

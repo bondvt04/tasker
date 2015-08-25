@@ -5,19 +5,19 @@
 var mongoose = require('../db/index');
 
 var nodeSchema = mongoose.Schema({
-    types: [{
-        typeName: String
-    }],
+    //types: [{
+    //    typeName: String
+    //}],
     content: String
 });
 
 // NOTE: methods must be added to the schema before compiling it with mongoose.model()
-nodeSchema.methods.getTypes = function () {
+/*nodeSchema.methods.getTypes = function () {
     //var greeting = this.name
     //    ? "Meow name is " + this.name
     //    : "I don't have a name";
     console.log(this.types);
-}
+}*/
 
 var Node = mongoose.model('Node', nodeSchema);
 

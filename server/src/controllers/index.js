@@ -11,6 +11,9 @@ class Controller {
         next();
     }
 
+    /**
+     * Args: [req, res, next]
+     */
     doAction(actionName, args) {
         var functionName = "_"+actionName+"Action";
         var self = this;
@@ -23,6 +26,7 @@ class Controller {
             var actionPromise = this[functionName](...Array.prototype.slice.call(args));
 
             actionPromise.then(function(result) {
+                console.log("___afterAction");
                 self.__afterAction(next);
             }).catch(function(err) {
                 console.error(err);
@@ -30,7 +34,28 @@ class Controller {
         }
     }
 
-    _indexAction(req, res, next) {
+    _getNodesAction(req, res) {
+        return new Promise(function(resolve, reject) {
+            Node.find(function (err, nodes) {
+                if (err) reject(err);
+
+                res.send(nodes);
+
+                resolve(nodes);
+            });
+
+            //Kitten.find({ name: /^Fluff/ }, callback);
+        });
+    }
+
+    _indexAction(req, res) {
+        return new Promise(function(resolve, reject) {
+            res.send("just /index action");
+            resolve();
+        });
+    }
+
+    _testAction(req, res) {
         var hello = new Node({
             content: 'Hello, World!'
         });
@@ -39,7 +64,7 @@ class Controller {
             hello.save(function (err, node) {
                 if (err) reject(err);
 
-                console.log("###", node.content);
+                console.log("___savePromise", node.content);
                 resolve(node);
             });
         });
@@ -47,8 +72,8 @@ class Controller {
         var findPromise = new Promise(function(resolve, reject) {
             Node.find(function (err, nodes) {
                 if (err) reject(err);
-                console.log(nodes);
 
+                console.log("___findPromise", nodes);
                 resolve(nodes);
             });
 
@@ -60,7 +85,7 @@ class Controller {
                 savePromise,
                 findPromise
             ]).then(function(results) {
-                resolve();
+                resolve(results);
             }).catch(function(err) {
                 reject();
             });
