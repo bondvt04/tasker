@@ -13,6 +13,7 @@ router.get('/nodes', function(req, res, next) {
 });
 
 // get one node by id
+// @todo 400 if incorrect id, 404 if can't find resource
 router.get('/nodes/:id', function(req, res, next) {
     controller.doAction("getOneNode", arguments);
 });

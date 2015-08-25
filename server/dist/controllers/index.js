@@ -8,6 +8,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Node = require("../models/Node");
 var Promise = require("promise");
+//var querystring = require("querystring");
 
 var Controller = (function () {
     function Controller() {
@@ -47,6 +48,11 @@ var Controller = (function () {
                 });
             }
         }
+
+        /**
+         * @todo Add filter, tags etc logic
+         * @todo do res.end() in the end, not in controller
+         */
     }, {
         key: "_getNodesAction",
         value: function _getNodesAction(req, res) {
@@ -61,6 +67,22 @@ var Controller = (function () {
 
                 //Kitten.find({ name: /^Fluff/ }, callback);
             });
+        }
+    }, {
+        key: "_addNodeAction",
+        value: function _addNodeAction(req, res) {
+            var newNode = new Node({
+                content: 'Hello, World!'
+            });
+
+            //return new Promise(function(resolve, reject) {
+            //    newNode.save(function (err, node) {
+            //        if (err) reject(err);
+            //
+            //        console.log("___savePromise", node.content);
+            //        resolve(node);
+            //    });
+            //});
         }
     }, {
         key: "_indexAction",

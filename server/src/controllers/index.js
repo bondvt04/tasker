@@ -1,5 +1,6 @@
 var Node = require("../models/Node");
 var Promise = require("promise");
+//var querystring = require("querystring");
 
 class Controller {
 
@@ -34,6 +35,10 @@ class Controller {
         }
     }
 
+    /**
+     * @todo Add filter, tags etc logic
+     * @todo do res.end() in the end, not in controller
+     */
     _getNodesAction(req, res) {
         return new Promise(function(resolve, reject) {
             Node.find(function (err, nodes) {
@@ -45,6 +50,19 @@ class Controller {
             });
 
             //Kitten.find({ name: /^Fluff/ }, callback);
+        });
+    }
+
+    _addNodeAction(req, res) {
+        var newNode = new Node(req.body);
+
+        return new Promise(function(resolve, reject) {
+            newNode.save(function (err, node) {
+                if (err) reject(err);
+
+                console.log("___savePromise", node);
+                resolve(node);
+            });
         });
     }
 
