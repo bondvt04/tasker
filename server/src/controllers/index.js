@@ -4,12 +4,16 @@ var Promise = require("promise");
 
 class Controller {
 
-    __beforeAction() {
-
+    __beforeAction(req, res, next) {
+        // we will render it later if no error
+        res.jsonToRender = {};
     }
 
-    __afterAction(next) {
-        next();
+    __afterAction(req, res, next, result) {
+        return new Promise(function(resolve, reject) {
+            console.log("___afterAction");
+            resolve(result);
+        });
     }
 
     /**
@@ -18,21 +22,31 @@ class Controller {
     doAction(actionName, args) {
         var functionName = "_"+actionName+"Action";
         var self = this;
+        var req = args[0];
+        var res = args[1];
         var next = args[2];
 
-        if(this[functionName] && "function" === typeof this[functionName]) {
-            this.__beforeAction();
+        return controllerPromise = new Promise(function(resolve, reject) {
+            if(self[functionName] && "function" === typeof self[functionName]) {
+                self.__beforeAction(req, res, next);
 
-            // fill with arguments as is (not as array)
-            var actionPromise = this[functionName](...Array.prototype.slice.call(args));
+                // fill with arguments as is (not as array)
+                var actionPromise = self[functionName](...Array.prototype.slice.call(args));
 
-            actionPromise.then(function(result) {
-                console.log("___afterAction");
-                self.__afterAction(next);
-            }).catch(function(err) {
-                console.error(err);
-            });
-        }
+                actionPromise.then(function(result) {
+                    var afterActionPromise = self.__afterAction(req, res, next, result);
+                    afterActionPromise.then(function(result) {
+                        resolve(result);
+                    }).catch(function(err) {
+                        reject(err);
+                    });
+                }).catch(function(err) {
+                    reject(err);
+                });
+            }
+        });
+
+
     }
 
     /**

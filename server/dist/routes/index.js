@@ -10,7 +10,12 @@ router.get('/', function (req, res, next) {
 
 // get list of nodes
 router.get('/nodes', function (req, res, next) {
-    controller.doAction("getNodes", arguments);
+    //controller.doAction("getNodes", arguments);
+    res.jsonToRender = {
+        a: 10,
+        b: 20
+    };
+    res.json(res.jsonToRender);
 });
 
 // get one node by id

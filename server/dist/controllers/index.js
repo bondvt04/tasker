@@ -71,18 +71,16 @@ var Controller = (function () {
     }, {
         key: "_addNodeAction",
         value: function _addNodeAction(req, res) {
-            var newNode = new Node({
-                content: 'Hello, World!'
-            });
+            var newNode = new Node(req.body);
 
-            //return new Promise(function(resolve, reject) {
-            //    newNode.save(function (err, node) {
-            //        if (err) reject(err);
-            //
-            //        console.log("___savePromise", node.content);
-            //        resolve(node);
-            //    });
-            //});
+            return new Promise(function (resolve, reject) {
+                newNode.save(function (err, node) {
+                    if (err) reject(err);
+
+                    console.log("___savePromise", node);
+                    resolve(node);
+                });
+            });
         }
     }, {
         key: "_indexAction",
