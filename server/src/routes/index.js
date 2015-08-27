@@ -7,12 +7,17 @@ router.get('/', function(req, res, next) {
     controller.doAction("index", arguments);
 });
 
+// test, how works error handling
+router.get('/nodes/500', function(req, res, next) {
+    var controllerPromise = controller.doAction("error500", arguments);
+});
+
 // get list of nodes
 router.get('/nodes', function(req, res, next) {
     var controllerPromise = controller.doAction("getNodes", arguments);
     controllerPromise.then(function(result) {
         res.json(res.jsonToRender);
-        next();
+        //next();
     }).catch(function(err) {
         console.err(err);
     });
@@ -24,7 +29,7 @@ router.get('/nodes/:id', function(req, res, next) {
     var controllerPromise = controller.doAction("getOneNode", arguments);
     controllerPromise.then(function(result) {
         res.json(res.jsonToRender);
-        next();
+        //next();
     }).catch(function(err) {
         console.err(err);
     });
@@ -35,7 +40,7 @@ router.post('/nodes/add', function(req, res, next) {
     var controllerPromise = controller.doAction("addNode", arguments);
     controllerPromise.then(function(result) {
         res.json(res.jsonToRender);
-        next();
+        //next();
     }).catch(function(err) {
         console.err(err);
     });
@@ -46,7 +51,7 @@ router.put('/nodes/:id', function(req, res, next) {
     var controllerPromise = controller.doAction("updateNode", arguments);
     controllerPromise.then(function(result) {
         res.json(res.jsonToRender);
-        next();
+        //next();
     }).catch(function(err) {
         console.err(err);
     });
@@ -57,7 +62,7 @@ router.delete('/nodes/:id', function(req, res, next) {
     var controllerPromise = controller.doAction("deleteNode", arguments);
     controllerPromise.then(function(result) {
         res.json(res.jsonToRender);
-        next();
+        //next();
     }).catch(function(err) {
         console.err(err);
     });

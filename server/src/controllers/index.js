@@ -10,10 +10,11 @@ class Controller {
     }
 
     __afterAction(req, res, next, result) {
-        return new Promise(function(resolve, reject) {
-            console.log("___afterAction");
-            resolve(result);
-        });
+        //return new Promise(function(resolve, reject) {
+        //    console.log("### 3");
+        //    resolve(result);
+        //    //next();
+        //});
     }
 
     /**
@@ -26,27 +27,64 @@ class Controller {
         var res = args[1];
         var next = args[2];
 
-        return controllerPromise = new Promise(function(resolve, reject) {
+        return new Promise(function(resolve, reject) {
             if(self[functionName] && "function" === typeof self[functionName]) {
                 self.__beforeAction(req, res, next);
 
                 // fill with arguments as is (not as array)
                 var actionPromise = self[functionName](...Array.prototype.slice.call(args));
 
+                function doAfterAction() {
+                    try {
+                        console.log("---^^^---");
+
+                        var afterActionPromise = self.__afterAction(req, res, next, result);
+
+                        console.log("---&&&---");
+
+                        afterActionPromise.then(function(result) {
+                            console.log("### 4");
+                            resolve(result);
+                        }).catch(function(err) {
+                            console.log("### 5");
+                            reject(err);
+                        }).done(function() {
+                            console.log("### 6");
+                        });
+                    } catch(e) {
+                        console.log(e);
+                        console.error(e);
+                        throw e;
+                    }
+                }
+
                 actionPromise.then(function(result) {
-                    var afterActionPromise = self.__afterAction(req, res, next, result);
-                    afterActionPromise.then(function(result) {
-                        resolve(result);
+                    console.log("### 7");
+                    doAfterAction().then(function(afterActionResult) {
+                        resolve(afterActionResult);
                     }).catch(function(err) {
                         reject(err);
                     });
                 }).catch(function(err) {
+                    console.log("### 8");
+                    doAfterAction();
                     reject(err);
                 });
             }
         });
+    }
 
-
+    _error500Action(req, res) {
+        return new Promise(function(resolve, reject) {
+            try {
+                console.log("_error500Action");
+                lol.hello.ololo();
+                throw new Error("zlo");
+            } catch(e) {
+                console.log("### 1");
+                reject(e);
+            }
+        });
     }
 
     /**

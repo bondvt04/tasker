@@ -8,35 +8,65 @@ router.get('/', function (req, res, next) {
     controller.doAction("index", arguments);
 });
 
+// test, how works error handling
+router.get('/nodes/500', function (req, res, next) {
+    var controllerPromise = controller.doAction("error500", arguments);
+});
+
 // get list of nodes
 router.get('/nodes', function (req, res, next) {
-    //controller.doAction("getNodes", arguments);
-    res.jsonToRender = {
-        a: 10,
-        b: 20
-    };
-    res.json(res.jsonToRender);
+    var controllerPromise = controller.doAction("getNodes", arguments);
+    controllerPromise.then(function (result) {
+        res.json(res.jsonToRender);
+        //next();
+    })['catch'](function (err) {
+        console.err(err);
+    });
 });
 
 // get one node by id
 // @todo 400 if incorrect id, 404 if can't find resource
 router.get('/nodes/:id', function (req, res, next) {
-    controller.doAction("getOneNode", arguments);
+    var controllerPromise = controller.doAction("getOneNode", arguments);
+    controllerPromise.then(function (result) {
+        res.json(res.jsonToRender);
+        //next();
+    })['catch'](function (err) {
+        console.err(err);
+    });
 });
 
 // add new node
 router.post('/nodes/add', function (req, res, next) {
-    controller.doAction("addNode", arguments);
+    var controllerPromise = controller.doAction("addNode", arguments);
+    controllerPromise.then(function (result) {
+        res.json(res.jsonToRender);
+        //next();
+    })['catch'](function (err) {
+        console.err(err);
+    });
 });
 
 // update one node by id
 router.put('/nodes/:id', function (req, res, next) {
-    controller.doAction("updateNode", arguments);
+    var controllerPromise = controller.doAction("updateNode", arguments);
+    controllerPromise.then(function (result) {
+        res.json(res.jsonToRender);
+        //next();
+    })['catch'](function (err) {
+        console.err(err);
+    });
 });
 
 // delete one node by id
 router['delete']('/nodes/:id', function (req, res, next) {
-    controller.doAction("deleteNode", arguments);
+    var controllerPromise = controller.doAction("deleteNode", arguments);
+    controllerPromise.then(function (result) {
+        res.json(res.jsonToRender);
+        //next();
+    })['catch'](function (err) {
+        console.err(err);
+    });
 });
 
 module.exports = router;

@@ -17,36 +17,94 @@ var Controller = (function () {
 
     _createClass(Controller, [{
         key: "__beforeAction",
-        value: function __beforeAction() {}
+        value: function __beforeAction(req, res, next) {
+            // we will render it later if no error
+            res.jsonToRender = {};
+        }
     }, {
         key: "__afterAction",
-        value: function __afterAction(next) {
-            next();
-        }
+        value: function __afterAction(req, res, next, result) {}
+        //return new Promise(function(resolve, reject) {
+        //    console.log("### 3");
+        //    resolve(result);
+        //    //next();
+        //});
 
         /**
          * Args: [req, res, next]
          */
+
     }, {
         key: "doAction",
         value: function doAction(actionName, args) {
             var functionName = "_" + actionName + "Action";
             var self = this;
+            var req = args[0];
+            var res = args[1];
             var next = args[2];
 
-            if (this[functionName] && "function" === typeof this[functionName]) {
-                this.__beforeAction();
+            return new Promise(function (resolve, reject) {
+                if (self[functionName] && "function" === typeof self[functionName]) {
+                    var actionPromise;
 
-                // fill with arguments as is (not as array)
-                var actionPromise = this[functionName].apply(this, _toConsumableArray(Array.prototype.slice.call(args)));
+                    (function () {
+                        var doAfterAction = function doAfterAction() {
+                            try {
+                                console.log("---^^^---");
 
-                actionPromise.then(function (result) {
-                    console.log("___afterAction");
-                    self.__afterAction(next);
-                })["catch"](function (err) {
-                    console.error(err);
-                });
-            }
+                                //var afterActionPromise = self.__afterAction(req, res, next, result);
+
+                                console.log("---&&&---");
+
+                                afterActionPromise.then(function (result) {
+                                    console.log("### 4");
+                                    resolve(result);
+                                })["catch"](function (err) {
+                                    console.log("### 5");
+                                    reject(err);
+                                }).done(function () {
+                                    console.log("### 6");
+                                });
+                            } catch (e) {
+                                console.log(e);
+                                console.error(e);
+                            }
+                        };
+
+                        self.__beforeAction(req, res, next);
+
+                        // fill with arguments as is (not as array)
+                        actionPromise = self[functionName].apply(self, _toConsumableArray(Array.prototype.slice.call(args)));
+
+                        actionPromise.then(function (result) {
+                            console.log("### 7");
+                            doAfterAction().then(function (afterActionResult) {
+                                resolve(afterActionResult);
+                            })["catch"](function (err) {
+                                reject(err);
+                            });
+                        })["catch"](function (err) {
+                            console.log("### 8");
+                            doAfterAction();
+                            reject(err);
+                        });
+                    })();
+                }
+            });
+        }
+    }, {
+        key: "_error500Action",
+        value: function _error500Action(req, res) {
+            return new Promise(function (resolve, reject) {
+                try {
+                    console.log("_error500Action");
+                    lol.hello.ololo();
+                    throw new Error("zlo");
+                } catch (e) {
+                    console.log("### 1");
+                    reject(e);
+                }
+            });
         }
 
         /**
