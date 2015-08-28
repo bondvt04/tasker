@@ -36,12 +36,14 @@ class Controller {
 
                 function doAfterAction() {
                     process.on('uncaughtException', function (err) {
+                        console.log("lol error");
                         console.error(err);
                     });
 
-                    try {
+                    //try {
                         console.log("---^^^---");
 
+                        throw new Error("zlo");
                         var afterActionPromise = self.__afterAction(req, res, next, result);
 
                         console.log("---&&&---");
@@ -55,11 +57,11 @@ class Controller {
                         }).done(function() {
                             console.log("### 6");
                         });
-                    } catch(e) {
+                    //} catch(e) {
                         //console.log(e);
                         //console.error(e);
                         //throw e;
-                    }
+                    //}
                 }
 
                 actionPromise.then(function(result) {

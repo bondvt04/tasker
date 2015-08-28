@@ -50,30 +50,32 @@ var Controller = (function () {
                     (function () {
                         var doAfterAction = function doAfterAction() {
                             process.on('uncaughtException', function (err) {
+                                console.log("lol error");
                                 console.error(err);
                             });
 
-                            try {
-                                console.log("---^^^---");
+                            //try {
+                            console.log("---^^^---");
 
-                                var afterActionPromise = self.__afterAction(req, res, next, result);
+                            throw new Error("zlo");
+                            var afterActionPromise = self.__afterAction(req, res, next, result);
 
-                                console.log("---&&&---");
+                            console.log("---&&&---");
 
-                                afterActionPromise.then(function (result) {
-                                    console.log("### 4");
-                                    resolve(result);
-                                })["catch"](function (err) {
-                                    console.log("### 5");
-                                    reject(err);
-                                }).done(function () {
-                                    console.log("### 6");
-                                });
-                            } catch (e) {
-                                //console.log(e);
-                                //console.error(e);
-                                //throw e;
-                            }
+                            afterActionPromise.then(function (result) {
+                                console.log("### 4");
+                                resolve(result);
+                            })["catch"](function (err) {
+                                console.log("### 5");
+                                reject(err);
+                            }).done(function () {
+                                console.log("### 6");
+                            });
+                            //} catch(e) {
+                            //console.log(e);
+                            //console.error(e);
+                            //throw e;
+                            //}
                         };
 
                         self.__beforeAction(req, res, next);
