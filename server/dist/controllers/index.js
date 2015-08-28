@@ -49,10 +49,14 @@ var Controller = (function () {
 
                     (function () {
                         var doAfterAction = function doAfterAction() {
+                            process.on('uncaughtException', function (err) {
+                                console.error(err);
+                            });
+
                             try {
                                 console.log("---^^^---");
 
-                                //var afterActionPromise = self.__afterAction(req, res, next, result);
+                                var afterActionPromise = self.__afterAction(req, res, next, result);
 
                                 console.log("---&&&---");
 
@@ -66,8 +70,9 @@ var Controller = (function () {
                                     console.log("### 6");
                                 });
                             } catch (e) {
-                                console.log(e);
-                                console.error(e);
+                                //console.log(e);
+                                //console.error(e);
+                                //throw e;
                             }
                         };
 
@@ -92,6 +97,10 @@ var Controller = (function () {
                 }
             });
         }
+
+        /**
+         * Тестим ловлю ошибок
+         */
     }, {
         key: "_error500Action",
         value: function _error500Action(req, res) {

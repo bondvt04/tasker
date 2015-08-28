@@ -35,6 +35,10 @@ class Controller {
                 var actionPromise = self[functionName](...Array.prototype.slice.call(args));
 
                 function doAfterAction() {
+                    process.on('uncaughtException', function (err) {
+                        console.error(err);
+                    });
+
                     try {
                         console.log("---^^^---");
 
@@ -52,9 +56,9 @@ class Controller {
                             console.log("### 6");
                         });
                     } catch(e) {
-                        console.log(e);
-                        console.error(e);
-                        throw e;
+                        //console.log(e);
+                        //console.error(e);
+                        //throw e;
                     }
                 }
 
@@ -74,6 +78,9 @@ class Controller {
         });
     }
 
+    /**
+     * Тестим ловлю ошибок
+     */
     _error500Action(req, res) {
         return new Promise(function(resolve, reject) {
             try {

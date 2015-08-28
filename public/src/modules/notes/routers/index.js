@@ -21,6 +21,20 @@ class Router {
                 mainRouter.add("notes/addffff", function(params, complete) {controller.doAction("addffff", arguments)});
                 mainRouter.add("notes/addfff", function(params, complete) {controller.doAction("addfff", arguments)});
 
+
+
+                //mainRouter.add("notes/lol1", function(params, complete) {
+                //    console.log("**", arguments);
+                //    complete();
+                //});
+
+                mainRouter.add("notes/lol2", function() {
+                    console.log("**opa", arguments);
+
+                    // ^notes\/lol2(?:\?*([^/]*))
+                    // notes/lol22222?hello=world
+                });
+
                 console.log("> NotesRouter.init()");
 
                 resolve(self);

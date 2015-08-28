@@ -174,6 +174,18 @@ webpackJsonp([2,4],{
 	                        controller.doAction("addfff", arguments);
 	                    });
 
+	                    //mainRouter.add("notes/lol1", function(params, complete) {
+	                    //    console.log("**", arguments);
+	                    //    complete();
+	                    //});
+
+	                    mainRouter.add("notes/lol2", function () {
+	                        console.log("**opa", arguments);
+
+	                        // ^notes\/lol2(?:\?*([^/]*))
+	                        // notes/lol22222?hello=world
+	                    });
+
 	                    console.log("> NotesRouter.init()");
 
 	                    resolve(self);
@@ -432,7 +444,9 @@ webpackJsonp([2,4],{
 	            return optional ? match : '([^/?]+)';
 	        }).replace(_SPLAT_PARAM, '([^?]*)');
 
-	        return new RegExp('^' + route + '(?:\\?*([^/]*))');
+	        console.log('*****', '^' + route + '(?:\\?*([^/]*))');
+	        //return new RegExp('^' + route + '(?:\\?*([^/]*))');
+	        return new RegExp('^' + route + '(?:\\?([^/]*))?$');
 	    }
 
 	    function _clearSlashes(path) {
@@ -629,10 +643,12 @@ webpackJsonp([2,4],{
 	            var falseToReject;
 
 	            if (routes) for (var i = 0, route; i < routes.length, route = routes[i]; i += 1) {
+	                //debugger;
 	                if (typeof route.async === 'number') {
 	                    route.params.splice(route.async, 0, applyNested(route.routes));
 	                }
 	                if (route.rootRerouting) {
+	                    //console.log("*****", route.params);
 	                    falseToReject = route.callback.apply(null, route.params);
 	                }
 	                if (typeof route.async !== 'number') {

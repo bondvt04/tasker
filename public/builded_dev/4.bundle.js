@@ -194,7 +194,9 @@ webpackJsonp([4],{
 	            return optional ? match : '([^/?]+)';
 	        }).replace(_SPLAT_PARAM, '([^?]*)');
 
-	        return new RegExp('^' + route + '(?:\\?*([^/]*))');
+	        console.log('*****', '^' + route + '(?:\\?*([^/]*))');
+	        //return new RegExp('^' + route + '(?:\\?*([^/]*))');
+	        return new RegExp('^' + route + '(?:\\?([^/]*))?$');
 	    }
 
 	    function _clearSlashes(path) {
@@ -391,10 +393,12 @@ webpackJsonp([4],{
 	            var falseToReject;
 
 	            if (routes) for (var i = 0, route; i < routes.length, route = routes[i]; i += 1) {
+	                //debugger;
 	                if (typeof route.async === 'number') {
 	                    route.params.splice(route.async, 0, applyNested(route.routes));
 	                }
 	                if (route.rootRerouting) {
+	                    //console.log("*****", route.params);
 	                    falseToReject = route.callback.apply(null, route.params);
 	                }
 	                if (typeof route.async !== 'number') {

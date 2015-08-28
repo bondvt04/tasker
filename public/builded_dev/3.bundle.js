@@ -18172,6 +18172,10 @@ webpackJsonp([3],[
 
 	    var Photo = React.createClass({displayName: "Photo",
 
+	        componentDidMount: function() {
+	            console.log("photoComponentDidMount");
+	        },
+
 	        toggleLiked: function() {
 	            this.setState({
 	                liked: !this.state.liked
@@ -18203,6 +18207,10 @@ webpackJsonp([3],[
 	    });
 
 	    var PhotoGallery = React.createClass({displayName: "PhotoGallery",
+
+	        componentDidMount: function() {
+	            console.log("galleryComponentDidMount");
+	        },
 
 	        writeHello: function(newGreeting) {
 	            this.setState({
