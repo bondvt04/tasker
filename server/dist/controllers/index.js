@@ -55,9 +55,9 @@ var Controller = (function () {
                             });
 
                             //try {
-                            console.log("---^^^---");
-
+                            console.log("---^^^---1");
                             throw new Error("zlo");
+                            console.log("---^^^---2");
                             var afterActionPromise = self.__afterAction(req, res, next, result);
 
                             console.log("---&&&---");
