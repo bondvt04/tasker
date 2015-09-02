@@ -2,20 +2,34 @@
  * Created by anatoliybondar on 8/31/15.
  */
 
+/**
+ * Открываем столько дебаггеров, сколько ядер, с соответствующими портами
+ * slc debug src/bin/test-domains-www.js
+ *
+ * @type {*|exports}
+ */
+
 var express = require('express')
     , http = require('http')
     , path = require('path')
     , domain = require('domain')
     , cluster = require('cluster')
     , http = require('http')
-    , numCPUs = require('os').cpus().length;
+    , numCPUs = require('os').cpus().length,
+    fs = require('fs');
 
 if (cluster.isMaster) {
+    console.log("###", numCPUs);
 
     // fork workers
-    for (var i = 0; i < numCPUs; i++) {
+    if(1) {
+        for (var i = 0; i < numCPUs; i++) {
+            cluster.fork();
+        }
+    } else {
         cluster.fork();
     }
+
 
     // when a worker dies create a new one
     cluster.on('exit', function(worker, code, signal) {
@@ -72,10 +86,12 @@ if (cluster.isMaster) {
     // for testing which cluster that serves the request
     var router = express.Router();
     router.get('/', function(req, res, next) {
+        var debug = require("debug")("app:main");
+        debug("lol");
         res.status(200).json({ id: cluster.worker.id });
     });
     router.get('/error', function(req, res, next) {
-        var fs = require('fs');
+
         // intentionally force an error
         fs.readFile('', process.domain.intercept(function(data) {
             // when using intercept we dont need this line anymore
