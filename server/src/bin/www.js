@@ -52,8 +52,8 @@ if (cluster.isMaster) {
 
         // Adding the request and response objects to the domain
         // makes the express error-middleware to not being called.
-        // reqDomain.add(req);
-        // reqDomain.add(res);
+        reqDomain.add(req);
+        reqDomain.add(res);
 
         reqDomain.run(next);
     });
