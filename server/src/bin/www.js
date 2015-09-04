@@ -9,8 +9,6 @@
  * @type {*|exports}
  */
 
-'use strict';
-
 var express = require('express'),
     http = require('http'),
     path = require('path'),
@@ -24,7 +22,7 @@ if (cluster.isMaster) {
     console.log("###", numCPUs);
 
     // fork workers
-    if (0) {
+    if(0) {
         for (var i = 0; i < numCPUs; i++) {
             cluster.fork();
         }
@@ -32,10 +30,12 @@ if (cluster.isMaster) {
         cluster.fork();
     }
 
+
     // when a worker dies create a new one
-    cluster.on('exit', function (worker, code, signal) {
+    cluster.on('exit', function(worker, code, signal) {
         cluster.fork();
     });
+
 } else {
 
     var app = express();
@@ -77,7 +77,7 @@ if (cluster.isMaster) {
     //app.set('views', __dirname + '/views');
     //app.set('view engine', 'jade');
     //app.use(express.logger('dev'));
-    app.use(express['static'](path.join(__dirname, 'public')));
+    app.use(express.static(path.join(__dirname, 'public')));
 
     // for testing which cluster that serves the request
     //var router = express.Router();
@@ -99,15 +99,14 @@ if (cluster.isMaster) {
 
     app.use("/api", require("../routes/index"));
 
-    app.use(function (err, req, res, next) {
+    app.use(function(err, req, res, next) {
         console.log('ERROR MIDDLEWARE', err);
-        res.writeHeader(500, { 'Content-Type': "text/html" });
+        res.writeHeader(500, {'Content-Type' : "text/html"});
         res.write("<h1>" + err.name + "</h1>");
         res.end("<p>" + err.message + "</p>");
     });
 
-    http.createServer(app).listen(app.get('port'), function () {
+    http.createServer(app).listen(app.get('port'), function(){
         console.log('Express server listening on port ' + app.get('port'));
     });
 }
-//# sourceMappingURL=../bin/www.js.map

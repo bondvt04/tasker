@@ -14,13 +14,14 @@ router.get('/nodes/500', function(req, res, next) {
 
 // get list of nodes
 router.get('/nodes', function(req, res, next) {
-    var controllerPromise = controller.doAction("getNodes", arguments);
+    throw new Error("asdfasdfasdf");
+    /*var controllerPromise = controller.doAction("getNodes", arguments);
     controllerPromise.then(function(result) {
         res.json(res.jsonToRender);
         //next();
     }).catch(function(err) {
         console.err(err);
-    });
+    });*/
 });
 
 // get one node by id

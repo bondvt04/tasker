@@ -2,12 +2,10 @@
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Node = require("../models/Node");
-var Promise = require("promise");
+
 //var querystring = require("querystring");
 
 var Controller = (function () {
@@ -43,59 +41,54 @@ var Controller = (function () {
             var res = args[1];
             var next = args[2];
 
+            var Promise = require("promise");
+
             return new Promise(function (resolve, reject) {
                 if (self[functionName] && "function" === typeof self[functionName]) {
-                    var actionPromise;
+                    //self.__beforeAction(req, res, next);
 
-                    (function () {
-                        var doAfterAction = function doAfterAction() {
-                            process.on('uncaughtException', function (err) {
-                                console.log("lol error");
-                                console.error(err);
-                            });
+                    resolve();
 
-                            //try {
+                    // fill with arguments as is (not as array)
+                    /*var actionPromise = self[functionName](...Array.prototype.slice.call(args));
+                     function doAfterAction() {
+                        //process.on('uncaughtException', function (err) {
+                        //    console.log("lol error");
+                        //    console.error(err);
+                        //});
+                         //try {
                             console.log("---^^^---1");
                             throw new Error("zlo");
                             console.log("---^^^---2");
                             var afterActionPromise = self.__afterAction(req, res, next, result);
-
-                            console.log("---&&&---");
-
-                            afterActionPromise.then(function (result) {
+                             console.log("---&&&---");
+                             afterActionPromise.then(function(result) {
                                 console.log("### 4");
                                 resolve(result);
-                            })["catch"](function (err) {
+                            }).catch(function(err) {
                                 console.log("### 5");
                                 reject(err);
-                            }).done(function () {
+                            }).done(function() {
                                 console.log("### 6");
                             });
-                            //} catch(e) {
+                        //} catch(e) {
                             //console.log(e);
                             //console.error(e);
                             //throw e;
-                            //}
-                        };
-
-                        self.__beforeAction(req, res, next);
-
-                        // fill with arguments as is (not as array)
-                        actionPromise = self[functionName].apply(self, _toConsumableArray(Array.prototype.slice.call(args)));
-
-                        actionPromise.then(function (result) {
-                            console.log("### 7");
-                            doAfterAction().then(function (afterActionResult) {
-                                resolve(afterActionResult);
-                            })["catch"](function (err) {
-                                reject(err);
-                            });
-                        })["catch"](function (err) {
-                            console.log("### 8");
-                            doAfterAction();
+                        //}
+                    }
+                     actionPromise.then(function(result) {
+                        console.log("### 7");
+                        doAfterAction().then(function(afterActionResult) {
+                            resolve(afterActionResult);
+                        }).catch(function(err) {
                             reject(err);
                         });
-                    })();
+                    }).catch(function(err) {
+                        console.log("### 8");
+                        doAfterAction();
+                        reject(err);
+                    });*/
                 }
             });
         }

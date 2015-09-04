@@ -1,5 +1,5 @@
 var Node = require("../models/Node");
-var Promise = require("promise");
+
 //var querystring = require("querystring");
 
 class Controller {
@@ -27,18 +27,22 @@ class Controller {
         var res = args[1];
         var next = args[2];
 
+        var Promise = require("promise");
+
         return new Promise(function(resolve, reject) {
             if(self[functionName] && "function" === typeof self[functionName]) {
-                self.__beforeAction(req, res, next);
+                //self.__beforeAction(req, res, next);
+
+                resolve();
 
                 // fill with arguments as is (not as array)
-                var actionPromise = self[functionName](...Array.prototype.slice.call(args));
+                /*var actionPromise = self[functionName](...Array.prototype.slice.call(args));
 
                 function doAfterAction() {
-                    process.on('uncaughtException', function (err) {
-                        console.log("lol error");
-                        console.error(err);
-                    });
+                    //process.on('uncaughtException', function (err) {
+                    //    console.log("lol error");
+                    //    console.error(err);
+                    //});
 
                     //try {
                         console.log("---^^^---1");
@@ -75,7 +79,7 @@ class Controller {
                     console.log("### 8");
                     doAfterAction();
                     reject(err);
-                });
+                });*/
             }
         });
     }

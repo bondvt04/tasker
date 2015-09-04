@@ -24,7 +24,7 @@ if (cluster.isMaster) {
     console.log("###", numCPUs);
 
     // fork workers
-    if (0) {
+    if (1) {
         for (var i = 0; i < numCPUs; i++) {
             cluster.fork();
         }
@@ -74,30 +74,32 @@ if (cluster.isMaster) {
 
     // all environments
     app.set('port', process.env.PORT || 7777);
-    //app.set('views', __dirname + '/views');
-    //app.set('view engine', 'jade');
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'jade');
+    //app.use(express.favicon());
     //app.use(express.logger('dev'));
+    //app.use(require('body-parser'));
+    //app.use(require('method-override'));
+    //app.use(app.router);
     app.use(express['static'](path.join(__dirname, 'public')));
 
     // for testing which cluster that serves the request
-    //var router = express.Router();
-    //router.get('/', function(req, res, next) {
-    //    var debug = require("debug")("app:main");
-    //    debug("lol");
-    //    res.status(200).json({ id: cluster.worker.id });
-    //});
-    //router.get('/error', function(req, res, next) {
-    //
-    //    // intentionally force an error
-    //    fs.readFile('', process.domain.intercept(function(data) {
-    //        // when using intercept we dont need this line anymore
-    //        //if (err) throw err;
-    //        res.send(data);
-    //    }));
-    //});
-    //app.use('/api', router);
+    var router = express.Router();
+    router.get('/', function (req, res, next) {
+        var debug = require("debug")("app:main");
+        debug("lol");
+        res.status(200).json({ id: cluster.worker.id });
+    });
+    router.get('/error', function (req, res, next) {
 
-    app.use("/api", require("../routes/index"));
+        // intentionally force an error
+        fs.readFile('', process.domain.intercept(function (data) {
+            // when using intercept we dont need this line anymore
+            //if (err) throw err;
+            res.send(data);
+        }));
+    });
+    app.use('/api', router);
 
     app.use(function (err, req, res, next) {
         console.log('ERROR MIDDLEWARE', err);
@@ -110,4 +112,4 @@ if (cluster.isMaster) {
         console.log('Express server listening on port ' + app.get('port'));
     });
 }
-//# sourceMappingURL=../bin/www.js.map
+//# sourceMappingURL=../bin/test-domains-www.js.map

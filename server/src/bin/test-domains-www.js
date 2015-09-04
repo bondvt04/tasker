@@ -9,13 +9,13 @@
  * @type {*|exports}
  */
 
-var express = require('express')
-    , http = require('http')
-    , path = require('path')
-    , domain = require('domain')
-    , cluster = require('cluster')
-    , http = require('http')
-    , numCPUs = require('os').cpus().length,
+var express = require('express'),
+    http = require('http'),
+    path = require('path'),
+    domain = require('domain'),
+    cluster = require('cluster'),
+    http = require('http'),
+    numCPUs = require('os').cpus().length,
     fs = require('fs');
 
 if (cluster.isMaster) {
