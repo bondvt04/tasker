@@ -59,6 +59,7 @@ if (cluster.isMaster) {
     //app.use(favicon(__dirname + '/public/favicon.ico'));
 
     //domains
+    // one domain for each request
     app.use(function domainMiddleware(req, res, next) {
 
         var reqDomain = domain.create();
@@ -83,7 +84,6 @@ if (cluster.isMaster) {
         // makes the express error-middleware to not being called.
         reqDomain.add(req);
         reqDomain.add(res);
-        reqDomain.add(app);
 
         reqDomain.run(next);
     });

@@ -1,9 +1,26 @@
+/**
+ * One domain per router
+ */
 
 var controller = require('../controllers/index');
 var express = require('express');
 var router = express.Router();
+var domain = require('domain');
+
+var reqDomain = domain.create();
+reqDomain.add(router);
+
+reqDomain.on('error', function (err) {
+    console.log("^^^^^^^^^^^^^^^^^^^ routerError!!!", err);
+    throw err;
+    reqDomain.dispose();
+});
+
+//reqDomain.run();
+
 
 router.get('/', function(req, res, next) {
+
     controller.doAction("index", arguments);
 });
 
@@ -14,15 +31,21 @@ router.get('/nodes/500', function(req, res, next) {
 
 // get list of nodes
 router.get('/nodes', function(req, res, next) {
-    //throw new Error("asdfasdfasdf");
+    //
 
-    var controllerPromise = controller.doAction("lol", arguments);
-    controllerPromise.then(function(res) {
-        console.log("#################### not zlo")
-    }).catch(function(err) {
-        throw err;
-        //next(err);
+    reqDomain.run(function() {
+        //throw new Error("asdfasdfasdf");
+
+        var controllerPromise = controller.doAction("lol", arguments);
+        controllerPromise.then(function(res) {
+            console.log("#################### not zlo")
+        }).catch(function(err) {
+            throw err;
+            //next(err);
+        });
     });
+
+
 
     /*var controllerPromise = controller.doAction("getNodes", arguments);
     controllerPromise.then(function(result) {
