@@ -17,10 +17,17 @@ class Controller {
         //});
     }
 
+    doAction(actionName, args) {
+        return new Promise(function(resolve, reject) {
+            do_.something.wrong();
+            //throw new Error("lol there are error occured");
+        });
+    }
+
     /**
      * Args: [req, res, next]
      */
-    doAction(actionName, args) {
+    doAction222(actionName, args) {
         var functionName = "_"+actionName+"Action";
         var self = this;
         var req = args[0];

@@ -14,7 +14,16 @@ router.get('/nodes/500', function(req, res, next) {
 
 // get list of nodes
 router.get('/nodes', function(req, res, next) {
-    throw new Error("asdfasdfasdf");
+    //throw new Error("asdfasdfasdf");
+
+    var controllerPromise = controller.doAction("lol", arguments);
+    controllerPromise.then(function(res) {
+        console.log("#################### not zlo")
+    }).catch(function(err) {
+        throw err;
+        //next(err);
+    });
+
     /*var controllerPromise = controller.doAction("getNodes", arguments);
     controllerPromise.then(function(result) {
         res.json(res.jsonToRender);

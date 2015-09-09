@@ -3,6 +3,18 @@
  */
 
 /**
+ * @todo use this error handling:
+ *
+ * requestDomain.on('error', next);
+ *
+ * We can then use the default error handler to get a much nicer looking error page & stack trace:
+ *
+ * app.use(express.errorHandler({dumpExceptions: true, showStack: true}));
+ *
+ * http://www.asyncdev.net/2013/07/promises-errors-and-express-js/
+ */
+
+/**
  * Открываем столько дебаггеров, сколько ядер, с соответствующими портами
  * slc debug src/bin/test-domains-www.js
  *
@@ -18,17 +30,19 @@ var express = require('express'),
     cluster = require('cluster'),
     http = require('http'),
     numCPUs = require('os').cpus().length,
-    fs = require('fs');
+    fs = require('fs'),
+    routes = [];
 
 if (cluster.isMaster) {
-    console.log("###", numCPUs);
+    //console.log("###", numCPUs);
 
-    // fork workers
     if (0) {
+        // fork workers
         for (var i = 0; i < numCPUs; i++) {
             cluster.fork();
         }
     } else {
+        // fork only one worker
         cluster.fork();
     }
 
@@ -68,9 +82,13 @@ if (cluster.isMaster) {
         // makes the express error-middleware to not being called.
         reqDomain.add(req);
         reqDomain.add(res);
+        reqDomain.add(app);
 
         reqDomain.run(next);
     });
+
+    routes = require("../routes/index");
+    app.use("/api", routes);
 
     // all environments
     app.set('port', process.env.PORT || 7777);
@@ -97,7 +115,7 @@ if (cluster.isMaster) {
     //});
     //app.use('/api', router);
 
-    app.use("/api", require("../routes/index"));
+    //app.use("/api", routes);
 
     app.use(function (err, req, res, next) {
         console.log('ERROR MIDDLEWARE', err);

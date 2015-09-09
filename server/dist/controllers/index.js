@@ -21,20 +21,28 @@ var Controller = (function () {
         }
     }, {
         key: "__afterAction",
-        value: function __afterAction(req, res, next, result) {}
-        //return new Promise(function(resolve, reject) {
-        //    console.log("### 3");
-        //    resolve(result);
-        //    //next();
-        //});
+        value: function __afterAction(req, res, next, result) {
+            //return new Promise(function(resolve, reject) {
+            //    console.log("### 3");
+            //    resolve(result);
+            //    //next();
+            //});
+        }
+    }, {
+        key: "doAction",
+        value: function doAction(actionName, args) {
+            return new Promise(function (resolve, reject) {
+                do_.something.wrong();
+                //throw new Error("lol there are error occured");
+            });
+        }
 
         /**
          * Args: [req, res, next]
          */
-
     }, {
-        key: "doAction",
-        value: function doAction(actionName, args) {
+        key: "doAction222",
+        value: function doAction222(actionName, args) {
             var functionName = "_" + actionName + "Action";
             var self = this;
             var req = args[0];
