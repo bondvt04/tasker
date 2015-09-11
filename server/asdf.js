@@ -16,15 +16,19 @@ router.get('/nodes', function(req, res, next) {
         // Так поймает
         //throw new Error("asdf");
 
-        var controllerPromise = controller.doAction("index", arguments);
-        controllerPromise.then(function(res) {
+        setTimeout(function() {
+            throw new Error("asdfqwer");
+        }, 5000);
 
-        }).catch(function(err) {
-            // А так нет
-            throw err;
-
-            //next(err);
-        });
+        //var controllerPromise = controller.doAction("index", arguments);
+        //controllerPromise.then(function(res) {
+        //
+        //}).catch(function(err) {
+        //    // А так нет
+        //    throw err;
+        //
+        //    //next(err);
+        //});
     });
 });
 

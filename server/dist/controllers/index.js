@@ -49,8 +49,6 @@ var Controller = (function () {
             var res = args[1];
             var next = args[2];
 
-            var Promise = require("promise");
-
             return new Promise(function (resolve, reject) {
                 if (self[functionName] && "function" === typeof self[functionName]) {
                     //self.__beforeAction(req, res, next);
