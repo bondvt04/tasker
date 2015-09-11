@@ -19,6 +19,12 @@ reqDomain.on('error', function (err) {
     reqDomain.dispose();
 });
 
+process.on('uncaughtException', function (err) {
+    console.log("^^^^^^^^^^^^^^^^^^^2 routerError!!!", err);
+});
+
+reqDomain.enter();
+
 //reqDomain.run();
 
 router.get('/', function (req, res, next) {
@@ -40,26 +46,26 @@ router.get('/nodes', function (req, res, next) {
     //    }, 5000);
     //});
 
-    reqDomain.run(function () {
-        var Promise = require("promise");
+    //reqDomain.run(function() {
+    var Promise = require("promise");
 
-        //throw new Error("asdfasdfasdf");
+    //throw new Error("asdfasdfasdf");
 
-        var controllerPromise = new Promise(function (resolve, reject) {
-            do_.something.wrong();
-            //throw new Error("lol there are error occured");
-        });
-
-        //var controllerPromise = controller.doAction("lol", arguments);
-        controllerPromise.then(function (result) {
-            console.log("#################### not zlo");
-        })['catch'](function (err) {
-            console.error("######", err);
-            throw new Error("asdfasdfasdf");
-            //throw err;
-            //next(err);
-        });
+    var controllerPromise = new Promise(function (resolve, reject) {
+        do_.something.wrong();
+        //throw new Error("lol there are error occured");
     });
+
+    //var controllerPromise = controller.doAction("lol", arguments);
+    controllerPromise.then(function (result) {
+        console.log("#################### not zlo");
+    })['catch'](function (err) {
+        console.error("######", err);
+        throw new Error("<<<<<<<< asdfasdfasdf >>>>>>>>");
+        //throw err;
+        //next(err);
+    });
+    //});
 
     /*var controllerPromise = controller.doAction("getNodes", arguments);
     controllerPromise.then(function(result) {
@@ -114,6 +120,8 @@ router['delete']('/nodes/:id', function (req, res, next) {
         console.err(err);
     });
 });
+
+reqDomain.exit();
 
 module.exports = router;
 //# sourceMappingURL=../routes/index.js.map

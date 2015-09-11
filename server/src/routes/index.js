@@ -19,6 +19,12 @@ reqDomain.on('error', function (err) {
     reqDomain.dispose();
 });
 
+process.on('uncaughtException', function (err) {
+    console.log("^^^^^^^^^^^^^^^^^^^2 routerError!!!", err);
+})
+
+reqDomain.enter();
+
 //reqDomain.run();
 
 
@@ -41,7 +47,7 @@ router.get('/nodes', function(req, res, next) {
     //    }, 5000);
     //});
 
-    reqDomain.run(function() {
+    //reqDomain.run(function() {
         var Promise = require("promise");
 
         //throw new Error("asdfasdfasdf");
@@ -56,11 +62,11 @@ router.get('/nodes', function(req, res, next) {
             console.log("#################### not zlo")
         }).catch(function(err) {
             console.error("######", err);
-            throw new Error("asdfasdfasdf");
+            throw new Error("<<<<<<<< asdfasdfasdf >>>>>>>>");
             //throw err;
             //next(err);
         });
-    });
+    //});
 
 
 
@@ -117,5 +123,7 @@ router.delete('/nodes/:id', function(req, res, next) {
         console.err(err);
     });
 });
+
+reqDomain.exit();
 
 module.exports = router;

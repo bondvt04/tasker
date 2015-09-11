@@ -72,6 +72,7 @@ if (cluster.isMaster) {
         });
 
         reqDomain.on('error', function (err) {
+            console.log("<<< error >>>");
             // http://stackoverflow.com/questions/16763550/explicitly-adding-req-and-res-to-domain-dont-propagate-error-to-express-middlew
             // delegate to express error-middleware
             next(err);
