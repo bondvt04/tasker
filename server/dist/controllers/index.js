@@ -1,16 +1,29 @@
+// for consoles
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var logger = require('tracer').colorConsole();
 var Node = require("../models/Node");
+var ApiControllerAbstract = require("./apiControllerAbstract");
 
 //var querystring = require("querystring");
 
-var Controller = (function () {
+var Controller = (function (_ApiControllerAbstract) {
+    _inherits(Controller, _ApiControllerAbstract);
+
     function Controller() {
         _classCallCheck(this, Controller);
+
+        _get(Object.getPrototypeOf(Controller.prototype), "constructor", this).call(this);
+
+        logger.log("lol");
     }
 
     _createClass(Controller, [{
@@ -21,82 +34,66 @@ var Controller = (function () {
         }
     }, {
         key: "__afterAction",
-        value: function __afterAction(req, res, next, result) {
-            //return new Promise(function(resolve, reject) {
-            //    console.log("### 3");
-            //    resolve(result);
-            //    //next();
-            //});
-        }
-    }, {
-        key: "doAction",
-        value: function doAction(actionName, args) {
+        value: function __afterAction(req, res, next, actionResult) {
             return new Promise(function (resolve, reject) {
-                do_.something.wrong();
-                //throw new Error("lol there are error occured");
+                actionResult.c = "csdf";
+                resolve(actionResult);
             });
         }
+
+        //doAction(actionName, args) {
+        //    return new Promise(function(resolve, reject) {
+        //        do_.something.wrong();
+        //        //throw new Error("lol there are error occured");
+        //    });
+        //}
 
         /**
          * Args: [req, res, next]
          */
     }, {
-        key: "doAction222",
-        value: function doAction222(actionName, args) {
-            var functionName = "_" + actionName + "Action";
-            var self = this;
-            var req = args[0];
-            var res = args[1];
-            var next = args[2];
+        key: "doAction",
+        value: function doAction(actionName, args) {
+            logger.log("##### ACTION");
 
-            return new Promise(function (resolve, reject) {
-                if (self[functionName] && "function" === typeof self[functionName]) {
-                    //self.__beforeAction(req, res, next);
-
-                    resolve();
-
-                    // fill with arguments as is (not as array)
-                    /*var actionPromise = self[functionName](...Array.prototype.slice.call(args));
-                     function doAfterAction() {
-                        //process.on('uncaughtException', function (err) {
-                        //    console.log("lol error");
-                        //    console.error(err);
-                        //});
-                         //try {
-                            console.log("---^^^---1");
-                            throw new Error("zlo");
-                            console.log("---^^^---2");
-                            var afterActionPromise = self.__afterAction(req, res, next, result);
-                             console.log("---&&&---");
-                             afterActionPromise.then(function(result) {
-                                console.log("### 4");
-                                resolve(result);
-                            }).catch(function(err) {
-                                console.log("### 5");
-                                reject(err);
-                            }).done(function() {
-                                console.log("### 6");
-                            });
-                        //} catch(e) {
-                            //console.log(e);
-                            //console.error(e);
-                            //throw e;
-                        //}
-                    }
-                     actionPromise.then(function(result) {
-                        console.log("### 7");
-                        doAfterAction().then(function(afterActionResult) {
-                            resolve(afterActionResult);
-                        }).catch(function(err) {
-                            reject(err);
-                        });
-                    }).catch(function(err) {
-                        console.log("### 8");
-                        doAfterAction();
-                        reject(err);
-                    });*/
-                }
-            });
+            //var functionName = "_"+actionName+"Action";
+            //var self = this;
+            //var req = args[0];
+            //var res = args[1];
+            //var next = args[2];
+            //
+            //return new Promise(function(resolve, reject) {
+            //    if(self[functionName] && "function" === typeof self[functionName]) {
+            //        //self.__beforeAction(req, res, next);
+            //
+            //        // fill with arguments as is (not as array)
+            //        var actionPromise = self[functionName](...Array.prototype.slice.call(args));
+            //
+            //        function doAfterAction(actionResult) {
+            //            var afterActionPromise = self.__afterAction(req, res, next, actionResult);
+            //
+            //            afterActionPromise.then(function(result) {
+            //                resolve(result);
+            //            }).catch(function(err) {
+            //                logger.error(err);
+            //                reject(err);
+            //            });
+            //        }
+            //
+            //        actionPromise.then(function(result) {
+            //            logger.log("### 7");
+            //            doAfterAction().then(function(afterActionResult) {
+            //                resolve(afterActionResult);
+            //            }).catch(function(err) {
+            //                reject(err);
+            //            });
+            //        }).catch(function(err) {
+            //            logger.log("### 8");
+            //            doAfterAction();
+            //            reject(err);
+            //        });
+            //    }
+            //});
         }
 
         /**
@@ -125,13 +122,14 @@ var Controller = (function () {
         key: "_getNodesAction",
         value: function _getNodesAction(req, res) {
             return new Promise(function (resolve, reject) {
-                Node.find(function (err, nodes) {
-                    if (err) reject(err);
-
-                    res.send(nodes);
-
-                    resolve(nodes);
-                });
+                resolve({ a: "asdf", b: "bsdf" });
+                //Node.find(function (err, nodes) {
+                //    if (err) reject(err);
+                //
+                //    res.send(nodes);
+                //
+                //    resolve(nodes);
+                //});
 
                 //Kitten.find({ name: /^Fluff/ }, callback);
             });
@@ -196,7 +194,13 @@ var Controller = (function () {
     }]);
 
     return Controller;
-})();
+})(ApiControllerAbstract);
 
-module.exports = new Controller();
+try {
+    var controller = new Controller();
+} catch (err) {
+    logger.error(err);
+}
+
+module.exports = controller;
 //# sourceMappingURL=../controllers/index.js.map
