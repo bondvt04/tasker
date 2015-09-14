@@ -21,7 +21,7 @@
  * @type {*|exports}
  */
 
-'use strict';
+
 
 var express = require('express'),
     http = require('http'),
@@ -121,7 +121,7 @@ if (cluster.isMaster) {
     app.use(function (err, req, res, next) {
         console.log('ERROR MIDDLEWARE', err);
         res.writeHeader(500, { 'Content-Type': "text/html" });
-        res.write("<h1>" + err.name + "</h1>");
+        res.write("<h1>" + err.name + err.stack + "</h1>");
         res.end("<p>" + err.message + "</p>");
     });
 

@@ -2,10 +2,16 @@
  * Created by anatoliybondar on 9/14/15.
  */
 
-var intel = require('intel');
-intel.setLevel(intel.WARN);
-intel.warn('i made it!');
-intel.debug('nobody loves me');
+//var trace = require('jstrace');
+//trace('request:start', { id: 10 });
+
+//require('longjohn');
+//console.log("asdfasdfasdf");
+
+//var intel = require('intel');
+//intel.setLevel(intel.WARN);
+//intel.warn('i made it!');
+//intel.debug('nobody loves me');
 
 //require('console-trace')();
 //console.error('a');

@@ -7,6 +7,8 @@ var babel = require('gulp-babel');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var clean = require('gulp-clean');
+//var removeUseStrict = require("gulp-remove-use-strict");
+var replace = require("gulp-replace");
 
 
 gulp.task('clean-dest', function () {
@@ -23,8 +25,12 @@ gulp.task('build', ['copy-src-to-dist'], function () {
     return gulp.src('dist/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(babel())
+
         //.pipe(concat('all.js'))
         .pipe(sourcemaps.write('.'))
+        //.pipe(removeUseStrict())
+        .pipe(replace(/\'use strict\'\;/g, ''))
+
         .pipe(gulp.dest('dist'));
 });
 

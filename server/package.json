@@ -28,6 +28,8 @@
     "gulp": "~3.9.0",
     "gulp-clean": "~0.3.1",
     "gulp-concat": "~2.6.0",
+    "gulp-remove-use-strict": "0.0.2",
+    "gulp-replace": "^0.5.4",
     "gulp-sourcemaps": "~1.5.2",
     "http": "0.0.0",
     "intel": "^1.0.2",

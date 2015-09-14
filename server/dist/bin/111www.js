@@ -2,7 +2,7 @@
 
 // http://stackoverflow.com/questions/16763550/explicitly-adding-req-and-res-to-domain-dont-propagate-error-to-express-middlew
 
-'use strict';
+
 
 var cluster = require('cluster');
 

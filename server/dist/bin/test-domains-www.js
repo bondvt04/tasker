@@ -9,7 +9,7 @@
  * @type {*|exports}
  */
 
-'use strict';
+
 
 var express = require('express'),
     http = require('http'),

@@ -3,7 +3,7 @@
  */
 
 // colored console.log()
-'use strict';
+
 
 var colors = require('colors');
 

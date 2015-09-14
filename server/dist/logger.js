@@ -1,13 +1,19 @@
+"use strict";
+
 /**
  * Created by anatoliybondar on 9/14/15.
  */
 
-'use strict';
+//var trace = require('jstrace');
+//trace('request:start', { id: 10 });
 
-var intel = require('intel');
-intel.setLevel(intel.WARN);
-intel.warn('i made it!');
-intel.debug('nobody loves me');
+//require('longjohn');
+//console.log("asdfasdfasdf");
+
+//var intel = require('intel');
+//intel.setLevel(intel.WARN);
+//intel.warn('i made it!');
+//intel.debug('nobody loves me');
 
 //require('console-trace')();
 //console.error('a');

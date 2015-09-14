@@ -2,7 +2,7 @@
  * Created by anatoliybondar on 8/21/15.
  */
 
-'use strict';
+
 
 var mongoose = require('../db/index');
 

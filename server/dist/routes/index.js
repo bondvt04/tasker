@@ -1,9 +1,9 @@
-'use strict';
+
 
 var controller = require('../controllers/index');
 var express = require('express');
 var router = express.Router();
-var logger = require('../logger');
+var logger = require('../megaLogger');
 
 router.get('/', function (req, res, next) {
 
@@ -17,6 +17,10 @@ router.get('/nodes/500', function (req, res, next) {
 
 // get list of nodes
 router.get('/nodes', function (req, res, next) {
+
+    logger.log("qwerqwerqwer", __line);
+
+    //throw new Error("qwerqwerqwer");
 
     //logger.log("Hello, world!");
     //logger.error("Hello, world!!!");
