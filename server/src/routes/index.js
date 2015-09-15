@@ -18,8 +18,8 @@ router.get('/nodes/500', function(req, res, next) {
 router.get('/nodes', function(req, res, next) {
 
 
-
-    logger.log("qwerqwerqwer", __line);
+    console.error("@@@"+__file+":"+__line+":aaaaaaaaaaaaaa");
+    logger.log("qwerqwerqwer");
 
     //throw new Error("qwerqwerqwer");
 

@@ -27,7 +27,7 @@ gulp.task('build', ['copy-src-to-dist'], function () {
         .pipe(babel())
 
         //.pipe(concat('all.js'))
-        .pipe(sourcemaps.write('.'))
+        .pipe(sourcemaps.write('.', {addComment: true}))
         //.pipe(removeUseStrict())
         .pipe(replace(/\'use strict\'\;/g, ''))
 
