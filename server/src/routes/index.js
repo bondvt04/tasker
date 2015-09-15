@@ -3,6 +3,11 @@ var express = require('express');
 var router = express.Router();
 var logger = require('../megaLogger');
 
+class Hello {
+    getGreeting() {
+        return "Hello, World!";
+    }
+}
 
 router.get('/', function(req, res, next) {
 
@@ -18,8 +23,8 @@ router.get('/nodes/500', function(req, res, next) {
 router.get('/nodes', function(req, res, next) {
 
 
-    console.error("@@@"+__file+":"+__line+":aaaaaaaaaaaaaa");
-    logger.log("qwerqwerqwer");
+    //console.error("@@@"+__file+":"+__line+":aaaaaaaaaaaaaa");
+    logger.log("asdf", "qwer");
 
     //throw new Error("qwerqwerqwer");
 

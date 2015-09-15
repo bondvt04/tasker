@@ -1,9 +1,28 @@
 
 
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
 var controller = require('../controllers/index');
 var express = require('express');
 var router = express.Router();
 var logger = require('../megaLogger');
+
+var Hello = (function () {
+    function Hello() {
+        _classCallCheck(this, Hello);
+    }
+
+    _createClass(Hello, [{
+        key: 'getGreeting',
+        value: function getGreeting() {
+            return "Hello, World!";
+        }
+    }]);
+
+    return Hello;
+})();
 
 router.get('/', function (req, res, next) {
 
@@ -18,8 +37,8 @@ router.get('/nodes/500', function (req, res, next) {
 // get list of nodes
 router.get('/nodes', function (req, res, next) {
 
-    console.error("@@@" + __file + ":" + __line + ":aaaaaaaaaaaaaa");
-    logger.log("qwerqwerqwer");
+    //console.error("@@@"+__file+":"+__line+":aaaaaaaaaaaaaa");
+    logger.log("asdf", "qwer");
 
     //throw new Error("qwerqwerqwer");
 

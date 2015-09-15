@@ -56,37 +56,34 @@ Object.defineProperty(global, '__file', {
     }
 });
 
-Object.defineProperty(global, '__line0', { get: function get() {
-        return __stack && __stack[0] ? __stack[0].getLineNumber() : undefined;
+//Object.defineProperty(global, '__line0', {get: function() {return (__stack && __stack[0])?__stack[0].getLineNumber():undefined;}});
+//Object.defineProperty(global, '__file0', {get: function() {return (__stack && __stack[0])?__stack[0].getFileName():undefined;}});
+//Object.defineProperty(global, '__line1', {get: function() {return (__stack && __stack[1])?__stack[1].getLineNumber():undefined;}});
+//Object.defineProperty(global, '__file1', {get: function() {return (__stack && __stack[1])?__stack[1].getFileName():undefined;}});
+//Object.defineProperty(global, '__line2', {get: function() {return (__stack && __stack[2])?__stack[2].getLineNumber():undefined;}});
+//Object.defineProperty(global, '__file2', {get: function() {return (__stack && __stack[2])?__stack[2].getFileName():undefined;}});
+//Object.defineProperty(global, '__line3', {get: function() {return (__stack && __stack[3])?__stack[3].getLineNumber():undefined;}});
+//Object.defineProperty(global, '__file3', {get: function() {return (__stack && __stack[3])?__stack[3].getFileName():undefined;}});
+
+Object.defineProperty(global, '__callsite0', { get: function get() {
+        return __stack && __stack[0] ? __stack[0] : null;
     } });
-Object.defineProperty(global, '__file0', { get: function get() {
-        return __stack && __stack[0] ? __stack[0].getFileName() : undefined;
+Object.defineProperty(global, '__callsite1', { get: function get() {
+        return __stack && __stack[1] ? __stack[1] : null;
     } });
-Object.defineProperty(global, '__line1', { get: function get() {
-        return __stack && __stack[1] ? __stack[1].getLineNumber() : undefined;
+Object.defineProperty(global, '__callsite2', { get: function get() {
+        return __stack && __stack[2] ? __stack[2] : null;
     } });
-Object.defineProperty(global, '__file1', { get: function get() {
-        return __stack && __stack[1] ? __stack[1].getFileName() : undefined;
-    } });
-Object.defineProperty(global, '__line2', { get: function get() {
-        return __stack && __stack[2] ? __stack[2].getLineNumber() : undefined;
-    } });
-Object.defineProperty(global, '__file2', { get: function get() {
-        return __stack && __stack[2] ? __stack[2].getFileName() : undefined;
-    } });
-Object.defineProperty(global, '__line3', { get: function get() {
-        return __stack && __stack[3] ? __stack[3].getLineNumber() : undefined;
-    } });
-Object.defineProperty(global, '__file3', { get: function get() {
-        return __stack && __stack[3] ? __stack[3].getFileName() : undefined;
+Object.defineProperty(global, '__callsite3', { get: function get() {
+        return __stack && __stack[3] ? __stack[3] : null;
     } });
 
 //var logger = console;
 var logger = {};
-logger.log = function (message1, message2, message3) {
+logger.log = function () {
 
-    var filePath = "";
-    var lineNumber = NaN;
+    var fileInfo = {};
+    var loggerArguments = Array.prototype.slice.call(arguments);
 
     function isValidFileName(fileName) {
         if (!fileName || fileName && fileName.match(/v8-debug/) || fileName && fileName.match(/ConsoleAgent/) || fileName && fileName.match(/megaLogger/)) {
@@ -96,39 +93,49 @@ logger.log = function (message1, message2, message3) {
         return true;
     }
 
-    if (isValidFileName(__file0)) {
-        filePath = __file0 + '.map';
-        lineNumber = __file0;
-    } else if (isValidFileName(__file1)) {
-        filePath = __file1 + '.map';
-        lineNumber = __file1;
-    } else if (isValidFileName(__file2)) {
-        filePath = __file2 + '.map';
-        lineNumber = __file2;
-    } else if (isValidFileName(__file3)) {
-        filePath = __file3 + '.map';
-        lineNumber = __file3;
-    } else {
-        return false;
+    callsite = __callsite0;
+    //console.log("===0 ", callsite);
+
+    if (!isValidFileName(callsite.getFileName())) {
+        callsite = __callsite1;
+        //console.log("===1 ", callsite);
+        if (!isValidFileName(callsite.getFileName())) {
+            callsite = __callsite2;
+            //console.log("===2 ", callsite.getFileName()+":"+callsite.getLineNumber()+":"+callsite.getColumnNumber());
+            if (!isValidFileName(callsite.getFileName())) {
+                callsite = __callsite3;
+                //console.log("===3 ", callsite);
+                if (!isValidFileName(callsite.getFileName())) {
+                    console.error("There are no valid file!");
+                    return false;
+                }
+            }
+        }
     }
 
-    //console.log("###---", filePath);
+    fileInfo = {
+        path: callsite.getFileName(),
+        mapPath: callsite.getFileName() + ".map",
+        line: callsite.getLineNumber(),
+        column: callsite.getColumnNumber()
+    };
 
-    fs.readFile(filePath, function (err, rawSourceMap) {
+    fs.readFile(fileInfo.mapPath, function (err, rawSourceMap) {
         if (err) {
             console.error(err);
             return;
-            //throw err;
-            //
         }
 
-        console.log("#####", rawSourceMap.toString('utf8', 0, rawSourceMap.length));
+        //console.log("#####", rawSourceMap.toString('utf8', 0, rawSourceMap.length));
         var smc = new SourceMapConsumer(rawSourceMap.toString('utf8', 0, rawSourceMap.length));
-        console.log(smc.originalPositionFor({
-            line: 2,
-            column: 28
-        }));
-        console.log("%%%", smc.sources);
+        var originalPosition = smc.originalPositionFor({
+            line: fileInfo.line,
+            column: fileInfo.column
+        });
+
+        loggerArguments.unshift(originalPosition.source + ":" + originalPosition.line + ":" + originalPosition.column);
+
+        console.log.apply(this, loggerArguments);
     });
 
     // async
