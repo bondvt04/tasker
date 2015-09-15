@@ -1,5 +1,7 @@
-var SourceMapConsumer = require('source-map').SourceMapConsumer;
+var fs = require("fs");
 
-console.log(SourceMapConsumer);
+fs.stat("./asdf2.js", function(err, statObject) {
+    if(err) //console.error(err);
 
-//SourceMapConsumer
+    console.log("###", statObject);
+});

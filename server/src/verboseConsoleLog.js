@@ -18,49 +18,6 @@ Object.defineProperty(global, '__stack', {
     }
 });
 
-Object.defineProperty(global, '__line', {
-    get: function(){
-        var result = "";
-
-        //if(__stack && __stack.length) {
-        //    if(__stack[0]) {
-        //        result += "|" + __stack[0].getLineNumber();
-        //    }
-        //
-        //    if(__stack[1]) {
-        //        result += "|" + __stack[1].getLineNumber();
-        //    }
-        //
-        //    if(__stack[2]) {
-        //        result += "|" + __stack[2].getLineNumber();
-        //    }
-        //}
-
-        result = __stack[1].getLineNumber();
-
-        return result;
-    }
-});
-
-Object.defineProperty(global, '__file', {
-    get: function(){
-        var result = "";
-
-        result = __stack[1].getFileName()
-
-        return result;
-    }
-});
-
-//Object.defineProperty(global, '__line0', {get: function() {return (__stack && __stack[0])?__stack[0].getLineNumber():undefined;}});
-//Object.defineProperty(global, '__file0', {get: function() {return (__stack && __stack[0])?__stack[0].getFileName():undefined;}});
-//Object.defineProperty(global, '__line1', {get: function() {return (__stack && __stack[1])?__stack[1].getLineNumber():undefined;}});
-//Object.defineProperty(global, '__file1', {get: function() {return (__stack && __stack[1])?__stack[1].getFileName():undefined;}});
-//Object.defineProperty(global, '__line2', {get: function() {return (__stack && __stack[2])?__stack[2].getLineNumber():undefined;}});
-//Object.defineProperty(global, '__file2', {get: function() {return (__stack && __stack[2])?__stack[2].getFileName():undefined;}});
-//Object.defineProperty(global, '__line3', {get: function() {return (__stack && __stack[3])?__stack[3].getLineNumber():undefined;}});
-//Object.defineProperty(global, '__file3', {get: function() {return (__stack && __stack[3])?__stack[3].getFileName():undefined;}});
-
 Object.defineProperty(global, '__callsite0', {get: function() {return (__stack && __stack[0])?__stack[0]:null;}});
 Object.defineProperty(global, '__callsite1', {get: function() {return (__stack && __stack[1])?__stack[1]:null;}});
 Object.defineProperty(global, '__callsite2', {get: function() {return (__stack && __stack[2])?__stack[2]:null;}});
@@ -68,7 +25,6 @@ Object.defineProperty(global, '__callsite3', {get: function() {return (__stack &
 
 
 
-//var logger = console;
 var logger = {};
 logger.log = function() {
 
@@ -89,8 +45,6 @@ logger.log = function() {
     }
 
     callsite = __callsite0;
-    //console.log("===0 ", callsite);
-
 
     if(!isValidFileName(callsite.getFileName())) {
         callsite = __callsite1;
@@ -115,6 +69,13 @@ logger.log = function() {
         line: callsite.getLineNumber(),
         column: callsite.getColumnNumber()
     }
+
+    // Check is *.map (source map) file exists
+    fs.stat(fileInfo.mapPath, function(err, statObject) {
+        if(err) //console.error(err);
+
+            console.log("###", statObject);
+    });
 
     fs.readFile(fileInfo.mapPath, function (err, rawSourceMap) {
         if (err) {
