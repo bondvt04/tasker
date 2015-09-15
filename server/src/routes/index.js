@@ -1,7 +1,7 @@
 var controller = require('../controllers/index');
 var express = require('express');
 var router = express.Router();
-var logger = require('../megaLogger');
+var logger = require('../verboseConsoleLog');
 
 class Hello {
     getGreeting() {
