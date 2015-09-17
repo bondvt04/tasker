@@ -7,7 +7,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var controller = require('../controllers/index');
 var express = require('express');
 var router = express.Router();
-var logger = require('../verboseConsoleLog');
+var logger = require('verbose-console-log');
 
 var Hello = (function () {
     function Hello() {
@@ -39,6 +39,12 @@ router.get('/nodes', function (req, res, next) {
 
     //console.error("@@@"+__file+":"+__line+":aaaaaaaaaaaaaa");
     logger.log("asdf", "qwer");
+
+    try {
+        asdf.qwer();
+    } catch (err) {
+        logger.error("ttt", 1234, 1234);
+    }
 
     //throw new Error("qwerqwerqwer");
 

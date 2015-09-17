@@ -5,8 +5,17 @@
 // colored console.log()
 var colors = require('colors');
 
+var domain = require('domain').create();
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/tasker');
+
+domain.on('error', function(er) {
+    console.log('--- Oh no, something wrong with DB');
+});
+
+domain.run(function() {
+    mongoose.connect('mongodb://localhost/tasker');
+});
+
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

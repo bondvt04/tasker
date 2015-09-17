@@ -1,7 +1,9 @@
-var fs = require("fs");
+var logger = require("verbose-console-log");
 
-fs.stat("./asdf2.js", function(err, statObject) {
-    if(err) console.error(err);
+logger.log("foo", "bar");
 
-    console.log("###", statObject);
-});
+try {
+    something.wrong();
+} catch(err) {
+    logger.error("asdf", "qwer");
+}

@@ -1,56 +1,23 @@
 var controller = require('../controllers/index');
 var express = require('express');
 var router = express.Router();
-var logger = require('../verboseConsoleLog');
+var logger = require('verbose-console-log');
 
-class Hello {
-    getGreeting() {
-        return "Hello, World!";
-    }
-}
+// Do your next() stuff in controller's actions when you done
 
 router.get('/', function(req, res, next) {
-
     controller.doAction("index", arguments);
 });
 
 // test, how works error handling
 router.get('/nodes/500', function(req, res, next) {
-    var controllerPromise = controller.doAction("error500", arguments);
+    controller.doAction("error500", arguments);
 });
 
 // get list of nodes
 router.get('/nodes', function(req, res, next) {
 
-
-    //console.error("@@@"+__file+":"+__line+":aaaaaaaaaaaaaa");
-    logger.log("asdf", "qwer");
-
-    //throw new Error("qwerqwerqwer");
-
-    //logger.log("Hello, world!");
-    //logger.error("Hello, world!!!");
-
-        //var Promise = require("promise");
-        //
-        ////throw new Error("asdfasdfasdf");
-        //
-        //var controllerPromise = new Promise(function(resolve, reject) {
-        //    do_.something.wrong();
-        //    //throw new Error("lol there are error occured");
-        //});
-        //
-        ////var controllerPromise = controller.doAction("lol", arguments);
-        //controllerPromise.then(function(result) {
-        //    console.log("#################### not zlo")
-        //}).catch(function(err) {
-        //    console.error("######", err);
-        //    throw new Error("<<<<<<<< asdfasdfasdf >>>>>>>>");
-        //    //throw err;
-        //    //next(err);
-        //});
-
-
+    controller.doAction("getNodes", arguments);
 
     //var controllerPromise = controller.doAction("getNodes", arguments);
     //controllerPromise.then(function(result) {

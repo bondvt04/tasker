@@ -110,4 +110,4 @@ logger = {
 };
 
 module.exports = logger;
-//# sourceMappingURL=verboseConsoleLog.js.map
+//# sourceMappingURL=222verboseConsoleLog.js.map
