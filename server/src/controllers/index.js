@@ -1,5 +1,5 @@
 // for consoles
-var logger = require('tracer').colorConsole();
+var logger = require("verbose-console-log");
 var Node = require("../models/Node");
 var ApiControllerAbstract = require("./apiControllerAbstract");
 
@@ -8,22 +8,20 @@ var ApiControllerAbstract = require("./apiControllerAbstract");
 class Controller extends ApiControllerAbstract {
 
     constructor() {
-        super();
-
-        logger.log("lol");
+        super(arguments);
     }
 
-    __beforeAction(req, res, next) {
-        // we will render it later if no error
-        res.jsonToRender = {};
-    }
+    //__beforeAction(req, res, next) {
+    //    console.log("Controller.__beforeAction");
+    //    return super.__beforeAction.apply(this, arguments);
+    //}
+    //
+    //__afterAction(req, res, next, actionResult) {
+    //    console.log("Controller.__afterAction");
+    //    return super.__afterAction.apply(this, arguments);
+    //}
 
-    __afterAction(req, res, next, actionResult) {
-        return new Promise(function(resolve, reject) {
-            actionResult.c = "csdf";
-            resolve(actionResult);
-        });
-    }
+
 
     //doAction(actionName, args) {
     //    return new Promise(function(resolve, reject) {
@@ -32,51 +30,7 @@ class Controller extends ApiControllerAbstract {
     //    });
     //}
 
-    /**
-     * Args: [req, res, next]
-     */
-    doAction(actionName, args) {
-        logger.log("##### ACTION");
 
-        //var functionName = "_"+actionName+"Action";
-        //var self = this;
-        //var req = args[0];
-        //var res = args[1];
-        //var next = args[2];
-        //
-        //return new Promise(function(resolve, reject) {
-        //    if(self[functionName] && "function" === typeof self[functionName]) {
-        //        //self.__beforeAction(req, res, next);
-        //
-        //        // fill with arguments as is (not as array)
-        //        var actionPromise = self[functionName](...Array.prototype.slice.call(args));
-        //
-        //        function doAfterAction(actionResult) {
-        //            var afterActionPromise = self.__afterAction(req, res, next, actionResult);
-        //
-        //            afterActionPromise.then(function(result) {
-        //                resolve(result);
-        //            }).catch(function(err) {
-        //                logger.error(err);
-        //                reject(err);
-        //            });
-        //        }
-        //
-        //        actionPromise.then(function(result) {
-        //            logger.log("### 7");
-        //            doAfterAction().then(function(afterActionResult) {
-        //                resolve(afterActionResult);
-        //            }).catch(function(err) {
-        //                reject(err);
-        //            });
-        //        }).catch(function(err) {
-        //            logger.log("### 8");
-        //            doAfterAction();
-        //            reject(err);
-        //        });
-        //    }
-        //});
-    }
 
     /**
      * Тестим ловлю ошибок

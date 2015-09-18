@@ -17,7 +17,13 @@ router.get('/nodes/500', function(req, res, next) {
 // get list of nodes
 router.get('/nodes', function(req, res, next) {
 
-    controller.doAction("getNodes", arguments);
+    var promise = controller.doAction("getNodes", arguments);
+
+    promise.then(function(result) {
+        logger.log(result);
+    }).catch(function(err) {
+        logger.error(err);
+    });
 
     //var controllerPromise = controller.doAction("getNodes", arguments);
     //controllerPromise.then(function(result) {

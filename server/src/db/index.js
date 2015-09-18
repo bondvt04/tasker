@@ -21,7 +21,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback() {
     // Соединение прошло успешно
-    console.log("Db connection was successfull".green);
+    console.log("Db connection was successful".green);
     //callback();
 });
 

@@ -1,74 +1,31 @@
 
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
 var controller = require('../controllers/index');
 var express = require('express');
 var router = express.Router();
 var logger = require('verbose-console-log');
 
-var Hello = (function () {
-    function Hello() {
-        _classCallCheck(this, Hello);
-    }
-
-    _createClass(Hello, [{
-        key: 'getGreeting',
-        value: function getGreeting() {
-            return "Hello, World!";
-        }
-    }]);
-
-    return Hello;
-})();
+// Do your next() stuff in controller's actions when you done
 
 router.get('/', function (req, res, next) {
-
     controller.doAction("index", arguments);
 });
 
 // test, how works error handling
 router.get('/nodes/500', function (req, res, next) {
-    var controllerPromise = controller.doAction("error500", arguments);
+    controller.doAction("error500", arguments);
 });
 
 // get list of nodes
 router.get('/nodes', function (req, res, next) {
 
-    //console.error("@@@"+__file+":"+__line+":aaaaaaaaaaaaaa");
-    logger.log("asdf", "qwer");
+    var promise = controller.doAction("getNodes", arguments);
 
-    try {
-        asdf.qwer();
-    } catch (err) {
-        logger.error("ttt", 1234, 1234);
-    }
-
-    //throw new Error("qwerqwerqwer");
-
-    //logger.log("Hello, world!");
-    //logger.error("Hello, world!!!");
-
-    //var Promise = require("promise");
-    //
-    ////throw new Error("asdfasdfasdf");
-    //
-    //var controllerPromise = new Promise(function(resolve, reject) {
-    //    do_.something.wrong();
-    //    //throw new Error("lol there are error occured");
-    //});
-    //
-    ////var controllerPromise = controller.doAction("lol", arguments);
-    //controllerPromise.then(function(result) {
-    //    console.log("#################### not zlo")
-    //}).catch(function(err) {
-    //    console.error("######", err);
-    //    throw new Error("<<<<<<<< asdfasdfasdf >>>>>>>>");
-    //    //throw err;
-    //    //next(err);
-    //});
+    promise.then(function (result) {
+        logger.log(result);
+    })['catch'](function (err) {
+        logger.error(err);
+    });
 
     //var controllerPromise = controller.doAction("getNodes", arguments);
     //controllerPromise.then(function(result) {
