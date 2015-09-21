@@ -30,7 +30,7 @@ var ApiControllerAbstract = (function () {
         key: "__beforeAction",
         value: function __beforeAction(req, res, next) {
             return new Promise(function (resolve, reject) {
-                console.log("Controller.__beforeAction");
+                logger.log("Controller.__beforeAction");
                 resolve();
             });
 
@@ -41,7 +41,7 @@ var ApiControllerAbstract = (function () {
         key: "__afterAction",
         value: function __afterAction(req, res, next, actionResult) {
             return new Promise(function (resolve, reject) {
-                console.log("Controller.__afterAction");
+                logger.log("Controller.__afterAction");
                 resolve();
             });
 
@@ -55,26 +55,34 @@ var ApiControllerAbstract = (function () {
          * __beforeActionPromise -> actionPromise -> __afterActionPromise
          *
          * Args: [req, res, next]
+         *
+         * Old implementation: var actionPromise = self[functionName](...Array.prototype.slice.call(args))
          */
     }, {
         key: "doAction",
         value: function doAction(actionName, args) {
             var self = this;
 
-            var beforeActionPromise = self.__beforeAction();
+            var functionName = "_" + actionName + "Action";
+            var req = args[0];
+            var res = args[1];
+            var next = args[2];
 
-            return beforeActionPromise.then(function (beforeActionResult) {
-                var actionPromise = self.tttAction();
-                actionPromise.then(function (actionResult) {
-                    var afterActionPromise = self.__afterAction();
-                    afterActionPromise.then(function (afterActionResult) {})["catch"](function (err) {
-                        logger.error(err);
-                    });
-                })["catch"](function (err) {
-                    logger.error(err);
-                });
-            })["catch"](function (err) {
+            function catchError(err) {
                 logger.error(err);
+                logger.error("Error stack:", err.stack);
+                next(err);
+            }
+
+            return new Promise(function (resolve, reject) {
+                self.__beforeAction().then(function (beforeActionResult) {
+                    // action must not know about "beforeActionResult" - only about "args"
+                    self[functionName](req, res).then(function (actionResult) {
+                        self.__afterAction(actionResult, next).then(function (afterActionResult) {
+                            resolve(afterActionResult);
+                        })["catch"](catchError);
+                    })["catch"](catchError);
+                })["catch"](catchError);
             });
 
             //var functionName = "_"+actionName+"Action";
@@ -116,9 +124,20 @@ var ApiControllerAbstract = (function () {
             //    }
             //});
         }
+
+        /**
+         * @param actionResult - result from "action" promise
+         */
     }, {
-        key: "tttAction",
-        value: function tttAction() {
+        key: "__afterAction",
+        value: function __afterAction(actionResult) {
+            return new Promise(function (resolve, reject) {
+                resolve(actionResult);
+            });
+        }
+    }, {
+        key: "_tttAction",
+        value: function _tttAction() {
             return new Promise(function (resolve, reject) {
                 resolve({ a: "asdf", b: "bsdf" });
             });

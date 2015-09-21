@@ -43,33 +43,32 @@ class ApiControllerAbstract {
      * __beforeActionPromise -> actionPromise -> __afterActionPromise
      *
      * Args: [req, res, next]
+     *
+     * Old implementation: var actionPromise = self[functionName](...Array.prototype.slice.call(args))
      */
     doAction(actionName, args) {
         var self = this;
 
-        var beforeActionPromise = new Promise(function(resolve, reject) {
-            self.__beforeAction().then(function(beforeActionResult) {
+        var functionName = "_"+actionName+"Action"
+        var req = args[0];
+        var res = args[1];
+        var next = args[2];
 
-            }).catch()
-        });
-
-
-
-
-        return beforeActionPromise.then(function(beforeActionResult) {
-            var actionPromise = self.tttAction();
-            actionPromise.then(function(actionResult) {
-                var afterActionPromise = self.__afterAction();
-                afterActionPromise.then(function(afterActionResult) {
-
-                }).catch(function(err) {
-                    logger.error(err);
-                });
-            }).catch(function(err) {
-                logger.error(err);
-            });
-        }).catch(function(err) {
+        function catchError(err) {
             logger.error(err);
+            logger.error("Error stack:", err.stack);
+            next(err);
+        }
+
+        return new Promise(function(resolve, reject) {
+            self.__beforeAction().then(function(beforeActionResult) {
+                // action must not know about "beforeActionResult" - only about "args"
+                self[functionName](req, res).then(function(actionResult) {
+                    self.__afterAction(actionResult, next).then(function(afterActionResult) {
+                        resolve(afterActionResult);
+                    }).catch(catchError);
+                }).catch(catchError);
+            }).catch(catchError);
         });
 
         //var functionName = "_"+actionName+"Action";
@@ -112,7 +111,16 @@ class ApiControllerAbstract {
         //});
     }
 
-    tttAction() {
+    /**
+     * @param actionResult - result from "action" promise
+     */
+    __afterAction(actionResult) {
+        return new Promise(function(resolve, reject) {
+            resolve(actionResult);
+        });
+    }
+
+    _tttAction() {
         return new Promise(function(resolve, reject) {
             resolve({a:"asdf", b:"bsdf"});
         });
