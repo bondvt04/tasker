@@ -19,7 +19,7 @@ router.get('/nodes', function(req, res, next) {
 
     //var promise = controller.doAction("getNodes", arguments);
 
-    controller.doAction("ttt", arguments).then(function(result) {
+    controller.doAction("getNodes", arguments).then(function(result) {
         logger.log(result);
     }).catch(function(err) {
         logger.error(err);

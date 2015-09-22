@@ -68,7 +68,7 @@ var Controller = (function (_ApiControllerAbstract) {
         key: "_getNodesAction",
         value: function _getNodesAction(req, res) {
             return new Promise(function (resolve, reject) {
-                resolve({ a: "asdf", b: "bsdf" });
+                resolve({ a: "asdf777", b: "bsdf888" });
                 //Node.find(function (err, nodes) {
                 //    if (err) reject(err);
                 //

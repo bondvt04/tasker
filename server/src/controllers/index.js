@@ -3,34 +3,11 @@ var logger = require("verbose-console-log");
 var Node = require("../models/Node");
 var ApiControllerAbstract = require("./apiControllerAbstract");
 
-//var querystring = require("querystring");
-
 class Controller extends ApiControllerAbstract {
 
     constructor() {
         super(arguments);
     }
-
-    //__beforeAction(req, res, next) {
-    //    console.log("Controller.__beforeAction");
-    //    return super.__beforeAction.apply(this, arguments);
-    //}
-    //
-    //__afterAction(req, res, next, actionResult) {
-    //    console.log("Controller.__afterAction");
-    //    return super.__afterAction.apply(this, arguments);
-    //}
-
-
-
-    //doAction(actionName, args) {
-    //    return new Promise(function(resolve, reject) {
-    //        do_.something.wrong();
-    //        //throw new Error("lol there are error occured");
-    //    });
-    //}
-
-
 
     /**
      * Тестим ловлю ошибок
@@ -54,7 +31,7 @@ class Controller extends ApiControllerAbstract {
      */
     _getNodesAction(req, res) {
         return new Promise(function(resolve, reject) {
-            resolve({a:"asdf", b:"bsdf"});
+            resolve({a:"asdf777", b:"bsdf888"});
             //Node.find(function (err, nodes) {
             //    if (err) reject(err);
             //
