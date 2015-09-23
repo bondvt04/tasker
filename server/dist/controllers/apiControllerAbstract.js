@@ -78,7 +78,7 @@ var ApiControllerAbstract = (function () {
                 self.__beforeAction().then(function (beforeActionResult) {
                     // action must not know about "beforeActionResult" - only about "args"
                     self[functionName](req, res).then(function (actionResult) {
-                        self.__afterAction(actionResult, next).then(function (afterActionResult) {
+                        self.__afterAction(actionResult, req, res, next).then(function (afterActionResult) {
                             resolve(afterActionResult);
                         })["catch"](catchError);
                     })["catch"](catchError);
@@ -91,9 +91,11 @@ var ApiControllerAbstract = (function () {
          */
     }, {
         key: "__afterAction",
-        value: function __afterAction(actionResult) {
+        value: function __afterAction(actionResult, req, res, next) {
             return new Promise(function (resolve, reject) {
                 resolve(actionResult);
+                res.send(actionResult);
+                next(actionResult);
             });
         }
     }]);

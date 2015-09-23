@@ -13,8 +13,6 @@ var logger = require("verbose-console-log");
 var Node = require("../models/Node");
 var ApiControllerAbstract = require("./apiControllerAbstract");
 
-//var querystring = require("querystring");
-
 var Controller = (function (_ApiControllerAbstract) {
     _inherits(Controller, _ApiControllerAbstract);
 
@@ -23,23 +21,6 @@ var Controller = (function (_ApiControllerAbstract) {
 
         _get(Object.getPrototypeOf(Controller.prototype), "constructor", this).call(this, arguments);
     }
-
-    //__beforeAction(req, res, next) {
-    //    console.log("Controller.__beforeAction");
-    //    return super.__beforeAction.apply(this, arguments);
-    //}
-    //
-    //__afterAction(req, res, next, actionResult) {
-    //    console.log("Controller.__afterAction");
-    //    return super.__afterAction.apply(this, arguments);
-    //}
-
-    //doAction(actionName, args) {
-    //    return new Promise(function(resolve, reject) {
-    //        do_.something.wrong();
-    //        //throw new Error("lol there are error occured");
-    //    });
-    //}
 
     /**
      * Тестим ловлю ошибок
