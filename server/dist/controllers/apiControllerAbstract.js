@@ -51,9 +51,9 @@ var ApiControllerAbstract = (function () {
                 logger.log("Controller.__afterAction2");
                 actionResult.c = "csdf";
                 resolve(actionResult);
-                //res.send(actionResult);
+                res.send(actionResult);
                 //res.send("asdf");
-                res.send("qwer");
+                //res.send("qwer");
                 next();
             });
         }

@@ -67,11 +67,13 @@ if (cluster.isMaster) {
         var reqDomain = domain.create();
 
         res.on('close', function () {
-            reqDomain.dispose();
+            reqDomain.exit();
+            //reqDomain.dispose();
         });
 
         res.on('finish', function () {
-            reqDomain.dispose();
+            //reqDomain.dispose();
+            reqDomain.exit();
         });
 
         reqDomain.on('error', function (err) {
@@ -80,7 +82,8 @@ if (cluster.isMaster) {
             // delegate to express error-middleware
             next(err);
 
-            reqDomain.dispose();
+            //reqDomain.dispose();
+            reqDomain.exit();
         });
 
         // Adding the request and response objects to the domain
