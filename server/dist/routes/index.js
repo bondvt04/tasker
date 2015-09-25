@@ -19,7 +19,7 @@ router.get('/nodes/500', function (req, res, next) {
 // get list of nodes
 router.get('/nodes', function (req, res, next) {
 
-    var promise = controller.doAction("getNodes", arguments);
+    //var promise = controller.doAction("getNodes", arguments);
 
     //controller.doAction("getNodes", arguments).then(function(result) {
     //    logger.log(result);
@@ -32,7 +32,7 @@ router.get('/nodes', function (req, res, next) {
     //    res.json(res.jsonToRender);
     //    next();
     //}).catch(function(err) {
-    //    console.err(err);
+    //    logger.err(err);
     //    next(err);
     //});
 });
@@ -45,7 +45,7 @@ router.get('/nodes/:id', function (req, res, next) {
         res.json(res.jsonToRender);
         //next();
     })['catch'](function (err) {
-        console.err(err);
+        logger.err(err);
     });
 });
 
@@ -56,7 +56,7 @@ router.post('/nodes/add', function (req, res, next) {
         res.json(res.jsonToRender);
         //next();
     })['catch'](function (err) {
-        console.err(err);
+        logger.err(err);
     });
 });
 
@@ -67,7 +67,7 @@ router.put('/nodes/:id', function (req, res, next) {
         res.json(res.jsonToRender);
         //next();
     })['catch'](function (err) {
-        console.err(err);
+        logger.err(err);
     });
 });
 
@@ -78,7 +78,7 @@ router['delete']('/nodes/:id', function (req, res, next) {
         res.json(res.jsonToRender);
         //next();
     })['catch'](function (err) {
-        console.err(err);
+        logger.err(err);
     });
 });
 

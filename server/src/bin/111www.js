@@ -21,7 +21,7 @@ if (cluster.isMaster) {
     cluster.fork();
 
     cluster.on('disconnect', function(worker) {
-        console.error('disconnect!');
+        logger.error('disconnect!');
         cluster.fork();
     });
 
@@ -65,10 +65,10 @@ if (cluster.isMaster) {
 
 // express-domain's error handling
 //app.use(function errorHandler(err, req, res, next) {
-//  console.log('error on request %d %s %s: %j', process.domain.id, req.method, req.url, err);
+//  logger.log('error on request %d %s %s: %j', process.domain.id, req.method, req.url, err);
 //  res.send(500, "Something bad happened. :(");
 //  if(err.domain) {
-//    console.log("########", err.message);
+//    logger.log("########", err.message);
 //    //you should think about gracefully stopping & respawning your server
 //    //since an unhandled error might put your application into an unknown state
 //  }
@@ -134,11 +134,11 @@ if (cluster.isMaster) {
         // handle specific listen errors with friendly messages
         switch (error.code) {
             case 'EACCES':
-                console.error(bind + ' requires elevated privileges');
+                logger.error(bind + ' requires elevated privileges');
                 process.exit(1);
                 break;
             case 'EADDRINUSE':
-                console.error(bind + ' is already in use');
+                logger.error(bind + ' is already in use');
                 process.exit(1);
                 break;
             default:

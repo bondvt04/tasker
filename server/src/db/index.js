@@ -2,7 +2,6 @@
  * Created by anatoliybondar on 8/21/15.
  */
 
-// colored console.log()
 var colors = require('colors');
 var logger = require("verbose-console-log");
 
@@ -10,7 +9,7 @@ var domain = require('domain').create();
 var mongoose = require('mongoose');
 
 domain.on('error', function(er) {
-    console.log('--- Oh no, something wrong with DB');
+    logger.log('--- Oh no, something wrong with DB'.red);
 });
 
 domain.run(function() {
@@ -19,7 +18,7 @@ domain.run(function() {
 
 
 var db = mongoose.connection;
-//db.on('error', console.error.bind(console, 'connection error:'));
+//db.on('error', logger.error.bind(logger, 'connection error:'));
 
 db.on('error', function(err) {
     logger.log("Db connection error:".red, err.message.red);
@@ -27,7 +26,7 @@ db.on('error', function(err) {
 
 db.once('open', function callback() {
     // Соединение прошло успешно
-    console.log("Db connection was successful".green);
+    logger.log("Db connection was successful".green);
     //callback();
 });
 

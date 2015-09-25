@@ -21,7 +21,7 @@ var express = require('express'),
     fs = require('fs');
 
 if (cluster.isMaster) {
-    console.log("###", numCPUs);
+    //logger.log("###", numCPUs);
 
     // fork workers
     if (1) {
@@ -102,14 +102,14 @@ if (cluster.isMaster) {
     app.use('/api', router);
 
     app.use(function (err, req, res, next) {
-        console.log('ERROR MIDDLEWARE', err);
+        logger.log('ERROR MIDDLEWARE', err);
         res.writeHeader(500, { 'Content-Type': "text/html" });
         res.write("<h1>" + err.name + "</h1>");
         res.end("<p>" + err.message + "</p>");
     });
 
     http.createServer(app).listen(app.get('port'), function () {
-        console.log('Express server listening on port ' + app.get('port'));
+        logger.log('Express server listening on port ' + app.get('port'));
     });
 }
-//# sourceMappingURL=../bin/test-domains-www.js.map
+//# sourceMappingURL=../bin/111test-domains-www.js.map

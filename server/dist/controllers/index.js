@@ -1,4 +1,3 @@
-// for consoles
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -29,11 +28,11 @@ var Controller = (function (_ApiControllerAbstract) {
     //_error500Action(req, res) {
     //    return new Promise(function(resolve, reject) {
     //        try {
-    //            console.log("_error500Action");
+    //            logger.log("_error500Action");
     //            lol.hello.ololo();
     //            throw new Error("zlo");
     //        } catch(e) {
-    //            console.log("### 1");
+    //            logger.log("### 1");
     //            reject(e);
     //        }
     //    });
@@ -52,7 +51,7 @@ var Controller = (function (_ApiControllerAbstract) {
                 logger.log("Controller.doAction2");
                 resolve({ a: "asdf777", b: "bsdf888" });
 
-                //console.log("###", Node);
+                //logger.log("###", Node);
 
                 //Node.find(function (err, nodes) {
                 //    if (err) reject(err);
@@ -71,20 +70,18 @@ var Controller = (function (_ApiControllerAbstract) {
         //        newNode.save(function (err, node) {
         //            if (err) reject(err);
         //
-        //            console.log("___savePromise", node);
+        //            logger.log("___savePromise", node);
         //            resolve(node);
         //        });
         //    });
         //}
 
-    }, {
-        key: "_indexAction",
-        value: function _indexAction(req, res) {
-            return new Promise(function (resolve, reject) {
-                res.send("just /index action");
-                resolve();
-            });
-        }
+        //_indexAction(req, res) {
+        //    return new Promise(function(resolve, reject) {
+        //        res.send("just /index action");
+        //        resolve();
+        //    });
+        //}
 
         //_testAction(req, res) {
         //    var hello = new Node({
@@ -95,7 +92,7 @@ var Controller = (function (_ApiControllerAbstract) {
         //        hello.save(function (err, node) {
         //            if (err) reject(err);
         //
-        //            console.log("___savePromise", node.content);
+        //            logger.log("___savePromise", node.content);
         //            resolve(node);
         //        });
         //    });
@@ -104,7 +101,7 @@ var Controller = (function (_ApiControllerAbstract) {
         //        Node.find(function (err, nodes) {
         //            if (err) reject(err);
         //
-        //            console.log("___findPromise", nodes);
+        //            logger.log("___findPromise", nodes);
         //            resolve(nodes);
         //        });
         //

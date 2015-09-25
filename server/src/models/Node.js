@@ -16,7 +16,7 @@ var nodeSchema = mongoose.Schema({
     //var greeting = this.name
     //    ? "Meow name is " + this.name
     //    : "I don't have a name";
-    console.log(this.types);
+    logger.log(this.types);
 }*/
 
 var Node = mongoose.model('Node', nodeSchema);

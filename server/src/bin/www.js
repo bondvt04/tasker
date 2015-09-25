@@ -21,6 +21,9 @@
  * @type {*|exports}
  */
 
+var colors = require('colors');
+var logger = require("verbose-console-log");
+
 var express = require('express'),
     http = require('http'),
     path = require('path'),
@@ -32,7 +35,7 @@ var express = require('express'),
     routes = [];
 
 if (cluster.isMaster) {
-    //console.log("###", numCPUs);
+    //logger.log("###", numCPUs);
 
 
     if(0) {
@@ -73,7 +76,7 @@ if (cluster.isMaster) {
         });
 
         reqDomain.on('error', function (err) {
-            console.log("<<< error >>>");
+            logger.log("<<< error >>>");
             // http://stackoverflow.com/questions/16763550/explicitly-adding-req-and-res-to-domain-dont-propagate-error-to-express-middlew
             // delegate to express error-middleware
             next(err);
@@ -119,14 +122,24 @@ if (cluster.isMaster) {
 
     //app.use("/api", routes);
 
+    app.use(function(req, res, next) {
+        logger.log("++++++++++".red);
+    });
+
     app.use(function(err, req, res, next) {
-        console.log('ERROR MIDDLEWARE', err);
+
+        if(!err.message) {
+            logger.error('You did next(NOT_ERROR_VAR); stuff!!!!'.underline.red);
+            return;
+        }
+
+        logger.error('ERROR MIDDLEWARE'.red, err.message.red, 'Stack:'.yellow, err, err.stack);
         res.writeHeader(500, {'Content-Type' : "text/html"});
         res.write("<h1>" + err.name + err.stack + "</h1>");
         res.end("<p>" + err.message + "</p>");
     });
 
     http.createServer(app).listen(app.get('port'), function(){
-        console.log('Express server listening on port ' + app.get('port'));
+        logger.log('Express server listening on port ' + app.get('port'));
     });
 }

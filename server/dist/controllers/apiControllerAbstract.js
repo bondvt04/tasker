@@ -49,15 +49,13 @@ var ApiControllerAbstract = (function () {
             logger.log("Controller.__afterAction1");
             return new Promise(function (resolve, reject) {
                 logger.log("Controller.__afterAction2");
+                actionResult.c = "csdf";
                 resolve(actionResult);
-                res.send(actionResult);
-                //next(actionResult);
+                //res.send(actionResult);
+                //res.send("asdf");
+                res.send("qwer");
+                next();
             });
-
-            //return new Promise(function(resolve, reject) {
-            //    actionResult.c = "csdf";
-            //    resolve(actionResult);
-            //});
         }
 
         /**
@@ -88,7 +86,6 @@ var ApiControllerAbstract = (function () {
                     // action must not know about "beforeActionResult" - only about "args"
                     self[functionName](req, res, next, beforeActionResult).then(function (actionResult) {
                         self.__afterAction(req, res, next, actionResult).then(function (afterActionResult) {
-                            throw new Error("asdf");
                             resolve(afterActionResult);
                         })["catch"](catchError);
                     })["catch"](catchError);

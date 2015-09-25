@@ -36,15 +36,13 @@ class ApiControllerAbstract {
         logger.log("Controller.__afterAction1");
         return new Promise(function(resolve, reject) {
             logger.log("Controller.__afterAction2");
+            actionResult.c = "csdf";
             resolve(actionResult);
             res.send(actionResult);
-            //next(actionResult);
+            //res.send("asdf");
+            //res.send("qwer");
+            next();
         });
-
-        //return new Promise(function(resolve, reject) {
-        //    actionResult.c = "csdf";
-        //    resolve(actionResult);
-        //});
     }
 
     /**

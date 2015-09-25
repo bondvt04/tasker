@@ -1,4 +1,3 @@
-// for consoles
 var colors = require('colors');
 var logger = require("verbose-console-log");
 var Node = require("../models/Node");
@@ -16,11 +15,11 @@ class Controller extends ApiControllerAbstract {
     //_error500Action(req, res) {
     //    return new Promise(function(resolve, reject) {
     //        try {
-    //            console.log("_error500Action");
+    //            logger.log("_error500Action");
     //            lol.hello.ololo();
     //            throw new Error("zlo");
     //        } catch(e) {
-    //            console.log("### 1");
+    //            logger.log("### 1");
     //            reject(e);
     //        }
     //    });
@@ -36,7 +35,7 @@ class Controller extends ApiControllerAbstract {
             logger.log("Controller.doAction2");
             resolve({a:"asdf777", b:"bsdf888"});
 
-            //console.log("###", Node);
+            //logger.log("###", Node);
 
             //Node.find(function (err, nodes) {
             //    if (err) reject(err);
@@ -55,7 +54,7 @@ class Controller extends ApiControllerAbstract {
     //        newNode.save(function (err, node) {
     //            if (err) reject(err);
     //
-    //            console.log("___savePromise", node);
+    //            logger.log("___savePromise", node);
     //            resolve(node);
     //        });
     //    });
@@ -77,7 +76,7 @@ class Controller extends ApiControllerAbstract {
     //        hello.save(function (err, node) {
     //            if (err) reject(err);
     //
-    //            console.log("___savePromise", node.content);
+    //            logger.log("___savePromise", node.content);
     //            resolve(node);
     //        });
     //    });
@@ -86,7 +85,7 @@ class Controller extends ApiControllerAbstract {
     //        Node.find(function (err, nodes) {
     //            if (err) reject(err);
     //
-    //            console.log("___findPromise", nodes);
+    //            logger.log("___findPromise", nodes);
     //            resolve(nodes);
     //        });
     //
