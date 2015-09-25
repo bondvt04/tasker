@@ -8,6 +8,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var colors = require('colors');
 var logger = require("verbose-console-log");
 
 var ApiControllerAbstract = (function () {
@@ -22,27 +23,35 @@ var ApiControllerAbstract = (function () {
 
     function ApiControllerAbstract() {
         _classCallCheck(this, ApiControllerAbstract);
-
-        logger.log("ApiControllerAbstract.constructor");
     }
 
     _createClass(ApiControllerAbstract, [{
         key: "__beforeAction",
+
+        //logger.log("ApiControllerAbstract.constructor");
         value: function __beforeAction(req, res, next) {
+            logger.log("Controller.__beforeAction1");
             return new Promise(function (resolve, reject) {
-                logger.log("Controller.__beforeAction");
+                logger.log("Controller.__beforeAction2");
                 resolve();
             });
 
             // we will render it later if no error
             //res.jsonToRender = {};
         }
+
+        /**
+         * @param actionResult - result from "action" promise
+         */
     }, {
         key: "__afterAction",
         value: function __afterAction(req, res, next, actionResult) {
+            logger.log("Controller.__afterAction1");
             return new Promise(function (resolve, reject) {
-                logger.log("Controller.__afterAction");
-                resolve();
+                logger.log("Controller.__afterAction2");
+                resolve(actionResult);
+                res.send(actionResult);
+                //next(actionResult);
             });
 
             //return new Promise(function(resolve, reject) {
@@ -69,7 +78,7 @@ var ApiControllerAbstract = (function () {
             var next = args[2];
 
             function catchError(err) {
-                logger.error(err);
+                logger.error(err.message.red);
                 logger.error("Error stack:", err.stack);
                 next(err);
             }
@@ -77,25 +86,13 @@ var ApiControllerAbstract = (function () {
             return new Promise(function (resolve, reject) {
                 self.__beforeAction().then(function (beforeActionResult) {
                     // action must not know about "beforeActionResult" - only about "args"
-                    self[functionName](req, res).then(function (actionResult) {
-                        self.__afterAction(actionResult, req, res, next).then(function (afterActionResult) {
+                    self[functionName](req, res, next, beforeActionResult).then(function (actionResult) {
+                        self.__afterAction(req, res, next, actionResult).then(function (afterActionResult) {
+                            throw new Error("asdf");
                             resolve(afterActionResult);
                         })["catch"](catchError);
                     })["catch"](catchError);
                 })["catch"](catchError);
-            });
-        }
-
-        /**
-         * @param actionResult - result from "action" promise
-         */
-    }, {
-        key: "__afterAction",
-        value: function __afterAction(actionResult, req, res, next) {
-            return new Promise(function (resolve, reject) {
-                resolve(actionResult);
-                res.send(actionResult);
-                next(actionResult);
             });
         }
     }]);
