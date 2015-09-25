@@ -33,15 +33,16 @@ class Controller extends ApiControllerAbstract {
         logger.log("Controller.doAction1");
         return new Promise(function(resolve, reject) {
             logger.log("Controller.doAction2");
-            resolve({a:"asdf777", b:"bsdf888"});
+            //resolve({a:"asdf777", b:"bsdf888"});
 
             //logger.log("###", Node);
 
-            //Node.find(function (err, nodes) {
-            //    if (err) reject(err);
-            //
-            //    resolve(nodes);
-            //});
+            Node.find(function (err, nodes) {
+                logger.log("######");
+                if (err) reject(err);
+
+                resolve(nodes);
+            });
 
             //Kitten.find({ name: /^Fluff/ }, callback);
         });
