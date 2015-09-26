@@ -22,7 +22,7 @@ d.run(function() {
 
     try {
         var p = new Promise(function(resolve, reject) {
-            console.log("qqq");
+            console.log("asdf");
             // А эту ошибку НЕ поймаем
             throw new Error("qwer");
         });
