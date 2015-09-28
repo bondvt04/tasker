@@ -34,7 +34,7 @@ var express = require('express'),
     fs = require('fs'),
     routes = [];
 
-if (cluster.isMaster) {
+if (0 && cluster.isMaster) {
     //logger.log("###", numCPUs);
 
 
@@ -51,6 +51,8 @@ if (cluster.isMaster) {
 
     // when a worker dies create a new one
     cluster.on('exit', function(worker, code, signal) {
+        logger.log('worker '.red + worker.process.pid + ' died'.red);
+        logger.log("NEW WORKER".green);
         cluster.fork();
     });
 

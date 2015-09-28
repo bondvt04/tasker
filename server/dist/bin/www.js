@@ -36,21 +36,23 @@ var express = require('express'),
     fs = require('fs'),
     routes = [];
 
-if (cluster.isMaster) {
+if (0 && cluster.isMaster) {
     //logger.log("###", numCPUs);
 
-    if (0) {
-        // fork workers
-        for (var i = 0; i < numCPUs; i++) {
-            cluster.fork();
-        }
-    } else {
-        // fork only one worker
-        cluster.fork();
-    }
+    //if(0) {
+    //    // fork workers
+    //    for (var i = 0; i < numCPUs; i++) {
+    //        cluster.fork();
+    //    }
+    //} else {
+    //    // fork only one worker
+    //    cluster.fork();
+    //}
 
     // when a worker dies create a new one
     cluster.on('exit', function (worker, code, signal) {
+        logger.log('worker '.red + worker.process.pid + ' died'.red);
+        logger.log("NEW WORKER".green);
         cluster.fork();
     });
 } else {
