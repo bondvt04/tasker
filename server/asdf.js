@@ -9,7 +9,11 @@ var process = require('process');
 var app = express();
 
 process.on('uncaughtException', function(err) {
-    logger.log("***************** zlo".magenta, err.message.red);
+
+});
+
+app.use(function() {
+
 });
 
 

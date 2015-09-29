@@ -21,10 +21,12 @@
  * @type {*|exports}
  */
 
-
+"use strict";
 
 var colors = require('colors');
 var logger = require("verbose-console-log");
+
+var OpError = require("../errors/index");
 
 var express = require('express'),
     http = require('http'),
@@ -34,7 +36,7 @@ var express = require('express'),
     http = require('http'),
     numCPUs = require('os').cpus().length,
     fs = require('fs');
-//routes = require("../routes/index");
+var routes = require("../routes/index");
 //routes = [];
 
 if (0 && cluster.isMaster) {
@@ -57,139 +59,116 @@ if (0 && cluster.isMaster) {
         cluster.fork();
     });
 } else {
+    var app;
 
-    var app = express();
+    (function () {
+        var lastErrorHandler = function lastErrorHandler(err) {
+            // @todo log to db and files
+            logger.error(err.message.red);
 
-    //var favicon = require('serve-favicon');
-    //app.use(favicon(__dirname + '/public/favicon.ico'));
+            if ("operational" !== err.type) {
+                // This is UNCAUGHT error! So we must crash application in order to not continue app running in unknown state
+                // So log, send response to user and then crash
+                process.exit(1);
+            }
+        };
 
-    //domains
-    // one domain for each request
-    /*app.use(function domainMiddleware(req, res, next) {
-         var reqDomain = domain.create();
-         res.on('close', function () {
-            reqDomain.exit();
-            //reqDomain.dispose();
-        });
-         res.on('finish', function () {
-            //reqDomain.dispose();
-            reqDomain.exit();
-        });
-         logger.log("### asdf");
-         reqDomain.on('error', function (err, req, res, next) {
-            logger.log("<<< error >>>");
-            // http://stackoverflow.com/questions/16763550/explicitly-adding-req-and-res-to-domain-dont-propagate-error-to-express-middlew
-            // delegate to express error-middleware
-              //reqDomain.dispose();
-            //reqDomain.exit();
-             // This is UNCAUGHT error! So we must crash application in order to not continue app running in unknown state
-            // So log, send response to user and then crash
-            //app.set("uncaught_error", true);
-             //logger.log("###", app.get("uncaught_error"));
-             next(err);
-        });
-         // Adding the request and response objects to the domain
-        // makes the express error-middleware to not being called.
-        reqDomain.add(req);
-        reqDomain.add(res);
-         //reqDomain.run(next);
-        //reqDomain.run(function() {
-        //    logger.log("### qwer");
+        app = express();
+
+        //var favicon = require('serve-favicon');
+        //app.use(favicon(__dirname + '/public/favicon.ico'));
+
+        //domains
+        // one domain for each request
+        /*app.use(function domainMiddleware(req, res, next) {
+             var reqDomain = domain.create();
+             res.on('close', function () {
+                reqDomain.exit();
+                //reqDomain.dispose();
+            });
+             res.on('finish', function () {
+                //reqDomain.dispose();
+                reqDomain.exit();
+            });
+             logger.log("### asdf");
+             reqDomain.on('error', function (err, req, res, next) {
+                logger.log("<<< error >>>");
+                // http://stackoverflow.com/questions/16763550/explicitly-adding-req-and-res-to-domain-dont-propagate-error-to-express-middlew
+                // delegate to express error-middleware
+                  //reqDomain.dispose();
+                //reqDomain.exit();
+                 //app.set("uncaught_error", true);
+                 //logger.log("###", app.get("uncaught_error"));
+                 next(err);
+            });
+             // Adding the request and response objects to the domain
+            // makes the express error-middleware to not being called.
+            reqDomain.add(req);
+            reqDomain.add(res);
+             //reqDomain.run(next);
+            //reqDomain.run(function() {
+            //    logger.log("### qwer");
+            //});
+            //next();
+            reqDomain.enter();
+            //reqDomain.run(next);
+             next();
+        });*/
+
+        //var createDomain = domain.create;
+        //app.use(function(req, res, next) {
+        //    var domain = createDomain();
+        //
+        //    domain.on('error', function(err) {
+        //        logger.log("<<<asdf>>>");
+        //
+        //        domain.dispose();
+        //    });
+        //
+        //    domain.enter();
+        //    next();
         //});
-        //next();
-        reqDomain.enter();
-        //reqDomain.run(next);
-         next();
-    });*/
 
-    //var createDomain = domain.create;
-    //app.use(function(req, res, next) {
-    //    var domain = createDomain();
-    //
-    //    domain.on('error', function(err) {
-    //        logger.log("<<<asdf>>>");
-    //
-    //        domain.dispose();
-    //    });
-    //
-    //    domain.enter();
-    //    next();
-    //});
+        app.use("/api", routes);
 
-    var domain = domain.create();
+        // all environments
+        app.set('port', process.env.PORT || 7777);
 
-    domain.on("error", function (err) {
-        logger.log("***************** zlo".magenta);
-    });
+        //app.use(express.logger('dev'));
 
-    process.on('uncaughtException', function (err) {
-        logger.log("***************** zlo".magenta);
-    });
+        app.use(function (req, res, next) {
+            logger.log("++++++++++".red);
+        });
 
-    process.on('uncaughtError', function (err) {
-        logger.log("***************** zlo".magenta);
-    });
+        app.use(function (err, req, res, next) {
 
-    domain.enter();
-    app.use("/api/nodes", function (req, res, next) {
+            if (!err.message) {
+                logger.log(err);
+                logger.log(err.type);
+                logger.log(err.name);
+                logger.error('You did next(NOT_ERROR_VAR); stuff!!!!'.underline.red);
+                return;
+            }
 
-        throw new Error("asdf");
+            logger.error('ERROR MIDDLEWARE'.red, err.message.red, 'Stack:'.yellow, err, err.stack);
+            res.writeHeader(500, { 'Content-Type': "text/html" });
+            res.write("<h1>" + err.name + err.stack + "</h1>");
+            res.end("<p>" + err.message + "</p>");
 
-        //logger.log("------------- asdf");
-        //res.send("asdf");
-        //next();
-    });
+            next(err);
+        });
 
-    //app.use("/api", routes);
+        app.use(function (err, req, res, next) {
+            lastErrorHandler(err);
+        });
 
-    // all environments
-    app.set('port', process.env.PORT || 7777);
+        process.on('uncaughtException', function (err) {
+            lastErrorHandler(err);
+        });
 
-    //app.use(express.logger('dev'));
-
-    // for testing which cluster that serves the request
-    //var router = express.Router();
-    //router.get('/', function(req, res, next) {
-    //    var debug = require("debug")("app:main");
-    //    debug("lol");
-    //    res.status(200).json({ id: cluster.worker.id });
-    //});
-    //router.get('/error', function(req, res, next) {
-    //
-    //    // intentionally force an error
-    //    fs.readFile('', process.domain.intercept(function(data) {
-    //        // when using intercept we dont need this line anymore
-    //        //if (err) throw err;
-    //        res.send(data);
-    //    }));
-    //});
-    //app.use('/api', router);
-
-    //app.use("/api", routes);
-
-    /*app.use(function(req, res, next) {
-        logger.log("++++++++++".red);
-    });
-     app.use(function(err, req, res, next) {
-         if(!err.message) {
-            logger.error('You did next(NOT_ERROR_VAR); stuff!!!!'.underline.red);
-            return;
-        }
-         logger.error('ERROR MIDDLEWARE'.red, err.message.red, 'Stack:'.yellow, err, err.stack);
-        res.writeHeader(500, {'Content-Type' : "text/html"});
-        res.write("<h1>" + err.name + err.stack + "</h1>");
-        res.end("<p>" + err.message + "</p>");
-         next(err);
-    });
-     app.use(function(err, req, res, next) {
-         logger.log("###", app.get("uncaught_error"));
-        if(app.get("uncaught_error")) {
-            process.exit(1);
-        }
-    });*/
-
-    http.createServer(app).listen(app.get('port'), function () {
-        logger.log('Express server listening on port ' + app.get('port'));
-    });
+        http.createServer(app).listen(app.get('port'), function () {
+            logger.log('Express server listening on port ' + app.get('port'));
+        });
+    })();
 }
 //# sourceMappingURL=../bin/www.js.map

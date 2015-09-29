@@ -1,3 +1,5 @@
+
+var OpError = require("../errors/index");
 var controller = require('../controllers/index');
 var express = require('express');
 var router = express.Router();
@@ -17,7 +19,7 @@ router.get('/nodes/500', function(req, res, next) {
 // get list of nodes
 router.get('/nodes', function(req, res, next) {
 
-    throw new Error("lol2");
+    throw new OpError("lol2");
     //next(new Error("asdf"));
 
     //var promise = controller.doAction("getNodes", arguments);

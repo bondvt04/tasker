@@ -21,8 +21,12 @@
  * @type {*|exports}
  */
 
+
+
 var colors = require('colors');
 var logger = require("verbose-console-log");
+
+var OpError = require("../errors/index");
 
 var express = require('express'),
     http = require('http'),
@@ -32,7 +36,7 @@ var express = require('express'),
     http = require('http'),
     numCPUs = require('os').cpus().length,
     fs = require('fs');
-    //routes = require("../routes/index");
+var routes = require("../routes/index");
     //routes = [];
 
 if (0 && cluster.isMaster) {
@@ -91,8 +95,6 @@ if (0 && cluster.isMaster) {
             //reqDomain.dispose();
             //reqDomain.exit();
 
-            // This is UNCAUGHT error! So we must crash application in order to not continue app running in unknown state
-            // So log, send response to user and then crash
             //app.set("uncaught_error", true);
 
             //logger.log("###", app.get("uncaught_error"));
@@ -131,34 +133,12 @@ if (0 && cluster.isMaster) {
     //});
 
 
-    var domain = domain.create();
-
-    domain.on("error", function(err) {
-        logger.log("***************** zlo".magenta);
-    });
-
-    process.on('uncaughtException', function(err) {
-        logger.log("***************** zlo".magenta);
-    });
-
-    process.on('uncaughtError', function(err) {
-        logger.log("***************** zlo".magenta);
-    });
-
-    domain.enter();
-    app.use("/api/nodes", function(req, res, next) {
-
-        throw new Error("asdf");
-
-        //logger.log("------------- asdf");
-        //res.send("asdf");
-        //next();
-    });
 
 
 
 
-    //app.use("/api", routes);
+
+    app.use("/api", routes);
 
 
 
@@ -168,33 +148,16 @@ if (0 && cluster.isMaster) {
 
     //app.use(express.logger('dev'));
 
-    // for testing which cluster that serves the request
-    //var router = express.Router();
-    //router.get('/', function(req, res, next) {
-    //    var debug = require("debug")("app:main");
-    //    debug("lol");
-    //    res.status(200).json({ id: cluster.worker.id });
-    //});
-    //router.get('/error', function(req, res, next) {
-    //
-    //    // intentionally force an error
-    //    fs.readFile('', process.domain.intercept(function(data) {
-    //        // when using intercept we dont need this line anymore
-    //        //if (err) throw err;
-    //        res.send(data);
-    //    }));
-    //});
-    //app.use('/api', router);
-
-    //app.use("/api", routes);
-
-    /*app.use(function(req, res, next) {
+    app.use(function(req, res, next) {
         logger.log("++++++++++".red);
     });
 
     app.use(function(err, req, res, next) {
 
         if(!err.message) {
+            logger.log(err);
+            logger.log(err.type);
+            logger.log(err.name);
             logger.error('You did next(NOT_ERROR_VAR); stuff!!!!'.underline.red);
             return;
         }
@@ -208,12 +171,23 @@ if (0 && cluster.isMaster) {
     });
 
     app.use(function(err, req, res, next) {
+        lastErrorHandler(err);
+    });
 
-        logger.log("###", app.get("uncaught_error"));
-        if(app.get("uncaught_error")) {
+    process.on('uncaughtException', function(err) {
+        lastErrorHandler(err);
+    });
+
+    function lastErrorHandler(err) {
+        // @todo log to db and files
+        logger.error(err.message.red);
+
+        if("operational" !== err.type) {
+            // This is UNCAUGHT error! So we must crash application in order to not continue app running in unknown state
+            // So log, send response to user and then crash
             process.exit(1);
         }
-    });*/
+    }
 
 
 
