@@ -41,7 +41,7 @@ var express = require('express'),
 var routes = require("../routes/index");
 //routes = [];
 
-if (0 && cluster.isMaster) {
+if (1 && cluster.isMaster) {
     //logger.log("###", numCPUs);
 
     if (0) {
@@ -63,46 +63,6 @@ if (0 && cluster.isMaster) {
 } else {
 
     var app = express();
-
-    //var favicon = require('serve-favicon');
-    //app.use(favicon(__dirname + '/public/favicon.ico'));
-
-    //domains
-    // one domain for each request
-    /*app.use(function domainMiddleware(req, res, next) {
-         var reqDomain = domain.create();
-         res.on('close', function () {
-            reqDomain.exit();
-            //reqDomain.dispose();
-        });
-         res.on('finish', function () {
-            //reqDomain.dispose();
-            reqDomain.exit();
-        });
-         logger.log("### asdf");
-         reqDomain.on('error', function (err, req, res, next) {
-            logger.log("<<< error >>>");
-            // http://stackoverflow.com/questions/16763550/explicitly-adding-req-and-res-to-domain-dont-propagate-error-to-express-middlew
-            // delegate to express error-middleware
-              //reqDomain.dispose();
-            //reqDomain.exit();
-             //app.set("uncaught_error", true);
-             //logger.log("###", app.get("uncaught_error"));
-             next(err);
-        });
-         // Adding the request and response objects to the domain
-        // makes the express error-middleware to not being called.
-        reqDomain.add(req);
-        reqDomain.add(res);
-         //reqDomain.run(next);
-        //reqDomain.run(function() {
-        //    logger.log("### qwer");
-        //});
-        //next();
-        reqDomain.enter();
-        //reqDomain.run(next);
-         next();
-    });*/
 
     //var createDomain = domain.create;
     //app.use(function(req, res, next) {

@@ -41,6 +41,8 @@ var CriticalError = (function (_OpError) {
 
         _get(Object.getPrototypeOf(CriticalError.prototype), "constructor", this).call(this, message);
 
+        this.name = "CriticalError";
+        this.message = message;
         this.type = "critical";
         Error.captureStackTrace(this, this.constructor.name);
     }

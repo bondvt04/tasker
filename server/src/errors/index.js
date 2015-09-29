@@ -12,7 +12,7 @@ class OpError extends Error {
         this.name = "OpError";
         this.message = message;
         this.type = "operational";
-        Error.captureStackTrace(this, this.constructor.name)
+        Error.captureStackTrace(this, this.constructor.name);
     }
 }
 
@@ -23,8 +23,10 @@ class CriticalError extends OpError {
     constructor(message) {
         super(message);
 
+        this.name = "CriticalError";
+        this.message = message;
         this.type = "critical";
-        Error.captureStackTrace(this, this.constructor.name)
+        Error.captureStackTrace(this, this.constructor.name);
     }
 }
 
