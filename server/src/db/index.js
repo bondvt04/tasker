@@ -8,12 +8,23 @@ var logger = require("verbose-console-log");
 var domain = require('domain').create();
 var mongoose = require('mongoose');
 
-domain.on('error', function(er) {
-    logger.log('--- Oh no, something wrong with DB'.red);
+domain.on('error', function(err) {
+    logger.log('Something wrong in DB domain: '.red, err.message.red, err.stack);
 });
 
 domain.run(function() {
-    mongoose.connect('mongodb://localhost/tasker');
+    var options = {
+        //server: {
+        //    socketOptions: {
+        //        socketTimeoutMS: 100,
+        //        connectTimeoutMS: 100,
+        //        noDelay: true
+        //    }
+        //}
+    };
+
+    //mongoose.createConnection('mongodb://localhost/tasker', options);
+    mongoose.connect('mongodb://localhost/tasker', options);
 });
 
 
