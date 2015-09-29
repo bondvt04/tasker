@@ -21,49 +21,49 @@
  * @type {*|exports}
  */
 
-
-
+var cluster = require('cluster');
+var numCPUs = require('os').cpus().length;
 var colors = require('colors');
 var logger = require("verbose-console-log");
 
-var OpError = require("../errors/index").classes.OpError;
-var lastErrorHandler = require("../errors/index").handlers.lastErrorHandler;
-var expressErrorHandler = require("../errors/index").handlers.expressErrorHandler;
-
-var express = require('express'),
-    http = require('http'),
-    path = require('path'),
-    domain = require('domain'),
-    cluster = require('cluster'),
-    http = require('http'),
-    numCPUs = require('os').cpus().length,
-    fs = require('fs');
-var routes = require("../routes/index");
-    //routes = [];
-
-if (1 && cluster.isMaster) {
+if (cluster.isMaster) {
     //logger.log("###", numCPUs);
 
-
-    if(0) {
-        // fork workers
-        for (var i = 0; i < numCPUs; i++) {
-            cluster.fork();
-        }
-    } else {
-        // fork only one worker
+    // Fork workers.
+    for (var i = 0; i < numCPUs; i++) {
         cluster.fork();
     }
 
-
-    // when a worker dies create a new one
     cluster.on('exit', function(worker, code, signal) {
-        logger.log('worker '.red + worker.process.pid + ' died'.red);
-        logger.log("NEW WORKER".green);
+        var message = 'Worker ' + worker.process.pid + ' died, will try start another one...'
+        logger.log(message.underline.cyan);
         cluster.fork();
     });
 
+    //if(0) {
+    //    // fork workers
+    //    for (var i = 0; i < numCPUs; i++) {
+    //        cluster.fork();
+    //    }
+    //} else {
+    //    // fork only one worker
+    //    cluster.fork();
+    //}
+    //
+    //
+    //// when a worker dies create a new one
+    //cluster.on('exit', function(worker, code, signal) {
+    //    logger.log('worker '.red + worker.process.pid + ' died'.red);
+    //    logger.log("NEW WORKER".green);
+    //    cluster.fork();
+    //});
+
 } else {
+    var lastErrorHandler = require("../errors/index").handlers.lastErrorHandler;
+    var expressErrorHandler = require("../errors/index").handlers.expressErrorHandler;
+    var express = require('express'),
+        http = require('http'),
+        routes = require("../routes/index");
 
     var app = express();
 
