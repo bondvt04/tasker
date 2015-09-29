@@ -10,7 +10,8 @@
     "111start-dev": "gulp && node-debug -p 7789 --debug-brk=false ./dist/bin/www.js #starts webinspector in chrome with ability make brakpoints",
     "start-dev": "slc debug ./dist/bin/www.js",
     "start-dev2": "node-debug -b false ./dist/bin/www.js",
-    "start-dev3": "DEBUG=lol,http,mail,express:* node ./dist/bin/www.js",
+    "start-dev3": "DEBUG=* node ./dist/bin/www.js",
+    "start-dev33": "DEBUG=lol,http,mail,express:* node ./dist/bin/www.js",
     "build": "webpack",
     "mega-start-commented": "webpack-dev-server --config webpack.development.js --devtool eval --progress --colors --hot --inline --history-api-fallback --content-base build"
   },

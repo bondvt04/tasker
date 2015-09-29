@@ -1,0 +1,7 @@
+
+> server@0.0.0 start-dev3 /Users/anatoliybondar/www/tasker/server
+> DEBUG=* node ./dist/bin/www.js
+
+/source/bin/www.js:81:15 Express server listening on port 7777
+/source/db/index.js:39:11 Db connection was successful
+::1 - - [29/Sep/2015:15:59:18 +0000] "GET /api/nodes HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36"
