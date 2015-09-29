@@ -33,8 +33,8 @@ var express = require('express'),
     cluster = require('cluster'),
     http = require('http'),
     numCPUs = require('os').cpus().length,
-    fs = require('fs'),
-    routes = require("../routes/index");
+    fs = require('fs');
+//routes = require("../routes/index");
 //routes = [];
 
 if (0 && cluster.isMaster) {
@@ -102,25 +102,42 @@ if (0 && cluster.isMaster) {
          next();
     });*/
 
-    var createDomain = domain.create;
-    app.use(function (req, res, next) {
-        var domain = createDomain();
+    //var createDomain = domain.create;
+    //app.use(function(req, res, next) {
+    //    var domain = createDomain();
+    //
+    //    domain.on('error', function(err) {
+    //        logger.log("<<<asdf>>>");
+    //
+    //        domain.dispose();
+    //    });
+    //
+    //    domain.enter();
+    //    next();
+    //});
 
-        domain.on('error', function (err) {
-            logger.log("<<<asdf>>>");
+    var domain = domain.create();
 
-            domain.dispose();
-        });
-
-        domain.enter();
-        next();
+    domain.on("error", function (err) {
+        logger.log("***************** zlo".magenta);
     });
 
+    process.on('uncaughtException', function (err) {
+        logger.log("***************** zlo".magenta);
+    });
+
+    process.on('uncaughtError', function (err) {
+        logger.log("***************** zlo".magenta);
+    });
+
+    domain.enter();
     app.use("/api/nodes", function (req, res, next) {
-        asdf.qwer();
-        logger.log("------------- asdf");
-        res.send("asdf");
-        next();
+
+        throw new Error("asdf");
+
+        //logger.log("------------- asdf");
+        //res.send("asdf");
+        //next();
     });
 
     //app.use("/api", routes);
