@@ -27,10 +27,12 @@ var colors = require('colors');
 var logger = require("verbose-console-log");
 
 if (cluster.isMaster) {
-    //logger.log("###", numCPUs);
-
-    // Fork workers.
-    for (var i = 0; i < numCPUs; i++) {
+    if(0) {
+        // Fork workers as much as CPUs on this machine
+        for (var i = 0; i < numCPUs; i++) {
+            cluster.fork();
+        }
+    } else {
         cluster.fork();
     }
 
@@ -39,25 +41,6 @@ if (cluster.isMaster) {
         logger.log(message.underline.cyan);
         cluster.fork();
     });
-
-    //if(0) {
-    //    // fork workers
-    //    for (var i = 0; i < numCPUs; i++) {
-    //        cluster.fork();
-    //    }
-    //} else {
-    //    // fork only one worker
-    //    cluster.fork();
-    //}
-    //
-    //
-    //// when a worker dies create a new one
-    //cluster.on('exit', function(worker, code, signal) {
-    //    logger.log('worker '.red + worker.process.pid + ' died'.red);
-    //    logger.log("NEW WORKER".green);
-    //    cluster.fork();
-    //});
-
 } else {
     var lastErrorHandler = require("../errors/index").handlers.lastErrorHandler;
     var expressErrorHandler = require("../errors/index").handlers.expressErrorHandler;
@@ -66,33 +49,13 @@ if (cluster.isMaster) {
         routes = require("../routes/index");
 
     var app = express();
+    app.set('port', process.env.PORT || 7777);
 
-    //var createDomain = domain.create;
-    //app.use(function(req, res, next) {
-    //    var domain = createDomain();
-    //
-    //    domain.on('error', function(err) {
-    //        logger.log("<<<asdf>>>");
-    //
-    //        domain.dispose();
-    //    });
-    //
-    //    domain.enter();
-    //    next();
-    //});
-
-
-
-
-
-
+    app.use(require('morgan')('combined'));
+    require('debug')('lol')('### booting %s', 9);
 
     app.use("/api", routes);
 
-
-
-    // all environments
-    app.set('port', process.env.PORT || 7777);
 
 
     //app.use(express.logger('dev'));
@@ -103,7 +66,12 @@ if (cluster.isMaster) {
 
 
     app.use(expressErrorHandler);
+
     process.on('uncaughtException', function(err) {
+        lastErrorHandler(err);
+    });
+
+    process.on('uncaughtRejection', function(err) {
         lastErrorHandler(err);
     });
 
