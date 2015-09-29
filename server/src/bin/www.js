@@ -32,7 +32,8 @@ var express = require('express'),
     http = require('http'),
     numCPUs = require('os').cpus().length,
     fs = require('fs'),
-    routes = [];
+    routes = require("../routes/index");
+    //routes = [];
 
 if (0 && cluster.isMaster) {
     //logger.log("###", numCPUs);
@@ -65,7 +66,7 @@ if (0 && cluster.isMaster) {
 
     //domains
     // one domain for each request
-    app.use(function domainMiddleware(req, res, next) {
+    /*app.use(function domainMiddleware(req, res, next) {
 
         var reqDomain = domain.create();
 
@@ -79,14 +80,24 @@ if (0 && cluster.isMaster) {
             reqDomain.exit();
         });
 
-        reqDomain.on('error', function (err) {
+        logger.log("### asdf");
+
+        reqDomain.on('error', function (err, req, res, next) {
             logger.log("<<< error >>>");
             // http://stackoverflow.com/questions/16763550/explicitly-adding-req-and-res-to-domain-dont-propagate-error-to-express-middlew
             // delegate to express error-middleware
-            next(err);
+
 
             //reqDomain.dispose();
-            reqDomain.exit();
+            //reqDomain.exit();
+
+            // This is UNCAUGHT error! So we must crash application in order to not continue app running in unknown state
+            // So log, send response to user and then crash
+            //app.set("uncaught_error", true);
+
+            //logger.log("###", app.get("uncaught_error"));
+
+            next(err);
         });
 
         // Adding the request and response objects to the domain
@@ -94,18 +105,49 @@ if (0 && cluster.isMaster) {
         reqDomain.add(req);
         reqDomain.add(res);
 
-        reqDomain.run(next);
+        //reqDomain.run(next);
+        //reqDomain.run(function() {
+        //    logger.log("### qwer");
+        //});
+        //next();
+        reqDomain.enter();
+        //reqDomain.run(next);
+
+        next();
+    });*/
+
+    var createDomain = domain.create;
+    app.use(function(req, res, next) {
+        var domain = createDomain();
+
+        domain.on('error', function(err) {
+            logger.log("<<<asdf>>>");
+
+            domain.dispose();
+        });
+
+        domain.enter();
+        next();
     });
 
-    routes = require("../routes/index");
-    app.use("/api", routes);
+    app.use("/api/nodes", function(req, res, next) {
+        asdf.qwer();
+        logger.log("------------- asdf");
+        res.send("asdf");
+        next();
+    });
+
+
+
+    //app.use("/api", routes);
+
+
 
     // all environments
     app.set('port', process.env.PORT || 7777);
-    //app.set('views', __dirname + '/views');
-    //app.set('view engine', 'jade');
+
+
     //app.use(express.logger('dev'));
-    app.use(express.static(path.join(__dirname, 'public')));
 
     // for testing which cluster that serves the request
     //var router = express.Router();
@@ -127,7 +169,7 @@ if (0 && cluster.isMaster) {
 
     //app.use("/api", routes);
 
-    app.use(function(req, res, next) {
+    /*app.use(function(req, res, next) {
         logger.log("++++++++++".red);
     });
 
@@ -142,7 +184,19 @@ if (0 && cluster.isMaster) {
         res.writeHeader(500, {'Content-Type' : "text/html"});
         res.write("<h1>" + err.name + err.stack + "</h1>");
         res.end("<p>" + err.message + "</p>");
+
+        next(err);
     });
+
+    app.use(function(err, req, res, next) {
+
+        logger.log("###", app.get("uncaught_error"));
+        if(app.get("uncaught_error")) {
+            process.exit(1);
+        }
+    });*/
+
+
 
     http.createServer(app).listen(app.get('port'), function(){
         logger.log('Express server listening on port ' + app.get('port'));

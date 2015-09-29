@@ -17,7 +17,8 @@ router.get('/nodes/500', function(req, res, next) {
 // get list of nodes
 router.get('/nodes', function(req, res, next) {
 
-    throw new Error("lol".red);
+    throw new Error("lol2");
+    //next(new Error("asdf"));
 
     //var promise = controller.doAction("getNodes", arguments);
 
