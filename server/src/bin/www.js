@@ -50,9 +50,18 @@ if (cluster.isMaster) {
 
     var app = express();
     app.set('port', process.env.PORT || 7777);
+    require("../debugging/index")(app);
 
-    app.use(require('morgan')('combined'));
-    require('debug')('lol')('### booting %s', 9);
+
+
+
+
+    var jwt = require("jsonwebtoken");
+
+
+
+
+
 
     app.use("/api", routes);
 
