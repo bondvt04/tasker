@@ -55,9 +55,21 @@ function expressErrorHandler(err, req, res, next) {
     }
 
     logger.error('ERROR MIDDLEWARE'.red, err.message.red, 'Stack:'.yellow, err, err.stack);
-    res.writeHeader(500, {'Content-Type' : "text/html"});
-    res.write("<h1>" + err.name + err.stack + "</h1>");
-    res.end("<p>" + err.message + "</p>");
+
+    if("dev" === process.env.NODE_ENV) {
+        // dev
+        res.writeHeader(500, {'Content-Type' : "text/html"});
+        res.write("<h1>" + err.name + "</h1>");
+        res.write("<p>" + err.message + "</p>");
+        res.end("<p style='color:#8b008b'>" + err.stack + "</p>");
+    } else {
+        // prod
+        res.writeHeader(500, {'Content-Type' : "text/html"});
+        res.write("<h1>" + err.name + "</h1>");
+        res.end("<p>" + err.message + "</p>");
+    }
+
+
 
     lastErrorHandler(err);
 }
