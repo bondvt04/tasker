@@ -7,6 +7,9 @@ var colors = require('colors');
 var logger = require("verbose-console-log");
 
 var mongoose = require('mongoose');
+var config = require('../config/index');
+
+logger.log("########", config, config.get("db:uri"), config.get("db"))
 
 var options = {
     //server: {
@@ -19,7 +22,7 @@ var options = {
 };
 
 //mongoose.createConnection('mongodb://localhost/tasker', options);
-mongoose.connect('mongodb://localhost/tasker', options);
+mongoose.connect(config.get("db:uri"), options);
 
 var db = mongoose.connection;
 

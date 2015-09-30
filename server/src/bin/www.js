@@ -56,13 +56,6 @@ if (cluster.isMaster) {
 
 
 
-    var jwt = require("jsonwebtoken");
-
-
-
-
-
-
     app.use("/api", routes);
 
 

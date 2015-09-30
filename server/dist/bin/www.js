@@ -52,9 +52,7 @@ if (cluster.isMaster) {
 
     var app = express();
     app.set('port', process.env.PORT || 7777);
-
-    app.use(require('morgan')('combined'));
-    require('debug')('lol')('### booting %s', 9);
+    require("../debugging/index")(app);
 
     app.use("/api", routes);
 
