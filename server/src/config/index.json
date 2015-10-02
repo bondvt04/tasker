@@ -1,5 +1,8 @@
 {
     "db": {
         "uri": "mongodb://localhost/tasker"
+    },
+    "security": {
+        "tokenLife" : 3600
     }
 }
