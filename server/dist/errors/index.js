@@ -22,7 +22,7 @@ var OpError = (function (_Error) {
         _get(Object.getPrototypeOf(OpError.prototype), "constructor", this).call(this, message);
 
         this.name = "OpError";
-        this.message = message;
+        this.message = message.bold.red;
         this.type = "operational";
         Error.captureStackTrace(this, this.constructor.name);
     }
@@ -42,7 +42,7 @@ var CriticalError = (function (_OpError) {
         _get(Object.getPrototypeOf(CriticalError.prototype), "constructor", this).call(this, message);
 
         this.name = "CriticalError";
-        this.message = message;
+        this.message = message.bold.red;
         this.type = "critical";
         Error.captureStackTrace(this, this.constructor.name);
     }

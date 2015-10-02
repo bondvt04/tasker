@@ -1,0 +1,1 @@
+Run node ONLY from /server - because of paths
