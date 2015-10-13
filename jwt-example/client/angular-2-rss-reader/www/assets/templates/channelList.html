@@ -1,0 +1,8 @@
+<div class="topcoat-list channel-list">
+    <ul class="topcoat-list__container">
+        <li class="topcoat-list__item" *ng-for="#channel of rss.channelsList">
+            <a class="link" [router-link]="['/feed',{'id': channel._id}]" class="link">{{ channel.name }}</a>
+            <button class="topcoat-icon-button right" (click)="removeChannel($event, channel)">Delete</button>
+        </li>
+    </ul>
+</div>

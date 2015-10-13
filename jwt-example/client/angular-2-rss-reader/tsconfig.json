@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "target": "es5",
+		"sourceMap": true,
+        "removeComments": true,
+        "outDir": "www/app"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "filesGlob": [
+        "./app/*.ts",
+        "./app/**/*.ts",
+        "./typings/tsd.d.ts",
+        "./app/custom_typings/custom.d.ts"
+    ],
+    "compileOnSave": false
+}

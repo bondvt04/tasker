@@ -1,0 +1,10 @@
+<div class="topcoat-list list feed" *ng-if="channel.items.length>0">
+    <ul class="topcoat-list__container">
+        <li class="topcoat-list__item" *ng-for="#item of channel.items">
+            <p class="date">{{ item.pubDate }}</p>
+            <img *ng-if="!!item.image" src="{{ item.image }}" />
+            <h3 (click)="openLink($event, item.link)" class="title">{{ item.title }}</h3>
+            <p class="description">{{ item.description }}</p>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,11 @@
+<button class="topcoat-button--cta bottom full" [router-link]="['/login']">Log in</button>
+<form class="form" role="form" [ng-form-model]="signupForm"  (submit)="signup($event)">
+    <h3 class="title">Signup</h3>
+    <div class="form-group" [class.has-error]="!signupForm.controls.username.valid && signupForm.controls.username.touched">
+        <input type="text" ng-control="username" class="form-control topcoat-text-input" placeholder="Username" >
+    </div>
+    <div class="form-group" [class.has-error]="!signupForm.controls.password.valid && signupForm.controls.password.touched">
+        <input type="password" ng-control="password" class="form-control topcoat-text-input" placeholder="Password">
+    </div>
+    <button type="submit" class="topcoat-button--cta full" [disabled]="!signupForm.valid">Signup</button>
+</form>

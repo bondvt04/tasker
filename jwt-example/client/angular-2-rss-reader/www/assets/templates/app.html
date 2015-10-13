@@ -1,0 +1,6 @@
+<header-menu *ng-if="auth.isAuth()"></header-menu>
+<div [class.is-auth]="auth.isAuth()" [class.not-auth]="!auth.isAuth()" class="body" >
+    <router-outlet class="page is-visible"></router-outlet>
+</div>
+<footer-menu *ng-if="auth.isAuth()"></footer-menu>
+<popup></popup>

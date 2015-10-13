@@ -31,6 +31,20 @@ class CriticalError extends OpError {
 }
 
 /**
+ * Auth error
+ */
+class AuthError extends OpError {
+    constructor(message) {
+        super(message);
+
+        this.name = "AuthError";
+        this.message = message.bold.red;
+        this.type = "auth";
+        Error.captureStackTrace(this, this.constructor.name);
+    }
+}
+
+/**
  * Launch this AFTER all handlers, because this handler can kill process
  */
 function lastErrorHandler(err) {

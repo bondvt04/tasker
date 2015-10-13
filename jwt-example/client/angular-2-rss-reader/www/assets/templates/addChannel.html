@@ -1,0 +1,10 @@
+<form  class="form" [ng-form-model]="addForm" (submit)="addChannel($event)">
+    <h3 class="title">Add RSS channel</h3>
+    <div class="form-group" [class.has-error]="!addForm.controls.name.valid && addForm.controls.name.touched">
+        <input class="topcoat-text-input" ng-control="name" type="text" placeholder="name">
+    </div>
+    <div class="form-group" [class.has-error]="!addForm.controls.channel.valid && addForm.controls.channel.touched">
+        <input class="topcoat-text-input" ng-control="channel" type="text" placeholder="channel url">
+    </div>
+    <button class="topcoat-button--cta logout" type="submit" [disabled]="!addForm.valid">Add Channel</button>
+</form>

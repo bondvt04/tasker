@@ -1,0 +1,18 @@
+{
+  "name": "rss-node-server",
+  "version": "1.0.0",
+  "description": "rss api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Markov Sergey",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.0.5",
+    "mongoose": "^4.1.8",
+    "morgan": "^1.6.1"
+  }
+}

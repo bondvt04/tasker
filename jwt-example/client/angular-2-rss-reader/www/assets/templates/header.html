@@ -1,0 +1,9 @@
+<div class="top-title">
+    <div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item left quarter"></div>
+        <div class="topcoat-navigation-bar__item right three-quarters">
+            <span class="topcoat-navigation-bar__title">Hello, {{auth.decodedToken.name}}</span>
+            <button class="topcoat-button--cta logout" *ng-if="auth.isAuth()" (click)="logout($event)" [router-link]="['/login']">logout</button>
+        </div>
+    </div>
+</div>

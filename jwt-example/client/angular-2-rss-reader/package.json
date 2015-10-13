@@ -1,0 +1,20 @@
+{
+  "name": "angular-2-rss-reader",
+  "version": "0.0.1",
+  "description": "Rss Reader with angular2",
+  "dependencies": {
+    "moment": "^2.10.6"
+  },
+  "devDependencies": {
+    "jwt-decode": "~1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.mobidev.biz/phonegap_tutorials/angular-2-rss-reader.git"
+  },
+  "author": "Markov Sergey",
+  "license": "MIT"
+}
