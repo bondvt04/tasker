@@ -38,7 +38,7 @@ class ApiControllerAbstract {
             logger.log("Controller.__afterAction2");
             actionResult.c = "csdf";
             resolve(actionResult);
-            res.send(actionResult);
+            res.json(actionResult);
             //res.send("asdf");
             //res.send("qwer");
             next();

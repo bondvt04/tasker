@@ -8,10 +8,14 @@ var logger = require('verbose-console-log');
 
 // Do your next() stuff in controller's actions when you done
 
-router.get('/login', function(req, res, next) {
-    console.log("###### qwer");
-    res.send("qwer");
+router.get('/add', function(req, res, next) {
+    console.log("###### auth_controller.addUser");
+    res.send("auth_controller.addUser");
     //controller.doAction("index", arguments);
+});
+
+router.get('/login', function(req, res, next) {
+    controller.doAction("index", arguments);
 });
 
 module.exports = router;
