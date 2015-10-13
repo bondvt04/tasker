@@ -48,9 +48,29 @@ var CriticalError = (function (_OpError) {
     }
 
     /**
-     * Launch this AFTER all handlers, because this handler can kill process
+     * Auth error
      */
     return CriticalError;
+})(OpError);
+
+var AuthError = (function (_OpError2) {
+    _inherits(AuthError, _OpError2);
+
+    function AuthError(message) {
+        _classCallCheck(this, AuthError);
+
+        _get(Object.getPrototypeOf(AuthError.prototype), "constructor", this).call(this, message);
+
+        this.name = "AuthError";
+        this.message = message.bold.red;
+        this.type = "auth";
+        Error.captureStackTrace(this, this.constructor.name);
+    }
+
+    /**
+     * Launch this AFTER all handlers, because this handler can kill process
+     */
+    return AuthError;
 })(OpError);
 
 function lastErrorHandler(err) {

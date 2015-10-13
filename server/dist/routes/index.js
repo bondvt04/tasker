@@ -21,8 +21,11 @@ router.get('/nodes/500', function (req, res, next) {
 // get list of nodes
 router.get('/nodes', function (req, res, next) {
 
+    console.log("####### asdf");
+    res.send("asdf");
+
     //res.send("asdf");
-    throw new OpError("lol2");
+    //throw new OpError("lol2");
     //next(new Error("asdf"));
 
     //var promise = controller.doAction("getNodes", arguments);

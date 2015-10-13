@@ -45,8 +45,7 @@ if (cluster.isMaster) {
     var lastErrorHandler = require("../errors/index").handlers.lastErrorHandler;
     var expressErrorHandler = require("../errors/index").handlers.expressErrorHandler;
     var express = require('express'),
-        http = require('http'),
-        routes = require("../routes/index");
+        http = require('http');
 
     var app = express();
     app.set('port', process.env.PORT || 7777);
@@ -55,8 +54,9 @@ if (cluster.isMaster) {
 
 
 
+    app.use("/api/auth", require("../routes/auth"));
+    app.use("/api", require("../routes/index"));
 
-    app.use("/api", routes);
 
 
 
@@ -83,12 +83,6 @@ if (cluster.isMaster) {
         logger.log('Express server listening on port ' + app.get('port'));
     });
 }
-/*
-
-
-
-
-
 
 //app.use('/static', express.static('public'));
 //http://localhost:3000/static/images/kitten.jpg
